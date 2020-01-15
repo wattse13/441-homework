@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Eli Watts' 441 Website</title>
+
+        <meta charset="utf-8">
+        <meta name="description" content="MART 441, Assignment 1">
+        <meta name="author" content="Eli Watts">
+
+        <!--Matches screen's width in device-independent pixels-->
+        <!--Establishes 1:1 relationship between CSS pixels and device-independent pixels-->
+        <!--From Pete LePage's Responsive Web Design Basics Course-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./style.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+
+      <div class="container-fluid">
+        <h1>Rotten Strawberry Blog</h1>
+        <p>This is some text.</p>
+      </div>
+
+      <picture>
+        <source srcset="./images/fly.jpg" media="(max-width: 600px)" title="fly" id="fly">
+        <source srcset="./images/site-logo.jpg">
+        <img src="./images/site-logo.jpg" alt="Digitally Manipulated Picture of Rotten Strawberry" title="gross strawberry" id="strawberry">
+      </picture>
+
+    </body>
+
+</html>
