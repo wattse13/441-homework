@@ -16,7 +16,11 @@
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./style.css">
+
+        <!--Css Links-->
+        <!--Font Style Sheet Linked First To Prevent style issues-->
+        <link rel="stylesheet" href="./style/fonts.css">
+        <link rel="stylesheet" href="./style/style.css">
 
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -28,15 +32,49 @@
     <body>
 
       <div class="container-fluid">
-        <h1>Rotten Strawberry Blog</h1>
-        <p>This is some text.</p>
+        <h1>rotten strawberry blog</h1>
+        <p class="byLine">a blog for gross stories.</p>
       </div>
 
+      <div class="row" id="navBar">
+        <div class="col-sm-4"><a href="#aboutSect">about?</a></div>
+        <div class="col-sm-4"><a href="#skillSect">skills?</a></div>
+        <div class="col-sm-4"><a href="#meSect">me?</a></div>
+      </div>
+
+      <!--<nav class="navbar-fixed-top">
+        <ul class="nav navbar-nav">
+          <li><a href="#aboutSect">about?</a></div></li>
+          <li><a href="#skillSect">skills?</a></div></li>
+          <li><a href="#meSect">me?</a></li>
+        </ul>
+      </nav>-->
+
       <picture>
-        <source srcset="./images/fly.jpg" media="(max-width: 600px)" title="fly" id="fly">
+        <source srcset="./images/fly.jpg" media="(max-width: 768px)" title="fly" id="fly">
         <source srcset="./images/site-logo.jpg">
         <img src="./images/site-logo.jpg" alt="Digitally Manipulated Picture of Rotten Strawberry" title="gross strawberry" id="strawberry">
       </picture>
+
+      <div class="container-fluid">
+        <h2 id="aboutSect">about?</h2>
+        <p>This blog is a collection of my attempts at storytelling. So far it contains mostly visual and written works, though one day I would like to include some interactive stories as well.</p>
+        <p>Stories provide an essential part of the human experience. Storytelling is a process that takes unordered information and rearranges it into a recognizable pattern that our brains can recognize and remember as important. If you, like me, are interested in the art of storytelling, I hope you’ll stick around and filler filler filler filler filler filler filler filler.</p>
+      </div>
+
+      <div class="container-fluid">
+        <h2 id="skillSect">skills?</h2>
+        <p>Like my father before me, and his father before him, I am a jack of all trades. Actually, the word <b>all</b> is a bit generous. A jack of a couple trades fits better.</p>
+        <p>I started my career as a working individual as a professional dishwasher. My parents, impressed by my ability to clean and organize dishes in a fast and efficient manner, suggested I try going pro at a young age. As luck would have it, a local restaurant hired me and I spent three years juggling typical high school responsibilities, with the glamour of the professional dishwashing life.</p>
+        <p>After my retirement from the professional dishwashing world and graduation from high school, I moved to Germany and spent three years learning how to build and repair violins. While not as glamourous as professional dishwashing, I did learn many things during my time as a luthier. Most importantly, I learned the fundamentals of turning raw materials into a finished story. A skill that can be applied to almost any creative or professional endeavor.</p>
+        <p>After three years, I knew I didn’t want to be a luthier for the rest of my life. So, I began studying at the University of Montana and working as an English tutor to help support myself. During my time in the Media Arts Program my love for story telling expanded to include forms beyond the written word. Adobe programs, like Photoshop, Illustrator, and Premier, have become tools I use regularly to tell stories. I’ve experimented with the Unity Game Engine, and now I’m exploring the world of web design.</p>
+      </div>
+
+      <div class="container-fluid">
+        <h2 id="meSect">me?</h2>
+        <p>I am a currently a Junior in the Media Arts Program at the University of Montana. When not studying or working as an English tutor, I enjoy reading, writing, climbing, or playing video games. Currently, I live in Germany, and am hoping the German immigration office will allow me to stay indefinitely.</p>
+        <p><a href="#">Back to Top.</a>
+      </div>
 
     </body>
 
