@@ -22,3 +22,5 @@ I like the parallax scrolling effect and I thought it would fit well on my webpa
 ![W3 Parallax Scrolling Code](./images/parallax-example.png)
 
 While I am very happy that my webpage image changes when the device’s screen width shrinks, I was unable to get some of the finer details to work. While the image changes, the alt text and title text do not. Therefore, the second picture, the fly, is mistitled. This is my first time using the `picture` element which may be why I don’t fully understand it.
+
+Finally, although I did have some success using Bootstrap, I was unable to use a downloaded version of Bootstrap. Instead, I have been relying on links to the Bootstrap Content Librabry in my HTML document header. Trying to understand how to use a downloaded version of Bootstrap led me down a rabbit hole of terms like node package manager that I was not able to understand. Hopefully that will change by the end of the semester!
