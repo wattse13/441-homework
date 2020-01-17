@@ -1,10 +1,32 @@
+/*Modifies image*/
+/*Max-width prevents img from becoming pixelated on large screens*/
+/*Display and margin attributes center img*/
 #strawberry {
   max-width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+/*Centers and adds space around text in row element*/
+.row {
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  font-size: 1.5em;
+}
+/*Centers text in h1, h2, and byLine class elements*/
+h1, h2, .byLine {
+  text-align: center;
+}
+/*Failed attempt to create fixed navBar*/
+/*While the navBar did stay fixed at top of screen, changing the margins did not center it as desired*/
+/*#navBar {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+/*Media Querry changes width of container-fluid elements to 50% of viewport when screen has a min width of 991.98px*/
 @media (min-width: 991.98px) {.container-fluid {
   margin: auto;
   padding: auto;
@@ -12,15 +34,7 @@
   height: auto;
   }
 }
-.row {
-  text-align: center;
-  margin: auto;
-  padding: auto;
-  font-size: 1.5em;
-}
-h1, h2, .byLine {
-  text-align: center;
-}
+/*Media querry changes width of container-fluid element to 85% of viewport when screen width is below 767.98px*/
 @media (max-width: 767.98px) {
   .container-fluid {
     margin: auto;
@@ -29,6 +43,7 @@ h1, h2, .byLine {
     height: auto;
   }
 }
+/*Media querry changes widht of container-fluid element to 90% of viewport when screen width is below 575.98px*/
 @media (max-width: 575.98px) {
   .container-fluid {
     margin: auto;
@@ -37,8 +52,3 @@ h1, h2, .byLine {
     height: auto;
   }
 }
-/*#navBar {
-  position: fixed;
-  margin-left: auto;
-  margin-right: auto;
-}*/
