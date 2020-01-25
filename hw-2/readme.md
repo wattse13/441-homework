@@ -14,6 +14,8 @@ As I had some extra time I also decided to try and use the downloaded version of
 
 ## What Didn’t Work?
 
-Using the downloaded version of Bootstrap rather than the internet dependent links, which I used last assignment, changed some of my website's formatting. In particular, my navbar changed from three inline links, to three vertically stacked links. I think this may be because of how my stylesheets are organized. The screenshot below shows how my current directory is laid out. When I added the bootstrap-4.4.1-dist folder it also added a couple CSS stylesheets, which I think may be conflicting with my existing stylsheets. I'm not sure if consolidating my CSS stylsheets into the Bootstrap stylesheets would fix my problem. 
+Using the downloaded version of Bootstrap rather than the internet dependent links, which I used last assignment, changed some of my website's formatting. In particular, my navbar changed from three inline links, to three vertically stacked links. I think this may be because of how my stylesheets are organized. The screenshot below shows how my current directory is laid out. When I added the bootstrap-4.4.1-dist folder it also added a couple CSS stylesheets, which I think may be conflicting with my existing stylsheets. I'm not sure if consolidating my CSS stylsheets into the Bootstrap stylesheets would fix my problem.
 
 ![W3 Parallax Scrolling Code](./images/stylesheet-organization.png)
+
+On top of my minor issue with Bootstrap, I was also unable to chose just three favorite games from all of the titles I have played.
