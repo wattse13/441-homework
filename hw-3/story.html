@@ -1,0 +1,110 @@
+<!--
+Author: Eli Watts
+File Name: index.html
+Date: 01/02/2020
+Purpose: MART 441 Homework Assignment #3
+-->
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Eli Watts' MART 441 Assignment 3</title>
+
+        <!--Meta information-->
+        <meta charset="utf-8">
+        <meta name="description" content="MART 441, Assignment 3">
+        <meta name="author" content="Eli Watts">
+
+        <!--Matches screen's width in device-independent pixels-->
+        <!--Establishes 1:1 relationship between CSS pixels and device-independent pixels-->
+        <!--From Pete LePage's Responsive Web Design Basics Course-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Latest compiled and minified CSS -->
+        <!--Allows me to use Bootstrap's CSS style content Library-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!--Links to downloaded version of Bootstrap-->
+        <!--Using this version rather than links to online versions changes navbar elements from inline elements to block elements-->
+        <!--<link rel="stylesheet" type="text/css" href=".bootstrap-4.1.1-dist/css/bootstrap.css">-->
+
+        <!--CSS Links-->
+        <!--Font Style Sheet Linked First To Prevent style issues-->
+        <link rel="stylesheet" href="./style/fonts.css">
+        <link rel="stylesheet" href="./style/style.css">
+
+        <!-- jQuery library -->
+        <!--Probably not necessary for this project, but allows me to use Bootstraps JQuery Library-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <!--Probably not necessary for this project, but allows me to use Bootstraps JavaScript Library-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <!--JavaScript File Link-->
+        <script src="./script.js"></script>
+    </head>
+
+    <body>
+
+      <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
+      <!--h1 is set to 36px by Bootstrap-->
+      <!--byLine class allows me to style line 42 in my CSS stylesheet-->
+      <div class="container-fluid">
+        <h1>rotten strawberry blog</h1>
+        <p class="byLine">a blog for gross stories.</p>
+      </div><!--End of container-fluid Section-->
+
+      <!--Bootstrap's row and col classes create a responsive grid that change based on screen size-->
+      <!--Bootstrap class col-sm-4 creates three equal-width columns that stack once screen size goes bellow 768px wide-->
+      <!--Links move to different sections of webpage using header IDs-->
+      <div class="row" id="navBar">
+        <div class="col-sm-6"><a href="./index.html">home?</a></div>
+        <div class="col-sm-6"><a href="./story.html">interactive story?</a></div>
+      </div><!--End of row Section-->
+
+      <h2>Mr. Kubi</h2>
+        <div class="container-fluid" id="storyBody0">
+          <p>Silence greeted Earl as he woke, like it had every day for the past seven years. Neither an alarm nor light from a window woke him. Instead, pain in his back pushed the sleep out of his eyes. Scowling, he crab walked to the edge of his nest on the kitchen island.</p>
+          <p>He stretched, then stepped down onto the frozen sea of belongings that covered his floor. Preserved peaches and ‘Travel’ journals bobbed on silent troughs and peaks. Plastic wrappers splashed under his footsteps as he approached a peach tea on the kitchen counter.</p>
+          <p>“Good morning.” He said.</p>
+          <p>A thin halo of empty space surrounded the empty bottle.</p>
+          <p>“You know, I thought that box pushing into my stomach this morning was you,” his scowl softened. “I tried to keep pretending, but my back doesn’t like twisting up to fit on our island.”</p>
+          <p>Mr. Kubi opened a window covered by a newspaper. Mushy boxes of mint tea allowed the window only a centimeter of movement.</p>
+          <p>Light stabbed at his eyes. Sun and street noise invaded his apartment through the small slit. A passing couple’s laughter exploded in his face. He wrapped his meaty fingers around the window handle and twisted it shut, strangling the laughter.</p>
+          <p>His hoarse panting calmed back into his normal shallow wheezing.</p>
+          <p>“I’ll try airing things out tomorrow when there’s less going on.”</p>
+          <p>Choked laughter from the sidewalk outside continued to seep in.</p>
+          <br />
+          <button onclick="choice1()" type="button" class="btn-warning" id="yes1">decision?</button>
+        </div>
+
+        <div id="storyBody2">
+          <p>Here is some text that needs to be toggled on and off</p>
+        </div>
+
+
+          <!--<div class="container-fluid" id="choice">
+            <button onclick="displayChoice()" type="button" class="btn-warning" id="yes1">yes</button>
+            <button type="button" class="btn-warning" id="no1">no</button>
+          </div>
+
+        </div>
+
+        <div class="hiding" id="storyBody2">
+          <p>Here is some other text for no.</p>
+        </div>
+
+        <script>
+          function displayChoice() {
+            let choiceNode = document.getElementById("storyBody2");
+            document.getElementById("storyBody0").appendChild(choiceNode);
+            if (choiceNode )
+          }
+        </script>-->
+
+
+  </body>
+
+</html>
