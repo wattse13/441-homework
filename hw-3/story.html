@@ -65,9 +65,14 @@ Purpose: MART 441 Homework Assignment #3
       </div><!--End of row Section-->
 
       <h2>Mr. Kubi</h2>
+
+      <button id="addName" onclick="addName()">missing someone?</button>
+
+      <br />
+
         <div class="container-fluid" id="storyBody0">
           <p>Silence greeted Earl as he woke, like it had every day for the past seven years. Neither an alarm nor light from a window woke him. Instead, pain in his back pushed the sleep out of his eyes. Scowling, he crab walked to the edge of his nest on the kitchen island.</p>
-          <p>He stretched, then stepped down onto the frozen sea of belongings that covered his floor. Preserved peaches and ‘Travel’ journals bobbed on silent troughs and peaks. Plastic wrappers splashed under his footsteps as he approached a peach tea on the kitchen counter.</p>
+          <p>He stretched, then stepped down onto the frozen sea of belongings that covered his floor. Preserved peaches and ‘Travel’ journals bobbed on silent troughs and peaks. Plastic wrappers splashed under his footsteps as he approached an empty can of peach tea – <span id="nameReplace">Ellie</span>’s favorite.</p>
           <p>“Good morning.” He said.</p>
           <p>A thin halo of empty space surrounded the empty bottle.</p>
           <p>“You know, I thought that box pushing into my stomach this morning was you,” his scowl softened. “I tried to keep pretending, but my back doesn’t like twisting up to fit on our island.”</p>
@@ -76,14 +81,47 @@ Purpose: MART 441 Homework Assignment #3
           <p>His hoarse panting calmed back into his normal shallow wheezing.</p>
           <p>“I’ll try airing things out tomorrow when there’s less going on.”</p>
           <p>Choked laughter from the sidewalk outside continued to seep in.</p>
-          <br />
-          <button onclick="choice1()" type="button" class="btn-warning" id="yes1">decision?</button>
+          <p>They all sounded so happy. Those people outside.</p>
+          <p>”Maybe I should clean up. Go out like we used to!” Mr. Kubi said while walking back to the can of empty peach tea on the kitchen counter. “I mean I’ve been talking to this can like it’s you since,” he paused, and held the can in his hand. “Since well, you know.”</p>
+	        <p><em>It’s just a can.</em> He tried to think.<em> I’ll start small. Throwing away a can can’t be that hard</em></p>
+          <!--<p>Here is a <span id="nameReplace">Sam</span> I would like to replace</p>-->
+          <button onclick="choice1()" type="button" class="btn-warning btn-lg" id="tossIt">toss it?</button>
         </div>
 
         <div id="storyBody2">
-          <p>Here is some text that needs to be toggled on and off</p>
+          <p><em>Yes,</em> it was just a can. Trash. Something to be thrown away. Mr. Kubi looked around for his garbage bin. Had he walked over to where the fridge disappeared into a mound of unread newspapers, and then dug at least one meter, he would have found it.</p>
+	         <p>”Trash bags. I’ll need trash bags if I want to start cleaning up.” Mr. Kubi said.</p>
+           <p>He waded to where his laptop floated on a wave of takeout boxes. The power cable disappeared into the depths and anchored it in its place like a buoy. Crusted green muck on both laptop halves made a <span id=grossSound>‘shlorp’</span> sound when peeled apart. Inside, a thick slimy film dulled the screen’s blue glow. The keys, unreadable.</p>
+           <p>Mr. Kubi clicked on the internet icon. While waiting for it to load, he dipped his hands into the swell of boxes and paddled through them. Under the surface they came across something smooth like an algae covered river rock. He wiggled the object free, then pulled it up. The mass he held was once a book. What wasn’t already eroded away by mold felt sponge like.</p>
+           <p>After reading what was left of the title, “. . . Eat . . . Spain,” he flipped through chunks of fused together pages. Between two sections he found a single frame comic captioned, “Cow Tools.”</p>
+           <p>“I never understood his work.” He smiled then flipped the comic over to read the note on the back.</p>
+           <p>“You’re thinking about it too hard!” As he read, he ran his fingers over the blue handwritten words. “I’ll explain it once I get back. Can’t wait to see you again soon!”</p>
+           <p>Mr. Kubi gave the comic a kiss before letting it fall. Another drop in the ocean.</p>
+           <p>Before ordering trash bags, he checked his email. Mr. Kubi never received anything but spam, though that didn’t stop him from checking often. Sometimes he responded to the junk mail; they never wrote back.</p>
+           <p>He cheered when he saw his son’s email. Wide eyed and grinning, he immediately opened the message and read:</p>
+           <p>Dad,</p>
+           <p>The landlord called. Your neighbors moved out because of the smell coming from your room. He’s threatening eviction. I’m sending a crew to help you because apparently you still can’t be trusted to do it on your own. They’ll be there in a month. Don’t worry, they’re professionals who are trained for cases like you. If things go well, maybe we can return to normal. If not, I’ll have to cut all ties with you including financial. I can’t keep enabling you.</p>
+           <p>Arnold.</p>
+           <p>“What smell?” Mr. Kubi slammed the reply button. There’s no smell. I live here, I’d notice if things smelled.”</p>
+           <button onclick="choice2()" type="button" class="btn-warning btn-lg" id="sendIt">send it?</button>
         </div>
 
+        <div id="storyBodyB">
+          <p><em>No,</em> it was best to hold onto <span id="nameReplace">Ellie.</span> Or at least what was left.</p>
+          <p>Mr. Kubi put the empty can back in its place and then waded to where his laptop floated on a wave of takeout boxes. The power cable disappeared into the depths and anchored it in its place like a buoy. Crusted green muck on both laptop halves made a <span id=grossSound>‘shlorp’</span> sound when peeled apart. Inside, a thick slimy film dulled the screen’s blue glow. The keys, unreadable.</p>
+          <p>Mr. Kubi clicked on the internet icon. While waiting for it to load, he dipped his hands into the swell of boxes and paddled through them. Under the surface they came across something smooth like an algae covered river rock. He wiggled the object free, then pulled it up. The mass he held was once a book. What wasn’t already eroded away by mold felt sponge like.</p>
+          <p>After reading what was left of the title, “. . . Eat . . . Spain,” he flipped through chunks of fused together pages. Between two sections he found a single frame comic captioned, “Cow Tools.”</p>
+          <p>“I never understood his work.” He smiled then flipped the comic over to read the note on the back.</p>
+          <p>“You’re thinking about it too hard!” As he read, he ran his fingers over the blue handwritten words. “I’ll explain it once I get back. Can’t wait to see you again soon!”</p>
+          <p>Mr. Kubi gave the comic a kiss before letting it fall. Another drop in the ocean.</p>
+          <p>Before ordering some food, he checked his email. Mr. Kubi never received anything but spam, though that didn’t stop him from checking often. Sometimes he responded to the junk mail; they never wrote back.</p>
+          <p>He cheered when he saw his son’s email. Wide eyed and grinning, he immediately opened the message and read:</p>
+          <p>Dad,</p>
+          <p>The landlord called. Your neighbors moved out because of the smell coming from your room. He’s threatening eviction. I’m sending a crew to help you because apparently you still can’t be trusted to do it on your own. They’ll be there in a month. Don’t worry, they’re professionals who are trained for cases like you. If things go well, maybe we can return to normal. If not, I’ll have to cut all ties with you including financial. I can’t keep enabling you.</p>
+          <p>Arnold.</p>
+          <p>“What smell?” Mr. Kubi slammed the reply button. There’s no smell. I live here, I’d notice if things smelled.”</p>
+          <button onclick="choice2()" type="button" class="btn-warning btn-lg" id="sendIt">send it?</button>
+        </div>
 
           <!--<div class="container-fluid" id="choice">
             <button onclick="displayChoice()" type="button" class="btn-warning" id="yes1">yes</button>
