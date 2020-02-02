@@ -56,11 +56,11 @@ h1, h2, .byLine {
     height: auto;
   }
 }
-#tossIt, #addName, #sendIt {
+#tossIt, #addName, #sendIt, #digMore {
   display: block;
   margin: auto;
   padding: auto;
 }
-#storyBody2, #storyBodyB {
+#storyBody2, #storyBodyB, #storyBody3, #storyBodyC, #storyBody4 {
   display: none;
 }
