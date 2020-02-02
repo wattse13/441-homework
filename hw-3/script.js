@@ -53,7 +53,7 @@ function choice2() {
 
       document.getElementById("digMore").style.display = 'none';
 
-    } else if (yesNo === false) {
+    } else if (yesNo3 === false) {
       let storyNodeC = document.getElementById("storyBodyC");
       document.getElementById("storyBody0").appendChild(storyNodeC);
       storyNodeC.style.display = 'block';
