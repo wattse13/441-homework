@@ -1,21 +1,22 @@
 # Eli Watts
 # MART 441
-# Homework Assignment 2
+# Homework Assignment 3
 
 ## Intro
 
-As I have taken a class on P5.js, a JavaScript library for creative coding, this weeks assignment was fairly straight forward. In my past experiences with coding classes, I have often struggled when concepts start to become more complex. So, I am greatful for the opprotunity to review some of the basics.
+It took me awhile to get started this week. Working through the 10 Codecademy lessons took longer than I expected and I had some initial trouble with understanding how to use JavaScript with HTML elements. Once I better understood how to use the `document.getElementById` method, things went well. . I decided to spice up an old story I wrote some years ago, with interactive elements. While not everything worked as planned, I’m happy with what I was able to learn this week.
 
 ## What Worked?
 
-Creating and  then linking to the external JavaScript document in my HTML document was no problem. Similarly, using the `.log` method with the `console` object to add comments to my webpage's console was also no problem.
+I was able to successfully add interactive elements to my story. Before this week’s assignment, I had no idea how to integrate JavaScript into HTML on an element by element basis, but now I do! I made heavy use of the `document.getElementById()` method to reference certain HTML elements, using their Id tags, which then allowed me to manipulate how they displayed on my webpage.
 
-As I had some extra time I also decided to try and use the downloaded version of Bootstrap rather than internet dependent links in my HTML header. While I was able to download Bootstrap succesfully and to add it to the same directory in which I stored my HTML document, it did create some problems which I will describe in the next section.
+Using the `onClick()`, the `document.appendChild(), and the `.style.display` methods combined with `if` statements, I was able to add different blocks of text to the story displayed on my webpage based on what decisions the end user made.
+
 
 ## What Didn’t Work?
 
-Using the downloaded version of Bootstrap rather than the internet dependent links, which I used last assignment, changed some of my website's formatting. In particular, my navbar changed from three inline links, to three vertically stacked links. I think this may be because of how my stylesheets are organized. The screenshot below shows how my current directory is laid out. When I added the bootstrap-4.4.1-dist folder it also added a couple CSS stylesheets, which I think may be conflicting with my existing stylsheets. I'm not sure if consolidating my CSS stylsheets into the Bootstrap stylesheets would fix my problem.
+I wanted to create a feature that would replace a name in my story – the protagonists love interest – with a name the user typed into `prompt()` method. While my function, called `nameReplace()` does replace the first instance of name in my story, it does not replace any other instances after the first. I think this is because after replacing the first name, the `if` statement evaluates to true and does not check again for new instances. Perhaps using a `for loop` would solve this problem.
 
-![W3 Parallax Scrolling Code](./images/stylesheet-organization.png)
+Originally, I did not want to use another button to call my `nameReplace()` function. Instead, I wanted the prompt to appear when the user clicked on the navbar link ‘interactive story?’. While I was able to get the `prompt()’ function to appear, I was unable to access the string it created. I tried troubleshooting with the `console.log()` function, but I was unable to get it to log anything to the console. Using the same code, but using a button, instead of a hyperlink, worked.
 
-On top of my minor issue with Bootstrap, I was also unable to chose just three favorite games from all of the titles I have played.
+Unfortunately, I also did not have time to add pictures to my story. I am assuming that if I had added pictures, I would have used the `document.getElementById()` method like I used it for other HTML elements.
