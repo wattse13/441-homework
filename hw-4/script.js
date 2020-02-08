@@ -32,7 +32,7 @@ function choice1() {
   }
 }
 
-//Similiar to function choice1()
+//Similiar to function getName(greeting) function from this weeks lesson
 //Because there is no if statement, the story doesn't branch into two separate paths
 //creates new function called choice2 with a single parameter
 //initiates new variable kubiEmail which is then assigned the value of what the user types into the emailText text area input
@@ -81,13 +81,16 @@ function choice2(email) {
   }
 //Creates new function called addName
 //When called onClick in HTML document variable name is initialized and given value of string typed in nameField input field
-//If the user enters 'yeah?' into the text field, a word in the story, marked with span tags, is replaced with the user's string
+//Initializes a for loop
+//In for loop, is is initalized as a variable and assigned a value of 0
+//If value of i is less than length of name array, i increases in value by 1
+//If value of name does not equal zero, word tagged with nameReplace span is assigned a new value, name
 //If the user does not enter a string, the word in the story is not replaced
 //Doesn't work correctly as only spang tagged words in displayed elements change
 //Span tagged words in hidden HTML elements do not change
 function addName() {
   let name = document.getElementById("nameField").value;
-    for (i =0; i < name.length; i++ ){
+    for (i = 0; i < name.length; i++ ){
       if (name != null) {
         document.getElementsByClassName("nameReplace")[i].innerHTML = `${name}`;
         console.log(name);
@@ -103,7 +106,7 @@ function addName() {
 //When called in the HTML document it initializes new variable replay and assigns it the value of user inputed string in replayStory text input element
 //If user enters 'yeah?' the location.reload() function is called which refreshes the page
 //If user enters 'nah?' a new HTML element is appended to screen
-//If neither 'yeah?' nor 'nah?' are entered a different HTML element is appended to the screen 
+//If neither 'yeah?' nor 'nah?' are entered a different HTML element is appended to the screen
 function playAgain() {
   let replay = document.getElementById("replayStory").value;
     if (replay === "yeah?") {
