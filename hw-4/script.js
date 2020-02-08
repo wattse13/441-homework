@@ -29,7 +29,7 @@ function choice1() {
 
     document.getElementById("tossIt").style.display = 'none';
     document.getElementById("tossText").style.display = 'none';
-  }
+  } 
 }
 
 function choice2(email) {
