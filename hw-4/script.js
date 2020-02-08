@@ -6,12 +6,12 @@ Purpose: Chose Your Own Adventure Story
 */
 
 //Creates new function called choice1
-//Initiates new variable yesNo in block scope and gives it the prompt function as a value
-//When the if statement evaluates to true, variable storyNode2 is initialized, and given the value of storyBody2 HTML element
+//Initiates new variable yesNo in block scope and assigns it the string value provided by the end user in the tossText input field
+//If the end user enters 'yeah?' variable storyNode2 is initialized, and given the value of storyBody2 HTML element
   //storyBody0 is appended with storyBody2 and storyBody2 style is changed from none to block
   //tossIt button element style is changed from block to none
-//when if statement evaluates to false storyNodeB vairable is initialized and given the value of StoryBodyB HTML element
-  //Rest follows similiar procedure to true, but a different HTML element is appended
+//If the end user enters 'nah?' the storyNodeB vairable is initialized and given the value of StoryBodyB HTML element
+  //Rest follows similiar procedure to true, but a different HTML element is append
 function choice1() {
   let yesNo = document.getElementById("tossText").value;
   if (yesNo === "yeah?") {
@@ -29,9 +29,20 @@ function choice1() {
 
     document.getElementById("tossIt").style.display = 'none';
     document.getElementById("tossText").style.display = 'none';
-  } 
+  }
 }
 
+//Similiar to function choice1()
+//Because there is no if statement, the story doesn't branch into two separate paths
+//creates new function called choice2 with a single parameter
+//initiates new variable kubiEmail which is then assigned the value of what the user types into the emailText text area input
+//userEmail HTML element is changed from display none to display block
+//userEmail HTML element is filled with user inputed string plus argument given when the function is called in the HTML document
+  //The '\n' doesn't create a paragraph break as I hoped it would
+//Initiates two more variables, storyNodeEmail and storyNode3 and assigns them values which correspond to HTML element IDs
+//HTML elements are changed from display none to display block
+//emailText text area input and sendIt button are styled from display block to display none
+//Window.alert function creates popup window on users screen
 function choice2(email) {
   let kubiEmail = document.getElementById("emailText").value;
   document.getElementById("userEmail").style.display = 'block';
@@ -47,24 +58,6 @@ function choice2(email) {
 
   window.alert("We are sorry to inform you but you are blocked from sending mail to that contact.");
 }
-
-//Similiar to function choice1()
-//Because there is no if statement, the story doesn't branch into two separate paths
-/*function choice2() {
-  let yesNo2 = document.getElementById("emailText").value
-    let storyNodeEmail = document.getElementById("userEmail");
-    let storyNode3 = document.getElementById("storyBody3");
-    document.getElementById("storyBody0").appendChild(storyNodeEmail);
-    document.getElementById("StoryBody0").appendChild(storyNode3);
-    storyNodeEmail.innerHTML = yesNo2;
-    storyNodeEmail.style.display = 'block';
-    storyNode3.style.display = 'block';
-
-    document.getElementById("sendIt").style.display = 'none';
-    window.alert("We are sorry to inform you but you are blocked from sending mail to that contact.");
-    document.getElementById("sendIt").style.display = 'none';
-    document.getElementById("emailText").style.display = 'none';
-  }*/
 
   //Works same way as function choice1()
   function choice3() {
@@ -87,11 +80,11 @@ function choice2(email) {
     }
   }
 //Creates new function called addName
-//When called onClick in HTML document variable name is initialized and given value of prompt function
-//If the user enters a string into the prompt, a word in the story, marked with span tags, is replaced with the user's string
+//When called onClick in HTML document variable name is initialized and given value of string typed in nameField input field
+//If the user enters 'yeah?' into the text field, a word in the story, marked with span tags, is replaced with the user's string
 //If the user does not enter a string, the word in the story is not replaced
-//Doesn't work correctly as only the first word is replaced
-//Last two else statements don't work as intended. Hitting ok without adding a string removes word from story
+//Doesn't work correctly as only spang tagged words in displayed elements change
+//Span tagged words in hidden HTML elements do not change
 function addName() {
   let name = document.getElementById("nameField").value;
     for (i =0; i < name.length; i++ ){
@@ -106,6 +99,11 @@ function addName() {
   }
 }
 
+//Creates new function calld playAgain()
+//When called in the HTML document it initializes new variable replay and assigns it the value of user inputed string in replayStory text input element
+//If user enters 'yeah?' the location.reload() function is called which refreshes the page
+//If user enters 'nah?' a new HTML element is appended to screen
+//If neither 'yeah?' nor 'nah?' are entered a different HTML element is appended to the screen 
 function playAgain() {
   let replay = document.getElementById("replayStory").value;
     if (replay === "yeah?") {
@@ -121,7 +119,7 @@ function playAgain() {
     }
 }
 
-//Very ineffecient Way to Create a Play Again Button
+//Very ineffecient Attempt to Create a Play Again Button
 /*function playAgain() {
   let replay = document.getElementById("replayStory").value;
   console.log(playAgain);
