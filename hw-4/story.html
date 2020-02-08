@@ -64,9 +64,9 @@ Purpose: MART 441 Homework Assignment #4
         <div class="col-sm-6"><a href="./story.html">interactive story?</a></div>
       </div><!--End of row Section-->
 
-      <h2>Mr. Kubi Misses</h2>
+      <h2>Mr. Kubi</h2>
       <input id="nameField" type="text">
-      <button id="btnSubmit" onClick="addName()">Submit</button>
+      <button id="btnSubmit" onClick="addName()">miss someone?</button>
 
       <!--onClick calls function addName()-->
       <!--<button id="missingPerson" onclick="addName()">missing someone?</button>-->
@@ -77,7 +77,7 @@ Purpose: MART 441 Homework Assignment #4
           <p>Silence greeted Earl as he woke, like it had every day for the past seven years. Neither an alarm nor light from a window woke him. Instead, pain in his back pushed the sleep out of his eyes. Scowling, he crab walked to the edge of his nest on the kitchen island.</p>
           <p>He stretched, then stepped down onto the frozen sea of belongings that covered his floor. Preserved peaches and ‘Travel’ journals bobbed on silent troughs and peaks. Plastic wrappers splashed under his footsteps as he approached an empty can of peach tea – <span class="nameReplace">Ellie</span>’s favorite.</p>
           <p>“Good morning.” He said.</p>
-          <p><span class="nameReplace">Ellie</span>
+          <!--<p><span class="nameReplace">Ellie</span>-->
           <p>A thin halo of empty space surrounded the empty bottle.</p>
           <p>“You know, I thought that box pushing into my stomach this morning was you,” his scowl softened. “I tried to keep pretending, but my back doesn’t like twisting up to fit on our island.”</p>
           <p>Mr. Kubi opened a window covered by a newspaper. Mushy boxes of mint tea allowed the window only a centimeter of movement.</p>
@@ -89,7 +89,9 @@ Purpose: MART 441 Homework Assignment #4
           <p>”Maybe I should clean up. Go out like we used to!” Mr. Kubi said while walking back to the can of empty peach tea on the kitchen counter. “I mean I’ve been talking to this can like it’s you since,” he paused, and held the can in his hand. “Since well, you know.”</p>
 	        <p><em>It’s just a can.</em> He tried to think.<em> I’ll start small. Throwing away a can can’t be that hard</em></p>
           <!--<p>Here is a <span id="nameReplace">Sam</span> I would like to replace</p>-->
-          <button onclick="choice1()" type="button" class="btn-warning btn-lg" id="tossIt">toss it?</button>
+          <input id="tossText" type="text" placeholder="yeah? nah?">
+          <button id="tossIt" onClick="choice1()">toss it?</button>
+          <!--<button onclick="choice1()" type="button" class="btn-warning btn-lg" id="tossIt">toss it?</button>-->
         </div>
 
         <div id="storyBody2">
@@ -108,7 +110,9 @@ Purpose: MART 441 Homework Assignment #4
            <p>Arnold.</p>
            <p>“What smell?” Mr. Kubi slammed the reply button. There’s no smell. I live here, I’d notice if things smelled.”</p>
            <p>Any happiness Mr. Kubi had felt was gone. In a furry, he wrote every hateful thing he had thought about himself, his son, and all those who he felt had abandoned him so many years ago.</p>
-           <button onclick="choice2()" type="button" class="btn-warning btn-lg" id="sendIt">send it?</button>
+           <input id="emailText" type="text" placeholder="write an awful email?">
+           <button id="sendIt" onClick="choice2('Mr. Kubi Wrote')">send it?</button>
+           <!--<button onclick="choice2()" type="button" class="btn-warning btn-lg" id="sendIt">send it?</button>-->
         </div>
 
         <div id="storyBodyB">
@@ -126,7 +130,13 @@ Purpose: MART 441 Homework Assignment #4
           <p>Arnold.</p>
           <p>“What smell?” Mr. Kubi slammed the reply button. There’s no smell. I live here, I’d notice if things smelled.”</p>
           <p>Any happiness Mr. Kubi had felt was gone. In a furry, he wrote every hateful thing he had thought about himself, his son, and all those who he felt had abandoned him so many years ago.</p>
-          <button onclick="choice2()" type="button" class="btn-warning btn-lg" id="sendIt">send it?</button>
+          <input id="emailText" type="text" placeholder="write an awful email?">
+          <button id="sendIt" onClick="choice2('Mr. Kubi Wrote')">send it?</button>
+          <!--<button onclick="choice2()" type="button" class="btn-warning btn-lg" id="sendIt">send it?</button>-->
+        </div>
+
+        <div>
+          <p id="userEmail"></p>
         </div>
 
         <div id="storyBody3">
@@ -145,21 +155,32 @@ Purpose: MART 441 Homework Assignment #4
           <p><span class=”nameReplace”>Ellie</span></p>
           <p>“That can’t be right?” Confusion poured into his lungs. Each of his violent exhales pushed the walls of his sunken cavern further from him until he choked on the void itself. The cavern walls trembled dangerously.</p>
           <p><em>She must have mis-wrote that.</em> Mr. Kubi thought.<em>Surely there's another letter around here somewhere</em></p>
-          <button onclick="choice3()" type="button" class="btn-warning btn-lg" id="digMore">dig more?</button>
+          <input id="digText" type="text" placeholder="yeah? nah?">
+          <button id="digMore" onClick="choice3()">dig more?</button>
+          <!--<button onclick="choice3()" type="button" class="btn-warning btn-lg" id="digMore">dig more?</button>-->
         </div>
 
         <div id="storyBody4">
           <p>Mr. Kubi reached for a deformed box and yanked on it. The walls of his cave rushed in around him. Mr. Kubi could not move.</p>
           <p>A team of three movers and a trained therapist knocked gently on Mr. Kubi’s door breaking, for the first time in a month, the silence.</p>
-
+          <input id="replayStory" type="text" placeholder="yeah? nah?">
+          <button id="replayButton" onClick="playAgain()">play again?</button>
         </div>
 
         <div id="storyBodyC">
           <p>No, Mr. Kubi decided he needed some fresh air first. He reached for the surface. But not carefully enough. The walls of his cave rushed in around him. Mr. Kubi could not move.</p>
           <p>A team of three movers and a trained therapist knocked gently on Mr. Kubi’s door breaking, for the first time in a month, the silence.</p>
+          <input id="replayStory" type="text" placeholder="yeah? nah?">
+          <button id="replayButton" onClick="playAgain()">play again?</button>
         </div>
 
+        <div id="goodBye">
+          <p>Thanks for reading my story!<p>
+        </div>
 
+        <div id="sayWhat">
+          <p>Sorry what? I didn't understand that. Please try a yeah? or a nah?</p>
+        </div>
 
           <!--<div class="container-fluid" id="choice">
             <button onclick="displayChoice()" type="button" class="btn-warning" id="yes1">yes</button>

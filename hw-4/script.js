@@ -2,7 +2,7 @@
 Author: Eli Watts
 File Name: script.js
 Date: 01/02/2020
-Purpose: To Print Superlatives to Web Console
+Purpose: Chose Your Own Adventure Story
 */
 
 //Creates new function called choice1
@@ -13,52 +13,77 @@ Purpose: To Print Superlatives to Web Console
 //when if statement evaluates to false storyNodeB vairable is initialized and given the value of StoryBodyB HTML element
   //Rest follows similiar procedure to true, but a different HTML element is appended
 function choice1() {
-  let yesNo = confirm("Should Mr. Kubi throw away the can of peach tea?");
-  if (yesNo === true) {
+  let yesNo = document.getElementById("tossText").value;
+  if (yesNo === "yeah?") {
     let storyNode2 = document.getElementById("storyBody2");
     document.getElementById("storyBody0").appendChild(storyNode2);
     storyNode2.style.display = 'block';
 
     document.getElementById("tossIt").style.display = 'none';
+    document.getElementById("tossText").style.display = 'none';
 
-  } else if (yesNo === false) {
+  } else if (yesNo === "nah?") {
     let storyNodeB = document.getElementById("storyBodyB");
     document.getElementById("storyBody0").appendChild(storyNodeB);
     storyNodeB.style.display = 'block';
 
     document.getElementById("tossIt").style.display = 'none';
+    document.getElementById("tossText").style.display = 'none';
   }
+}
+
+function choice2(email) {
+  let kubiEmail = document.getElementById("emailText").value;
+  document.getElementById("userEmail").style.display = 'block';
+  document.getElementById("userEmail").innerHTML = email + ": \n" + kubiEmail;
+
+  let storyNodeEmail = document.getElementById("userEmail");
+  let storyNode3 = document.getElementById("storyBody3");
+  document.getElementById("storyBody0").appendChild(storyNodeEmail);
+  document.getElementById("storyBody0").appendChild(storyNode3);
+  storyNode3.style.display = 'block';
+  document.getElementById("emailText").style.display = 'none';
+  document.getElementById("sendIt").style.display = 'none';
+
+  window.alert("We are sorry to inform you but you are blocked from sending mail to that contact.");
 }
 
 //Similiar to function choice1()
 //Because there is no if statement, the story doesn't branch into two separate paths
-function choice2() {
-  let yesNo2 = prompt("Write the awful things you think Mr. Kubi Wrote!");
+/*function choice2() {
+  let yesNo2 = document.getElementById("emailText").value
+    let storyNodeEmail = document.getElementById("userEmail");
     let storyNode3 = document.getElementById("storyBody3");
-    document.getElementById("storyBody0").appendChild(storyNode3);
+    document.getElementById("storyBody0").appendChild(storyNodeEmail);
+    document.getElementById("StoryBody0").appendChild(storyNode3);
+    storyNodeEmail.innerHTML = yesNo2;
+    storyNodeEmail.style.display = 'block';
     storyNode3.style.display = 'block';
 
     document.getElementById("sendIt").style.display = 'none';
     window.alert("We are sorry to inform you but you are blocked from sending mail to that contact.");
     document.getElementById("sendIt").style.display = 'none';
-  }
+    document.getElementById("emailText").style.display = 'none';
+  }*/
 
   //Works same way as function choice1()
   function choice3() {
-    let yesNo3 = confirm("Should Mr. Kubi dig for more evidence?");
-    if (yesNo3 === true) {
+    let yesNo3 = document.getElementById("digText").value;
+    if (yesNo3 === "yeah?") {
       let storyNode4 = document.getElementById("storyBody4");
       document.getElementById("storyBody0").appendChild(storyNode4);
       storyNode4.style.display = 'block';
 
       document.getElementById("digMore").style.display = 'none';
+      document.getElementById("digText").style.display = 'none';
 
-    } else if (yesNo3 === false) {
+    } else if (yesNo3 === "nah?") {
       let storyNodeC = document.getElementById("storyBodyC");
       document.getElementById("storyBody0").appendChild(storyNodeC);
       storyNodeC.style.display = 'block';
 
       document.getElementById("digMore").style.display = 'none';
+      document.getElementById("digText").style.display = 'none';
     }
   }
 //Creates new function called addName
@@ -73,14 +98,59 @@ function addName() {
       if (name != null) {
         document.getElementsByClassName("nameReplace")[i].innerHTML = `${name}`;
         console.log(name);
-  } /*else if (name === null) {
+      }  else if (name === null) {
+        document.getElementsByClassName("nameReplace").innerHTML = "Ellie";
+      }  else {
     document.getElementsByClassName("nameReplace").innerHTML = "Ellie";
-  } else {
-    document.getElementsByClassName("nameReplace").innerHTML = "Ellie";
-  }*/
+    }
   }
 }
 
+function playAgain() {
+  let replay = document.getElementById("replayStory").value;
+    if (replay === "yeah?") {
+      location.reload();
+    } else if (replay === "nah?") {
+      let storyNode5 = document.getElementById("goodBye");
+      document.getElementById("storyBody0").appendChild(storyNode5);
+      storyNode5.style.display = 'block';
+    } else {
+      let storyNode6 = document.getElementById("sayWhat");
+      document.getElementById("storyBody0").appendChild(storyNode6);
+      storyNode6.style.display = 'block';
+    }
+}
+
+//Very ineffecient Way to Create a Play Again Button
+/*function playAgain() {
+  let replay = document.getElementById("replayStory").value;
+  console.log(playAgain);
+  if (replay === "yeah?") {
+    document.getElementById("storyBody3").style.display = 'none';
+    document.getElementById("storyBody2").style.display = 'none';
+    document.getElementById("storyBodyB").style.display = 'none';
+    document.getElementById("storyBody4").style.display = 'none';
+    document.getElementById("storyBodyC").style.display = 'none';
+    document.getElementById("emailText").style.display = 'none';
+    document.getElementById("sendIt").style.display = 'none';
+    document.getElementById("userEmail").style.display = 'none';
+    document.getElementById("sayWhat").style.display = 'none';
+    document.getElementById("tossText").style.display = 'block';
+    document.getElementById("tossIt").style.display = 'block';
+    document.getElementById("emailText").style.display = 'block';
+    document.getElementById("sendIt").style.display = 'block';
+    document.getElementById("digText").style.display = 'block';
+    document.getElementById("digMore").style.display = 'block';
+  } else if (replay === "nah?") {
+    let storyNode5 = document.getElementById("goodBye");
+    document.getElementById("storyBody0").appendChild(storyNode5);
+    storyNode5.style.display = 'block';
+  } else {
+    let storyNode6 = document.getElementById("sayWhat");
+    document.getElementById("storyBody0").appendChild(storyNode6);
+    storyNode6.style.display = 'block';
+  }
+}*/
 //Originally planned to show prompt when user clicked on navBar link
 //Did not work
 /*function addName() {

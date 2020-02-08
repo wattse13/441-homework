@@ -56,11 +56,14 @@ h1, h2, .byLine {
     height: auto;
   }
 }
-#tossIt, #missingPerson, #sendIt, #digMore {
+#tossIt, #missingPerson, #sendIt, #digMore, #replayButton, #tossText, #emailText, #replayButton, #replayStory, #nameField, #btnSubmit, #digText {
   display: block;
   margin: auto;
   padding: auto;
 }
-#storyBody2, #storyBodyB, #storyBody3, #storyBodyC, #storyBody4 {
+#storyBody2, #storyBodyB, #storyBody3, #storyBodyC, #storyBody4, #goodBye, #sayWhat, #userEmail {
   display: none;
+}
+#userEmail {
+  font-style: italic;
 }
