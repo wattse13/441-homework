@@ -23,4 +23,6 @@ Like last week I am still struggling with the function `addName()`. I modified t
 
 Without the `[i]` bit, the function does not work at all, but I am a bit confused as to how it works, as it suggests the existence of an array, when, as written above, none exist.
 
+I also tried using the variant provided by my fellow student, jballas on GitHub and the variant given to me by Professor Cassens, which looked like `document.getElementsByClassName("nameReplace")[i].textContent = ${name}`. Unfortunately, neither variants fixed my problem. 
+
 Finally, I tried using `\n` to create a line break in one of my strings. It did not work and I am not entirely sure why not.
