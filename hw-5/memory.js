@@ -33,6 +33,7 @@ let collectedSpiders = [
 
 let displayedSpiders = [];
 
+//Non-working part borrowed from Chris Coyier at csstricks.com
 function findSpiders( min, max ) {
   console.log(Math.floor(Math.random() * (max - min + 1) ) + min);
   return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -40,6 +41,7 @@ function findSpiders( min, max ) {
   console.log(randomSpider);*/
 }
 
+//Stolen from GeeksforGeeks https://www.geeksforgeeks.org/how-to-find-if-two-arrays-contain-any-common-item-in-javascript/
 function checkSpiders( collected, displayed ) {
   return collected.some(spider => displayed.includes(spider))
 }
