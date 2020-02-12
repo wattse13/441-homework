@@ -1,0 +1,143 @@
+<!--
+Author: Eli Watts
+File Name: memory.html
+Date: 12/02/2020
+Purpose: MART 441 Homework Assignment #5
+-->
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Eli Watts' MART 441 Assignment 5</title>
+
+        <!--Meta information-->
+        <meta charset="utf-8">
+        <meta name="description" content="MART 441, Assignment 5">
+        <meta name="author" content="Eli Watts">
+
+        <!--Matches screen's width in device-independent pixels-->
+        <!--Establishes 1:1 relationship between CSS pixels and device-independent pixels-->
+        <!--From Pete LePage's Responsive Web Design Basics Course-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Latest compiled and minified CSS -->
+        <!--Allows me to use Bootstrap's CSS style content Library-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!--Links to downloaded version of Bootstrap-->
+        <!--Using this version rather than links to online versions changes navbar elements from inline elements to block elements-->
+        <!--<link rel="stylesheet" type="text/css" href=".bootstrap-4.1.1-dist/css/bootstrap.css">-->
+
+        <!--CSS Links-->
+        <!--Font Style Sheet Linked First To Prevent style issues-->
+        <link rel="stylesheet" href="./style/fonts.css">
+        <link rel="stylesheet" href="./style/style.css">
+
+        <!-- jQuery library -->
+        <!--Probably not necessary for this project, but allows me to use Bootstraps JQuery Library-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <!--Probably not necessary for this project, but allows me to use Bootstraps JavaScript Library-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <!--JavaScript File Link-->
+        <script src="./memory.js"></script>
+    </head>
+
+    <body>
+
+    <!--Test to make sure I am properly accessing HTML elements-->
+    <!--Taken from week 5 lesson-->
+    <!--<body onload="printArray();">
+        <div id="myFoods"></div>-->
+
+      <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
+      <!--h1 is set to 36px by Bootstrap-->
+      <!--byLine class allows me to style line 42 in my CSS stylesheet-->
+      <div class="container-fluid">
+        <h1>rotten strawberry blog</h1>
+        <p class="byLine">a blog for gross stories.</p>
+      </div><!--End of container-fluid Section-->
+
+      <!--Bootstrap's row and col classes create a responsive grid that change based on screen size-->
+      <!--Bootstrap class col-sm-4 creates three equal-width columns that stack once screen size goes bellow 768px wide-->
+      <!--Links move to different sections of webpage using header IDs-->
+      <div class="row" id="navBar">
+        <div class="col-sm-6"><a href="./index.html">home?</a></div>
+        <div class="col-sm-6"><a href="./story.html">memory?</a></div>
+      </div><!--End of row Section-->
+
+      <!--Random Number Generator Test-->
+      <button id="btnSubmit" onClick="findSpiders( 0 , 9 )">miss someone?</button>
+
+      <div id="memoryGrid">
+        <div class="col-sm-6 row1">
+           <img id="blank1" class="img-responsive imgRow1" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row1">
+          <img id="blank2" class="img-responsive imgRow1" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row2">
+           <img id="blank3" class="img-responsive imgRow2" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row2">
+          <img id="blank4" class="img-responsive imgRow2" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row3">
+           <img id="blank5" class="img-responsive imgRow3" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row3">
+          <img id="blank6" class="img-responsive imgRow3" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row4">
+           <img id="blank7" class="img-responsive imgRow4" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row4">
+          <img id="blank8" class="img-responsive imgRow4" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row5">
+           <img id="blank9" class="img-responsive imgRow5" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row5">
+          <img id="blank10" class="img-responsive imgRow5" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+      </div>
+
+      <div id="spiderGrid">
+        <div class="col-sm-6 row1 spiderImg">
+           <img id="spider1" class="img-responsive spiderRow1" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row1 spiderImg">
+          <img id="spider2" class="img-responsive spiderRow1" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row2 spiderImg">
+           <img id="spider3" class="img-responsive spiderRow2" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row2 spiderImg">
+          <img id="spider4" class="img-responsive siderRow2" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row3 spiderImg">
+           <img id="spider5" class="img-responsive spiderRow3" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row3 spiderImg">
+          <img id="spider6" class="img-responsive spiderRow3" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row4 spiderImg">
+           <img id="spider7" class="img-responsive spiderRow4" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row4 spiderImg">
+          <img id="spider8" class="img-responsive spiderRow4" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row5 spiderImg">
+           <img id="spider9" class="img-responsive spiderRow5" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+        <div class="col-sm-6 row5 spiderImg">
+          <img id="spider10" class="img-responsive spiderRow5" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        </div>
+      </div>
+
+    </body>
+
+</html>
