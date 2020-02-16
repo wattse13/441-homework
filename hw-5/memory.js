@@ -5,52 +5,96 @@ Date: 12/02/2020
 Purpose: MART 441 Homework Assignment #5
 */
 
-let blankImg = [
-  document.getElementById("blank1"),
-  document.getElementById("blank2"),
-  document.getElementById("blank3"),
-  document.getElementById("blank4"),
-  document.getElementById("blank5"),
-  document.getElementById("blank6"),
-  document.getElementById("blank7"),
-  document.getElementById("blank8"),
-  document.getElementById("blank9"),
-  document.getElementById("blank10")
+//Creates new global variable and assigns it a value of an array with listed items
+var blankImg = [
+  "blank1",
+  "blank2",
+  "blank3",
+  "blank4",
+  "blank5",
+  "blank6",
+  "blank7",
+  "blank8",
+  "blank9",
+  "blank10"
 ];
 
-let collectedSpiders = [
-  document.getElementById("spider1"),
-  document.getElementById("spider2"),
-  document.getElementById("spider3"),
-  document.getElementById("spider4"),
-  document.getElementById("spider5"),
-  document.getElementById("spider6"),
-  document.getElementById("spider7"),
-  document.getElementById("spider8"),
-  document.getElementById("spider9"),
-  document.getElementById("spider10")
-];
-
-let displayedSpiders = [];
-
-//Non-working part borrowed from Chris Coyier at csstricks.com
-function findSpiders( min, max ) {
-  console.log(Math.floor(Math.random() * (max - min + 1) ) + min);
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
-  /*let randomSpider = collectedSpiders[Math.floor(Math.random()*collectedSpiders.length)];
-  console.log(randomSpider);*/
-}
-
-//Stolen from GeeksforGeeks https://www.geeksforgeeks.org/how-to-find-if-two-arrays-contain-any-common-item-in-javascript/
+//Taken from anuupadhyay at GeeksforGeeks https://www.geeksforgeeks.org/how-to-find-if-two-arrays-contain-any-common-item-in-javascript/
+//Creates new function which takes two arguments
+//Looks through each element in first array, parameter 1, and checks if any are included in second array, parameter2
+//If the element exists in both arrays, function returns true, if not, function returns false
 function checkSpiders( collected, displayed ) {
   return collected.some(spider => displayed.includes(spider))
 }
 
-//console.log(checkSpiders(collectedSpiders, displayedSpiders));
+//Creates new global vairable and assigns it a value of an empty array
+var displayedSpiders = [];
+
+//Creates new global variable and assigns it a value of array with items
+//Originally planned to use document.getElementById() to populate array
+//Using document.getElementById() as array items consistently gave me a value of null when trying to do anything with array items
+var collectedSpiders = [
+  "spider1",
+  "spider2",
+  "spider3",
+  "spider4",
+  "spider5",
+  "spider6",
+  "spider7",
+  "spider8",
+  "spider9",
+  "spider10"
+];
+
+//Globally Declaring Variable fixes Scope problem in displayedSpiders.push() Method in If Statement
+//Doesn't seem to actually change anything though
+var randomSpider;
+
+//Creates new function that does not take any arguments
+//This function may create 10 different arrays?
+function spiderCollection() {
+
+  //Creates new for loop which will continue to loop until the collectedSpiders.length is equal to displayedSpiders.length
+  for( i = displayedSpiders.length; i < collectedSpiders.length; i++ ) {
+
+    //Creates new for loop which will continue to loop until the collectedSpiders.length is equal to displayedSpiders.length
+    //Before adding this loop, program would only push one element into displayedSpiders array
+      //Pushed item however, was a defined value
+    //With this loop program now pushes 10 items into displayedSpiders array, but they are all undefined...
+    //Added because I beleive without it, the program generates only one random number, which it then uses 10 times
+    for( j = displayedSpiders.lenght; j < collectedSpiders.lenght; j++ ){
+      //Creates new variable and assigns it a random number with value between 0 and 9
+      //Random number is multiplied by length of collectedSpiders array, before then being rounded down to nearest integer
+      randomSpider = collectedSpiders[Math.floor(Math.random() * collectedSpiders.length)];
+      //console.log(randomSpider);
+    }
+
+    //Assigns variable value of checkSpiders function
+    var repeatCheck = checkSpiders( collectedSpiders , displayedSpiders );
+    //console.log test
+    console.log( repeatCheck );
+
+    //If value of repeatCheck is equal to false:
+    //array item with index number which corresponds to value of randomSpider is pushed to displayedSpider array
+    if( repeatCheck === false ) {
+      displayedSpiders.push( randomSpider );
+      console.log( displayedSpiders );
+    }
+  }
+}
+
+//Taken from week-4 lesson
+/*function findSpiders( min, max ) {
+  console.log(Math.floor(Math.random() * (max - min + 1) ) + min);
+  return Math.floor(Math.random() * (max - min + 1) ) + min;*/
+  /*let randomSpider = collectedSpiders[Math.floor(Math.random()*collectedSpiders.length)];
+  console.log(randomSpider);
+}*/
 
 
-
-
+/*-------------------------------------------------------------------------------------------------------*/
+//Code Grave Yard
+/*-------------------------------------------------------------------------------------------------------*/
 
 /*function organizeSpiders() {
   let collectedSpiders = [
