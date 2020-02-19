@@ -19,6 +19,13 @@ var blankImg = [
   "blank10"
 ];
 
+function cardFlip() {
+  if( document.getElementById("blank1").style.display === "block" ) {
+    console.log("true");
+    document.getElementById("blank1").style.display = "none";
+  }
+}
+
 //Taken from anuupadhyay at GeeksforGeeks https://www.geeksforgeeks.org/how-to-find-if-two-arrays-contain-any-common-item-in-javascript/
 //Creates new function which takes two arguments
 //Looks through each element in first array, parameter 1, and checks if any are included in second array, parameter2

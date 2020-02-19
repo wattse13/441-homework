@@ -12,15 +12,22 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-#blank1, #blank2, #blank3, #blank4, #blank5, #blank6, #blank7, #blank8, #blank9, #blank10 {
+/*#blank1, #blank2, #blank3, #blank4, #blank5, #blank6, #blank7, #blank8, #blank9, #blank10 {
   max-width: 25%;
   height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-.spiderImg {
+}*/
+.backSide {
   display: none;
+}
+#memoryGrid {
+  max-width: 25%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*Centers and adds space around text in row element*/
 .row {
