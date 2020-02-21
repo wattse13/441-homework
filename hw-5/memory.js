@@ -20,9 +20,13 @@ var blankImg = [
 ];
 
 function cardFlip() {
-  if( document.getElementById("blank1").style.display === "block" ) {
-    console.log("true");
+  if( document.getElementById("blank1").style.display == "block" ) {
+    //console.log("true");
     document.getElementById("blank1").style.display = "none";
+    document.getElementById("spider1").style.display = "block";
+  } else if( document.getElementById("spider1").style.displyal == "block" ) {
+    document.getElementById("spider1").style.display = "none";
+    document.getElementById("blank1").style.display = "block";
   }
 }
 
