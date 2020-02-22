@@ -1,5 +1,5 @@
 /*
-Author: Eli Watts
+Author: Eli Watts (This document is a slightly modified version of Professor Cassens' week 5 example document.)
 File Name: memory.js
 Date: 12/02/2020
 Purpose: MART 441 Homework Assignment #5
