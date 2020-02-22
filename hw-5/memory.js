@@ -5,8 +5,62 @@ Date: 12/02/2020
 Purpose: MART 441 Homework Assignment #5
 */
 
+// create an array of image names that correspond to the image tags
+var imageTags = ["spider1", "spider2", "spider3", "spider4", "spider5", "spider6", "spider7", "spider8", "spider9", "spider10"];
+// create a variable with the blank image name
+var blankImagePath = "images/spiderWeb";
+// create a empty array for the actual images
+var actualImages = new Array();
+
+function printBlanks() {
+   // call our random image creation function
+    createRandomImageArray();
+    // create a for loop
+    for(var i = 0; i < imageTags.length; i++) {
+    // iterate through the image tag ids and sets the source
+        document.getElementById(imageTags[i]).src= blankImagePath;
+    }
+}
+
+function createRandomImageArray() {
+    // create an array of actual images
+    var actualImagePath = [ "images/brownBlackJumper.jpeg",
+                            "images/zebraJumper.jpg",
+                            "images/bronzeJumper.jpg",
+                            "images/putnamiJumper.jpg",
+                            "images/hidingJumper.jpg"
+                          ];
+
+    // create another array to make sure the images only get added twice
+    var count = [ 0 , 0 , 0 , 0 , 0 ];
+    // create a while statement to check to see if our actual image array is full
+    while(actualImages.length < 10) {
+        // get a random number between 0 and the number total number of images that we can choose from
+        var randomNumber = Math.floor(Math.random() * actualImagePath.length)
+          // create an if statement that says if the total number added is less than 2, then
+        // add the image to the actual image array
+        if(count[randomNumber] < 2) {
+            actualImages.push(actualImagePath[randomNumber]);
+            // then add one to the array that makes sure only two images can be added
+            count[randomNumber] = count[randomNumber] + 1;
+        }
+    }
+}
+
+function flipImage(number) {
+    document.getElementById(imageTags[number]).src= actualImages[number];
+        // this should be a quick function that just changes
+        // the image based on what number was pressed
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------*/
+//Code Grave Yard
+/*-------------------------------------------------------------------------------------------------------*/
+
 //Creates new global variable and assigns it a value of an array with listed items
-var blankImg = [
+/*var blankImg = [
   "blank1",
   "blank2",
   "blank3",
@@ -73,7 +127,7 @@ function spiderCollection() {
       //Pushed item however, was a defined value
     //With this loop program now pushes 10 items into displayedSpiders array, but they are all undefined...
     //Added because I beleive without it, the program generates only one random number, which it then uses 10 times
-    for( j = displayedSpiders.lenght; j < collectedSpiders.lenght; j++ ){
+    for( j = displayedSpiders.length; j < collectedSpiders.length; j++ ){
       //Creates new variable and assigns it a random number with value between 0 and 9
       //Random number is multiplied by length of collectedSpiders array, before then being rounded down to nearest integer
       randomSpider = collectedSpiders[Math.floor(Math.random() * collectedSpiders.length)];
@@ -102,10 +156,6 @@ function spiderCollection() {
   console.log(randomSpider);
 }*/
 
-
-/*-------------------------------------------------------------------------------------------------------*/
-//Code Grave Yard
-/*-------------------------------------------------------------------------------------------------------*/
 
 /*function organizeSpiders() {
   let collectedSpiders = [

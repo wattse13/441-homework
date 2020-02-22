@@ -10,8 +10,13 @@ function addPlayerInfo() {
   let nameTwo = document.getElementById("lastNameField").value;
   let age = document.getElementById("ageField").value;
   let clickNumber = document.getElementById("clickAttempts");
-  let playerInfo = { "firstName": nameOne , "lastName": nameTwo , "playerAge": age , "playerAttempts": clickNumber };
+  var playerInfo = { "firstName": nameOne , "lastName": nameTwo , "playerAge": age , "playerAttempts": clickNumber };
 
   localStorage.setItem("playerInfo", JSON.stringify(playerInfo));
   console.log(playerInfo);
+}
+
+function displayPlayerInfo() {
+  var congratulations = localStorage.getItem("playerInfo");
+  document.getElementById("test").innerHTML = "<h1>" + JSON.parse(congratulations).firstName + "</h1>";
 }

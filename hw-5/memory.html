@@ -46,7 +46,7 @@ Purpose: MART 441 Homework Assignment #5
         <script src="./memory.js"></script>
     </head>
 
-    <body>
+    <body onLoad="printBlanks();">
 
     <!--Test to make sure I am properly accessing HTML elements-->
     <!--Taken from week 5 lesson-->
@@ -69,82 +69,73 @@ Purpose: MART 441 Homework Assignment #5
         <div class="col-sm-6"><a href="./story.html">memory?</a></div>
       </div><!--End of row Section-->
 
+        <div class="divTableCell"><img src="" id="spider1" width="250" height="200" onclick="flipImage(0);"></div>
+        <div class="divTableCell"><img src="" id="spider2" width="250" height="200" onclick="flipImage(1);"></div>
+        <div class="divTableCell"><img src="" id="spider3" width="250" height="200" onclick="flipImage(2);"></div>
+        <div class="divTableCell"><img src="" id="spider4" width="250" height="200" onclick="flipImage(3);"></div>
+        <div class="divTableCell"><img src="" id="spider5" width="250" height="200" onclick="flipImage(4);"></div>
+        <div class="divTableCell"><img src="" id="spider6" width="250" height="200" onclick="flipImage(5);"></div>
+        <div class="divTableCell"><img src="" id="spider7" width="250" height="200" onclick="flipImage(6);"></div>
+        <div class="divTableCell"><img src="" id="spider8" width="250" height="200" onclick="flipImage(7);"></div>
+        <div class="divTableCell"><img src="" id="spider9" width="250" height="200" onclick="flipImage(8);"></div>
+        <div class="divTableCell"><img src="" id="spider10" width="250" height="200" onclick="flipImage(9);"></div>
+
+
+
       <!--Random Number Generator Test-->
-      <button id="btnSubmit" onClick="spiderCollection()">play?</button>
+      <!--<button id="btnSubmit">play?</button>
 
       <div id="memoryGrid">
 
         <div id="position1">
-          <img id="blank1" class="img-responsive faceSide" style="display:block" onClick="cardFlip();" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-          <img id="spider1" class="img-responsive backSide" style="display:none" onClick="cardFlip();" src="./images/brownBlackJumper.jpeg" alt="Picture of a Brown and Black Jumping Spider" title="Jumping Spider Image Provided by Pexels. Used Under CC0"
+          <img id="spider1" class="img-responsive backSide" onClick="flipImage(0);" src="" alt="Picture of a Brown and Black Jumping Spider" title="Jumping Spider Image Provided by Pexels. Used Under CC0"
         </div>
 
-      </div>
+        <div id="position2">
+          <img id="spider2" class="img-responsive backSide" onClick="flipImage(1);" src="" alt="Picture of a Zebra Jumping Spider" title="Zebra Jumping Spider. Image by Pezibear from Pixabay"
+        </div>
+
+        <div id="position3">
+          <img id="spider3" class="img-responsive backSide" onClick="cardFlip(2);" src="" alt="Picture of a Bronze Jumping Spider" title="Bronze Jumping Spider. Image by Tibor Nagy. CC BY-NC-ND 2.0"
+        </div>
+
+        <div id="position4">
+          <img id="spider4" class="img-responsive backSide" onClick="flipImage(3);" src="" alt="Picture of a Putnami Jumping Spider" title="Putnami Jumping Spide Image by Thomas Shahan. Used Under CC BY-NC-ND 2.0"
+        </div>
+
+        <div id="position5">
+          <img id="spider5" class="img-responsive backSide" onClick="flipImage(4);" src="" alt="Picture of a Hiding Jumping Spider" title="Hiding Jumping Spider Image Provided by Thomas Shahan. Used Undder CC BY-NC-ND 2.0"
+        </div>
+
+      </div>-->
 
       <!--<div id="memoryGrid">
-        <div class="col-sm-6 row1">
-           <img id="blank1" class="img-responsive imgRow1" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row1">
-          <img id="blank2" class="img-responsive imgRow1" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row2">
-           <img id="blank3" class="img-responsive imgRow2" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row2">
-          <img id="blank4" class="img-responsive imgRow2" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row3">
-           <img id="blank5" class="img-responsive imgRow3" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row3">
-          <img id="blank6" class="img-responsive imgRow3" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row4">
-           <img id="blank7" class="img-responsive imgRow4" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row4">
-          <img id="blank8" class="img-responsive imgRow4" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row5">
-           <img id="blank9" class="img-responsive imgRow5" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row5">
-          <img id="blank10" class="img-responsive imgRow5" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-      </div>
 
-      <div id="spiderGrid">
-        <div class="col-sm-6 row1 spiderImg">
-           <img id="spider1" class="img-responsive spiderRow1" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+        <div id="position1">
+          <img id="blank1" class="img-responsive faceSide" style="display:block" onClick="flipImage(0);" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+          <img id="spider1" class="img-responsive backSide" style="display:none" onClick="flipImage(1);" src="./images/brownBlackJumper.jpeg" alt="Picture of a Brown and Black Jumping Spider" title="Jumping Spider Image Provided by Pexels. Used Under CC0"
         </div>
-        <div class="col-sm-6 row1 spiderImg">
-          <img id="spider2" class="img-responsive spiderRow1" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+
+        <div id="position2">
+          <img id="blank2" class="img-responsive faceSide" style="display:block" onClick="flipImage(2);" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+          <img id="spider2" class="img-responsive backSide" style="display:none" onClick="flipImage(3);" src="./images/zebraJumper.jpg" alt="Picture of a Zebra Jumping Spider" title="Zebra Jumping Spider. Image by Pezibear from Pixabay"
         </div>
-        <div class="col-sm-6 row2 spiderImg">
-           <img id="spider3" class="img-responsive spiderRow2" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+
+        <div id="position3">
+          <img id="blank3" class="img-responsive faceSide" style="display:block" onClick="flipImage(4);" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+          <img id="spider3" class="img-responsive backSide" style="display:none" onClick="cardFlip(5);" src="./images/bronzeJumper.jpg" alt="Picture of a Bronze Jumping Spider" title="Bronze Jumping Spider. Image by Tibor Nagy. CC BY-NC-ND 2.0"
         </div>
-        <div class="col-sm-6 row2 spiderImg">
-          <img id="spider4" class="img-responsive siderRow2" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+
+        <div id="position4">
+          <img id="blank1" class="img-responsive faceSide" style="display:block" onClick="flipImage(6);" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+          <img id="spider4" class="img-responsive backSide" style="display:none" onClick="flipImage(7);" src="./images/putnamiJumper.jpeg" alt="Picture of a Putnami Jumping Spider" title="Putnami Jumping Spide Image by Thomas Shahan. Used Under CC BY-NC-ND 2.0"
         </div>
-        <div class="col-sm-6 row3 spiderImg">
-           <img id="spider5" class="img-responsive spiderRow3" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+
+        <div id="position5">
+          <img id="blank1" class="img-responsive faceSide" style="display:block" onClick="flipImage(8);" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
+          <img id="spider5" class="img-responsive backSide" style="display:none" onClick="flipImage(9);" src="./images/hidingJumper.jpeg" alt="Picture of a Hiding Jumping Spider" title="Hiding Jumping Spider Image Provided by Thomas Shahan. Used Undder CC BY-NC-ND 2.0"
         </div>
-        <div class="col-sm-6 row3 spiderImg">
-          <img id="spider6" class="img-responsive spiderRow3" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row4 spiderImg">
-           <img id="spider7" class="img-responsive spiderRow4" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row4 spiderImg">
-          <img id="spider8" class="img-responsive spiderRow4" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row5 spiderImg">
-           <img id="spider9" class="img-responsive spiderRow5" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
-        <div class="col-sm-6 row5 spiderImg">
-          <img id="spider10" class="img-responsive spiderRow5" src="./images/spiderWeb" alt="Picture of Spider Web" title="Spider Web Image Provided by https://torange.biz. Used under CC-BY 4.0">
-        </div>
+
       </div>-->
 
     </body>
