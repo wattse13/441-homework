@@ -1,0 +1,35 @@
+/*Imported Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap');
+@import url("https://use.typekit.net/jre1bse.css");
+/*End of Imported Fonts*/
+
+/*Font files*/
+/*Differing file formats are used to ensure compatibility with different browsers*/
+@font-face {
+  font-family: 'carbontype';
+   src: url('../fonts/carbontype/carbontype.eot') format('embedded-opentype'); /*IE9+ Compat Modes*/
+   src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/carbontype/CarbonType.woff') format('Web Open Font Format'), /*Modern browsers*/
+        url('../fonts/carbontype/carbontype.ttf') format('truetype'), /*Safari, Android, iOS*/
+        url('../fonts/carbontype/CarbonType.svg') format('SVG Fonts/Shapes'); /*Legacy iOS*/
+   font-weight: normal;
+   font-style: normal;
+}
+/*Applies font style to h1 text*/
+/*Back-up fonts are included in case my first choice is unavailable on end-user's computer*/
+h1 {
+  font-family: 'carbontype', 'Rockwell', 'Baskerville', serif;
+  font-weight: normal;
+}
+/*Applies font style to h2, .byLine, and .row element text*/
+/*Back-up fonts are included in case my first choice is unavailable on end-user's computer*/
+h2, .byLine, .row {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  line-height: 150%
+}
+/*Applies font style to p element text*/
+/*Back-up fonts are included in case my first choice is unavailable on end-user's computer*/
+p {font-family: 'courier-std', monospace;
+font-size: 150%;
+}

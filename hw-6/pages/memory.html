@@ -32,8 +32,8 @@ Purpose: MART 441 Homework Assignment #6
 
         <!--CSS Links-->
         <!--Font Style Sheet Linked First To Prevent style issues-->
-        <link rel="stylesheet" href="./style/fonts.css">
-        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="../style/fonts.css">
+        <link rel="stylesheet" href="../style/style.css">
 
         <!-- jQuery library -->
         <!--Probably not necessary for this project, but allows me to use Bootstraps JQuery Library-->
@@ -44,11 +44,11 @@ Purpose: MART 441 Homework Assignment #6
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         <!--JavaScript File Link-->
-        <!--<script src="./script.js"></script>-->
+        <script src="../script.js"></script>
         <script src="../json.js"></script>
     </head>
 
-    <body onLoad="displayPlayerInfo();">
+    <body onLoad="printBlanks();">
       <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
       <!--h1 is set to 36px by Bootstrap-->
       <!--byLine class allows me to style line 42 in my CSS stylesheet-->
@@ -65,7 +65,31 @@ Purpose: MART 441 Homework Assignment #6
         <div class="col-sm-6"><a href="./memoryintro.html">memory?</a></div>
       </div><!--End of row Section-->
 
-      <h2>Congratulations!</h2>
+      <div id="memoryGrid">
+
+        <table class="table table-condensed">
+          <tbody>
+            <tr>
+              <td><div class="divTableCell"><img src="" id="spider1" width="250" height="200" onclick="flipImage(0);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider2" width="250" height="200" onclick="flipImage(1);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider3" width="250" height="200" onclick="flipImage(2);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider4" width="250" height="200" onclick="flipImage(3);"></div></td>
+            </tr>
+            <tr>
+              <td><div class="divTableCell"><img src="" id="spider5" width="250" height="200" onclick="flipImage(4);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider6" width="250" height="200" onclick="flipImage(5);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider7" width="250" height="200" onclick="flipImage(6);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider8" width="250" height="200" onclick="flipImage(7);"></div></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><div class="divTableCell"><img src="" id="spider9" width="250" height="200" onclick="flipImage(8);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider10" width="250" height="200" onclick="flipImage(9);"></div></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <!--Random Number Generator Test-->
       <!--<button id="btnSubmit" onClick="">play again?</button>-->
