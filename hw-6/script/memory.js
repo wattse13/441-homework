@@ -8,9 +8,19 @@ Purpose: MART 441 Homework Assignment #5
 // create an array of image names that correspond to the image tags
 var imageTags = ["spider1", "spider2", "spider3", "spider4", "spider5", "spider6", "spider7", "spider8", "spider9", "spider10"];
 // create a variable with the blank image name
-var blankImagePath = "images/spiderWeb";
+var blankImagePath = "../images/spiderWeb";
 // create a empty array for the actual images
 var actualImages = new Array();
+
+var firstNumber = -1;
+
+var secondNumber = -1;
+
+var playerInfo = { "firstName": "" , "lastName": "" , "playerAge": "" , "playerAttempts": 0 };
+
+var clickCounter = 0;
+
+var doneMatchedUp = 0;
 
 function printBlanks() {
    // call our random image creation function
@@ -24,11 +34,11 @@ function printBlanks() {
 
 function createRandomImageArray() {
     // create an array of actual images
-    var actualImagePath = [ "images/brownBlackJumper.jpeg",
-                            "images/zebraJumper.jpg",
-                            "images/bronzeJumper.jpg",
-                            "images/putnamiJumper.jpg",
-                            "images/hidingJumper.jpg"
+    var actualImagePath = [ "../images/brownBlackJumper.jpeg",
+                            "../images/zebraJumper.jpg",
+                            "../images/bronzeJumper.jpg",
+                            "../images/putnamiJumper.jpg",
+                            "../images/hidingJumper.jpg"
                           ];
 
     // create another array to make sure the images only get added twice
@@ -48,11 +58,64 @@ function createRandomImageArray() {
 }
 
 function flipImage(number) {
-    document.getElementById(imageTags[number]).src= actualImages[number];
-        // this should be a quick function that just changes
-        // the image based on what number was pressed
+    // make the second image appear
+  if(firstNumber >= 0) {
+        secondNumber = number;
+        document.getElementById(imageTags[number]).src = actualImages[secondNumber];
+
+      // make the first image appear
+      } else if (firstNumber < 0) {
+        firstNumber = number;
+        document.getElementById(imageTags[firstNumber]).src= actualImages[firstNumber];
+      }
+
+    // check to see if the images do not match
+  if(actualImages[secondNumber] != actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0) {
+      setTimeout( flipBack , 1000); // calls a method after 1 second
+      clickCounter ++;
+      console.log(playerInfo.playerAttempts);
+
+      // check to see if the images do match
+    } else if(actualImages[secondNumber] == actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0) {
+      clickCounter ++;
+      doneMatchedUp ++;
+      firstNumber = -1;
+      secondNumber = -1;
+
+        if( doneMatchedUp == actualImages.length / 2 ) {
+          playerInfo.playerAttempts = clickCounter;
+          localStorage.setItem("playerInfo", JSON.stringify(playerInfo));
+          console.log(playerInfo.playerAttempts);
+          window.location = "./memoryoutro.html";
+        }
+    }
 }
 
+function flipBack() {
+    document.getElementById(imageTags[firstNumber]).src = blankImagePath;
+    document.getElementById(imageTags[secondNumber]).src = blankImagePath;
+    firstNumber = -1;
+    secondNumber = -1;
+}
+
+function addPlayerInfo() {
+  let nameOne = document.getElementById("firstNameField").value;
+  let nameTwo = document.getElementById("lastNameField").value;
+  let age = document.getElementById("ageField").value;
+
+  playerInfo.firstName = nameOne;
+  playerInfo.lastName = nameTwo;
+  playerInfo.playerAge = age;
+  playerInfo.playerAttempts = clickCounter;
+
+  localStorage.setItem("playerInfo", JSON.stringify(playerInfo));
+}
+
+function displayPlayerInfo() {
+  var congratulations = localStorage.getItem("playerInfo");
+  document.getElementById("test").innerHTML = "<h1>" + JSON.parse(congratulations).firstName + "</h1>";
+  //document.getElementById("howMany").innerHTML = "<h1>" + JSON.parse(congratulations).playerAttempts + "</h1>"
+}
 
 
 /*-------------------------------------------------------------------------------------------------------*/
