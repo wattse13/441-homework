@@ -65,10 +65,28 @@ Purpose: MART 441 Homework Assignment #6
         <div class="col-sm-6"><a href="./memoryintro.html">memory?</a></div>
       </div><!--End of row Section-->
 
-      <input id="firstNameField" type="text">
-      <input id="lastNameField" type="text">
-      <input id="ageField" type="text">
-      <button id="btnSubmit" onClick="window.location.href = './memory.html'; addPlayerInfo();">play?</button>
+      <h2>Memory Game!</h2>
+
+      <br />
+
+      <div class="container-fluid">
+        <div class="form-group">
+           <label for="usr">First Name:</label>
+           <input type="text" class="form-control" id="firstNameField">
+          </div>
+          <div class="form-group">
+           <label for="usr">Last Name:</label>
+           <input type="text" class="form-control" id="lastNameField">
+          </div>
+          <div class="form-group">
+           <label for="usr">Age:</label>
+           <input type="text" class="form-control" id="ageField">
+          </div>
+      </div>
+
+      <br />
+
+      <button id="btnSubmit" onClick="addPlayerInfo(); window.location.href = './memory.html';">play?</button>
 
       <!--Random Number Generator Test-->
       <!--<button id="btnSubmit" onClick="">play again?</button>-->

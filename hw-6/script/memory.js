@@ -1,8 +1,8 @@
 /*
-Author: Eli Watts (This document is a slightly modified version of Professor Cassens' week 5 example document.)
+Author: Eli Watts (This document borrows heavily from lesson 5 and 6 example documents.)
 File Name: memory.js
 Date: 12/02/2020
-Purpose: MART 441 Homework Assignment #5
+Purpose: MART 441 Homework Assignment #6
 */
 
 // create an array of image names that correspond to the image tags
@@ -23,6 +23,7 @@ var clickCounter = 0;
 var doneMatchedUp = 0;
 
 function printBlanks() {
+  console.log(playerInfo);
    // call our random image creation function
     createRandomImageArray();
     // create a for loop
@@ -84,7 +85,7 @@ function flipImage(number) {
 
         if( doneMatchedUp == actualImages.length / 2 ) {
           playerInfo.playerAttempts = clickCounter;
-          localStorage.setItem("playerInfo", JSON.stringify(playerInfo));
+          localStorage.setItem("playerInput", JSON.stringify(playerInfo));
           console.log(playerInfo.playerAttempts);
           window.location = "./memoryoutro.html";
         }
@@ -99,22 +100,27 @@ function flipBack() {
 }
 
 function addPlayerInfo() {
-  let nameOne = document.getElementById("firstNameField").value;
-  let nameTwo = document.getElementById("lastNameField").value;
-  let age = document.getElementById("ageField").value;
+  var nameOne = document.getElementById("firstNameField").value;
+  var nameTwo = document.getElementById("lastNameField").value;
+  var age = document.getElementById("ageField").value;
 
   playerInfo.firstName = nameOne;
   playerInfo.lastName = nameTwo;
   playerInfo.playerAge = age;
   playerInfo.playerAttempts = clickCounter;
 
-  localStorage.setItem("playerInfo", JSON.stringify(playerInfo));
+  localStorage.setItem("playerInput", JSON.stringify(playerInfo));
 }
 
 function displayPlayerInfo() {
-  var congratulations = localStorage.getItem("playerInfo");
-  document.getElementById("test").innerHTML = "<h1>" + JSON.parse(congratulations).firstName + "</h1>";
-  //document.getElementById("howMany").innerHTML = "<h1>" + JSON.parse(congratulations).playerAttempts + "</h1>"
+  var congratulations = localStorage.getItem("playerInput");
+  playerInfo = JSON.parse(congratulations);
+  document.getElementById("playerFirstName").innerHTML = JSON.parse(congratulations).firstName;
+  document.getElementById("playerSecondName").innerHTML = JSON.parse(congratulations).lastName;
+  document.getElementById("playerAgeInput").innerHTML = JSON.parse(congratulations).playerAge;
+  document.getElementById("playerAttemptsMade").innerHTML = JSON.parse(congratulations).playerAttempts;
+
+  //console.log(playerInfo.firstName);
 }
 
 

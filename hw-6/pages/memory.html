@@ -48,7 +48,7 @@ Purpose: MART 441 Homework Assignment #6
         <script src="../script/json.js"></script>
     </head>
 
-    <body onLoad="printBlanks();">
+    <body onLoad="printBlanks(); displayPlayerInfo();">
       <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
       <!--h1 is set to 36px by Bootstrap-->
       <!--byLine class allows me to style line 42 in my CSS stylesheet-->
@@ -91,10 +91,7 @@ Purpose: MART 441 Homework Assignment #6
         </table>
       </div>
 
-      <button id="tossIt" onClick="addPlayerInfo(); window.location = './memoryoutro.html'">finished?</button>
-
-      <!--Random Number Generator Test-->
-      <!--<button id="btnSubmit" onClick="">play again?</button>-->
+      <button id="btnSubmit" onClick="location.reload();">retry?</button>
 
     </body>
 
