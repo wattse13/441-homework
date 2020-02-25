@@ -11,19 +11,20 @@ var imageTags = ["spider1", "spider2", "spider3", "spider4", "spider5", "spider6
 var blankImagePath = "../images/spiderWeb";
 // create a empty array for the actual images
 var actualImages = new Array();
-
+// Initializes new global variable and assigns it a value of -1
 var firstNumber = -1;
-
+// Initializes new global variable and assigns it a value of -1
 var secondNumber = -1;
-
+// Initalizes new JSON object. Key values are left as blank strings to be filled in through player input
 var playerInfo = { "firstName": "" , "lastName": "" , "playerAge": "" , "playerAttempts": 0 };
-
+// Initalizes new global variable and assigns it a value of 0
 var clickCounter = 0;
-
+// Initalizes new global variable and assigns it a value of 0
 var doneMatchedUp = 0;
 
+// Creates new function which will print top side of memory cards until the lenght of the random image array is equal to the length of the image tag array
 function printBlanks() {
-  console.log(playerInfo);
+  //console.log(playerInfo);
    // call our random image creation function
     createRandomImageArray();
     // create a for loop
@@ -33,6 +34,8 @@ function printBlanks() {
     }
 }
 
+// This function is later called in the printBlanks() function
+// Creates an array which stores a randomly ordered list of image paths
 function createRandomImageArray() {
     // create an array of actual images
     var actualImagePath = [ "../images/brownBlackJumper.jpeg",
@@ -58,63 +61,100 @@ function createRandomImageArray() {
     }
 }
 
+// This function flips memory card over, checks to see if it matches a second flipped card, and flips cards that do not match back over after 1 second
 function flipImage(number) {
-    // make the second image appear
+  // make the second image appear
+  // Because firstNumber is initially set to -1, this function resolves to false the first time a blank memory card is clicked on
+  // Upon second click firstNumber has been reassigned a value between 0 and 9 which causes this if statement to evaluate to true
   if(firstNumber >= 0) {
+        // reassigns value of secondNumber to the value of the number variable
         secondNumber = number;
+        // src value is reassigned to the index value of the actualImages array which corresponds to the secondNumber value
         document.getElementById(imageTags[number]).src = actualImages[secondNumber];
 
       // make the first image appear
+      // Because firstNumber is initially set to -1, this function resolves to true the first time a blank memory card is clicked on
       } else if (firstNumber < 0) {
+        // reAssigns vlaue of firstNumber to the value of the number variable.
+        // variable number is assigned as a value on the memory.HTML doc as an argument ( 0 - 9 )
         firstNumber = number;
+        // src value is reassigned to the index value of the actualImages array which corresponds to the firstNumber value
         document.getElementById(imageTags[firstNumber]).src= actualImages[firstNumber];
       }
 
-    // check to see if the images do not match
+  // check to see if the images do not match
   if(actualImages[secondNumber] != actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0) {
-      setTimeout( flipBack , 1000); // calls a method after 1 second
+      // calls a method after 1 second
+      setTimeout( flipBack , 1000);
+      // value of clickCounter variable increases by one
       clickCounter ++;
-      console.log(playerInfo.playerAttempts);
+      //console.log(playerInfo.playerAttempts);
 
-      // check to see if the images do match
+    // check to see if the images do match
     } else if(actualImages[secondNumber] == actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0) {
+
+      // value of clickCounter and doneMatchedUp increase by one
       clickCounter ++;
       doneMatchedUp ++;
+
+      // firstNumber and secondNumber variables are reset
       firstNumber = -1;
       secondNumber = -1;
 
+        // If statement checks to see if the value of doneMatchedUp is equal to half the length of the actualImages array
         if( doneMatchedUp == actualImages.length / 2 ) {
+
+          // If yes, the playerInfo key playerAttempts is assigned the value of the variable clickCounter
+          // Value of variable clickCounter is saved to local storage as a string under the name playerInput
+          // Memoryoutro.HTML page is loaded
           playerInfo.playerAttempts = clickCounter;
           localStorage.setItem("playerInput", JSON.stringify(playerInfo));
-          console.log(playerInfo.playerAttempts);
+          //console.log(playerInfo.playerAttempts);
           window.location = "./memoryoutro.html";
         }
     }
 }
 
+// Called when second card does not match first card
 function flipBack() {
+
+    // Image src value is reassigned to value of blankImagePath variable
     document.getElementById(imageTags[firstNumber]).src = blankImagePath;
     document.getElementById(imageTags[secondNumber]).src = blankImagePath;
+
+    // FirstNumber and secondNumber are reassigned values of -1
     firstNumber = -1;
     secondNumber = -1;
 }
 
+// Adds player info to playerInfo JSON object
 function addPlayerInfo() {
+  // Initializes variables and assigns them value of strings typed into the corresponding text fields
+  // Web console displays error stating the following line is not defined. Though, program still runs as it should
   var nameOne = document.getElementById("firstNameField").value;
   var nameTwo = document.getElementById("lastNameField").value;
   var age = document.getElementById("ageField").value;
 
+  // Uses variables initalized above to change values in the playerInfo JSON object
   playerInfo.firstName = nameOne;
   playerInfo.lastName = nameTwo;
   playerInfo.playerAge = age;
   playerInfo.playerAttempts = clickCounter;
 
+  // Saves JSON object to local storage as a string under the name playerInput
   localStorage.setItem("playerInput", JSON.stringify(playerInfo));
 }
 
+// Function retrieves information stored to local storage under name playerIput
 function displayPlayerInfo() {
+
+  // Creates new varaible and assigns it the locally stored playerInput values
   var congratulations = localStorage.getItem("playerInput");
+
+  // Dot notation is then used to parse the playerInfo JSON object
   playerInfo = JSON.parse(congratulations);
+
+  // InnerHTML is changed to values stored in playerInfo JSON object
   document.getElementById("playerFirstName").innerHTML = JSON.parse(congratulations).firstName;
   document.getElementById("playerSecondName").innerHTML = JSON.parse(congratulations).lastName;
   document.getElementById("playerAgeInput").innerHTML = JSON.parse(congratulations).playerAge;
