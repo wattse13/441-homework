@@ -43,10 +43,11 @@ Purpose: MART 441 Homework Assignment #7
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         <!--JavaScript File Link-->
-        <script src="../script/script.js"></script>
+        <script src="../script/memory.js"></script>
+        <script src="../script/gallery.js"></script>
     </head>
 
-    <body>
+    <body onLoad="fillEmUp();">
 
       <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
       <!--h1 is set to 36px by Bootstrap-->
@@ -72,6 +73,16 @@ Purpose: MART 441 Homework Assignment #7
           </div>
         </div>
       </div><!--End of row Section-->
+
+      <h2 id="imageTitle"></h2>
+      <div id="imageFilePath"></div>
+      <p id="imageDescription"></p>
+      <p id="imageAuthor"></p>
+      <p id="imageYear"></p>
+
+      <br />
+
+      <button id="btnSubmit" onClick="nextImagePlease()">next?</button>
 
     </body>
 </html>
