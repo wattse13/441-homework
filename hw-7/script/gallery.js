@@ -23,7 +23,7 @@ class ImageDisplayer {
   constructor( imgTitle , imgPath , imgDescr , imgAuthor , imgYear ) {
     this.imgTitle = imgTitle;
     this.imgPath = imgPath;
-    this.imgDesc = imgDescr;
+    this.imgDescr = imgDescr;
     this.imgAuthor = imgAuthor;
     this.imgYear = imgYear;
   }
@@ -60,11 +60,18 @@ function fillEmUp() {
   actualImages.push(myImageDisplayer2);
   actualImages.push(myImageDisplayer3);
   actualImages.push(myImageDisplayer4);
-  console.log(actualImages[3]);
+  //console.log(actualImages[3].imgTitle);
 }
 
 function spitEmOut() {
-  
+
+  var randomNumber = Math.floor(Math.random() * actualImages.length);
+
+  document.getElementById("imageTitle").innerHTML = actualImages[randomNumber].imgTitle;
+  document.getElementById("imageFilePath").innerHTML = actualImages[randomNumber].imgPath;
+  document.getElementById("imageDescription").innerHTML = actualImages[randomNumber].imgDescr;
+  document.getElementById("imageAuthor").innerHTML = actualImages[randomNumber].imgAuthor;
+  document.getElementById("imageYear").innerHTML = actualImages[randomNumber].imgYear;
 }
 
 

@@ -83,6 +83,6 @@ h1, h2, .byLine {
   padding-right: 20%;
 }
 
-#memoryOutro {
+#memoryOutro, #galleryText {
   text-align: center;
 }
