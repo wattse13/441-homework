@@ -4,7 +4,7 @@
 
 ## Intro
 
-This week went well! I am happy with what I was able to achieve, though part of me thinks that there were some things I could have done to make my code even better. For example, part of me wonders if I should have made the two external methods that my `gallery.js` doc uses and instead turned them into class methods. An additional challenge that I maybe should have taken on would be to add a sort of counter which would prevent duplicates from appearing until every image had been displayed at least once.
+This week went well! I am happy with what I was able to achieve, though part of me thinks that there were some things I could have done to make my code even better. For example, part of me wonders if I should have made the two external methods that my `gallery.js` doc uses into class methods. An additional challenge that I maybe should have taken on would be to add a sort of counter which would prevent duplicates from appearing until every image had been displayed at least once.
 
 ## What Worked?
 
