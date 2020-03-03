@@ -1,0 +1,96 @@
+<!--
+Author: Eli Watts
+File Name: jqueryArt.html
+Date: 12/02/2020
+Purpose: MART 441 Homework Assignment #8
+-->
+
+<html>
+
+    <head>
+        <title>Eli Watts' MART 441 Assignment 8</title>
+
+        <!--Meta information-->
+        <meta charset="utf-8">
+        <meta name="description" content="MART 441, Assignment 8">
+        <meta name="author" content="Eli Watts">
+
+        <!--Matches screen's width in device-independent pixels-->
+        <!--Establishes 1:1 relationship between CSS pixels and device-independent pixels-->
+        <!--From Pete LePage's Responsive Web Design Basics Course-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Latest compiled and minified CSS -->
+        <!--Allows me to use Bootstrap's CSS style content Library-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!--Links to downloaded version of Bootstrap-->
+        <!--Using this version rather than links to online versions changes navbar elements from inline elements to block elements-->
+        <!--<link rel="stylesheet" type="text/css" href=".bootstrap-4.1.1-dist/css/bootstrap.css">-->
+
+        <!--CSS Links-->
+        <!--Font Style Sheet Linked First To Prevent style issues-->
+        <link rel="stylesheet" href="../style/fonts.css">
+        <link rel="stylesheet" href="../style/style.css">
+
+        <!-- jQuery library -->
+        <!--Allows me to use Bootstraps JQuery Library-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <!--Probably not necessary for this project, but allows me to use Bootstraps JavaScript Library-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <!--JavaScript File Link-->
+        <script src="../script/memory.js"></script>
+        <script src="../script/gallery.js"></script>
+        <script src="../script/jqueryArt.js"></script>
+    </head>
+
+    <body>
+
+      <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
+      <!--h1 is set to 36px by Bootstrap-->
+      <!--byLine class allows me to style line 42 in my CSS stylesheet-->
+      <div class="container-fluid">
+        <h1>rotten strawberry blog</h1>
+        <p class="byLine">a blog for gross stories.</p>
+      </div><!--End of container-fluid Section-->
+
+      <!--Bootstrap's row and col classes create a responsive grid that change based on screen size-->
+      <!--Bootstrap class col-sm-4 creates three equal-width columns that stack once screen size goes bellow 768px wide-->
+      <!--Links move to different sections of webpage using header IDs-->
+      <div class="row" id="navBar">
+        <div class="col-sm-6"><a href="./index.html">home?</a></div>
+        <div class="col-sm-6">
+          <div class="dropdown">
+           <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown"> more ? <span class="caret"></span></button>
+           <ul class="dropdown-menu">
+             <li><a href="./gallery.html">gallery?</a></li>
+             <li><a href="./story.html">interactive story?</a></li>
+             <li><a href="./memoryintro.html">memory?</a></li>
+             <li><a href="./jqueryArt.html">some shapes?</a></li>
+           </ul>
+          </div>
+        </div>
+      </div><!--End of row Section-->
+
+      <div id="side1" class="square">
+        <p>My shame begins</p>
+      <div>
+
+      <div id="side2" class="square">
+        <p> as a cold sweat</p>
+      </div>
+
+      <div id="side3" class="square">
+        <p> radiating</p>
+      </div>
+
+      <div id="side4" class="square">
+        <p> from my forehead.</p>
+      </div>
+
+  </body>
+
+</html>
