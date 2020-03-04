@@ -48,30 +48,50 @@ Purpose: MART 441 Homework Assignment #8
 
     <body>
 
+      <div id="nightStars" class="text-center">
+        <img src="../images/nightStars.jpg">
+      </div>
+
       <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
       <!--h1 is set to 36px by Bootstrap-->
       <!--byLine class allows me to style line 42 in my CSS stylesheet-->
-      <div class="container-fluid">
-        <h1>rotten strawberry blog</h1>
-        <p class="byLine">a blog for gross stories.</p>
-      </div><!--End of container-fluid Section-->
+      <div id="motherShip">
+        <div class="container-fluid">
+          <h1>rotten strawberry blog</h1>
+          <p class="byLine">a blog for gross stories.</p>
+        </div><!--End of container-fluid Section-->
 
-      <!--Bootstrap's row and col classes create a responsive grid that change based on screen size-->
-      <!--Bootstrap class col-sm-4 creates three equal-width columns that stack once screen size goes bellow 768px wide-->
-      <!--Links move to different sections of webpage using header IDs-->
-      <div class="row" id="navBar">
-        <div class="col-sm-6"><a href="./index.html">home?</a></div>
-        <div class="col-sm-6">
-          <div class="dropdown">
-           <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown"> more ? <span class="caret"></span></button>
-           <ul class="dropdown-menu">
-             <li><a href="./gallery.html">gallery?</a></li>
-             <li><a href="./story.html">interactive story?</a></li>
-             <li><a href="./memoryintro.html">memory?</a></li>
-           </ul>
+        <!--Bootstrap's row and col classes create a responsive grid that change based on screen size-->
+        <!--Bootstrap class col-sm-4 creates three equal-width columns that stack once screen size goes bellow 768px wide-->
+        <!--Links move to different sections of webpage using header IDs-->
+        <div class="row" id="navBar">
+          <div class="col-sm-6"><a href="./index.html">home?</a></div>
+          <div class="col-sm-6">
+            <div class="dropdown">
+             <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown"> more ? <span class="caret"></span></button>
+             <ul class="dropdown-menu">
+               <li><a href="./gallery.html">gallery?</a></li>
+               <li><a href="./story.html">interactive story?</a></li>
+               <li><a href="./memoryintro.html">memory?</a></li>
+             </ul>
+            </div>
           </div>
-        </div>
-      </div><!--End of row Section-->
+        </div><!--End of row Section-->
+
+        <div id="storyTitle">
+          <h2>A Tortured Metaphor</h2>
+          <br />
+          <button id="btnSubmit">blast off?</button>
+          <br />
+    </div><!--End of Mother Ship Section-->
+
+    <p>I'm outside the Mothership!</p>
+
+      <div id="rocketShip" class="text-center">
+        <img src="../images/rocketShip.png" class="rounded">
+      </div>
+
+
 
   </body>
 </html>
