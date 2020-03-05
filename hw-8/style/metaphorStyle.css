@@ -1,0 +1,74 @@
+body {
+  background-color: black;
+  overflow-y: visible;
+}
+#universe {
+  overflow-x: hidden;
+}
+
+/*Centers and adds space around text in row element*/
+.row {
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  font-size: 1.5em;
+}
+/*Centers text in h1, h2, and byLine class elements*/
+h1, h2, .byLine {
+  text-align: center;
+}
+
+/*Media Querry changes width of container-fluid elements to 50% of viewport when screen has a min width of 991.98px*/
+@media (min-width: 991.98px) {.container-fluid {
+  margin: auto;
+  padding: auto;
+  width: 50%;
+  height: auto;
+  }
+}
+/*Media querry changes width of container-fluid element to 85% of viewport when screen width is below 767.98px*/
+@media (max-width: 767.98px) {
+  .container-fluid {
+    margin: auto;
+    padding: auto;
+    width: 85%;
+    height: auto;
+  }
+}
+/*Media querry changes widht of container-fluid element to 90% of viewport when screen width is below 575.98px*/
+@media (max-width: 575.98px) {
+  .container-fluid {
+    margin: auto;
+    padding: auto;
+    width: 90%;
+    height: auto;
+  }
+}
+
+#tossIt, #missingPerson, #sendIt, #digMore, #replayButton, #tossText, #emailText, #replayButton, #replayStory, #nameField, #btnSubmit, #digText {
+  display: block;
+  margin: auto;
+  padding: auto;
+}
+
+#rocketShip {
+  max-width: 100%;
+  height: auto;
+  display: none;
+  left: 50%;
+  margin-left: -360px;
+  position: absolute;
+  top: 700px;
+  z-index: 5;
+}
+
+.nightStars img {
+  height: auto;
+  width: 100%;
+}
+
+#secondNight {
+  display: none;
+  z-index: 1;
+  position: relative;
+}

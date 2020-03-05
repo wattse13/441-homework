@@ -32,7 +32,7 @@ Purpose: MART 441 Homework Assignment #8
         <!--CSS Links-->
         <!--Font Style Sheet Linked First To Prevent style issues-->
         <link rel="stylesheet" href="../style/fonts.css">
-        <link rel="stylesheet" href="../style/style.css">
+        <link rel="stylesheet" href="../style/metaphorStyle.css">
 
         <!-- jQuery library -->
         <!--Probably not necessary for this project, but allows me to use Bootstraps JQuery Library-->
@@ -48,13 +48,17 @@ Purpose: MART 441 Homework Assignment #8
 
     <body>
 
-      <div id="nightStars" class="text-center">
-        <img src="../images/nightStars.jpg">
-      </div>
+      <div id="universe">
+        <div class="text-center nightStars">
+          <img src="../images/nightStars.jpg">
+        </div>
+        <div class="text-center nightStars">
+          <img src="../images/nightStars.jpg" id="secondNight">
+        </div>
 
-      <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
-      <!--h1 is set to 36px by Bootstrap-->
-      <!--byLine class allows me to style line 42 in my CSS stylesheet-->
+        <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
+        <!--h1 is set to 36px by Bootstrap-->
+        <!--byLine class allows me to style line 42 in my CSS stylesheet-->
       <div id="motherShip">
         <div class="container-fluid">
           <h1>rotten strawberry blog</h1>
@@ -83,14 +87,13 @@ Purpose: MART 441 Homework Assignment #8
           <br />
           <button id="btnSubmit">blast off?</button>
           <br />
+        </div><!--End of Story Title Section-->
     </div><!--End of Mother Ship Section-->
-
-    <p>I'm outside the Mothership!</p>
 
       <div id="rocketShip" class="text-center">
         <img src="../images/rocketShip.png" class="rounded">
       </div>
-
+  </div><!--End of Universe Section-->
 
 
   </body>
