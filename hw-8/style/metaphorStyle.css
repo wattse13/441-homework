@@ -63,12 +63,39 @@ h1, h2, .byLine {
 }
 
 .nightStars img {
-  height: auto;
   width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
 }
 
 #secondNight {
+  max-width: 100%;
+  height: auto;
   display: none;
+  left: 50%;
+  margin-left: -50%;
   z-index: 1;
-  position: relative;
+  position: absolute;
+}
+
+#textBox1, #textBox2, #textBox3 {
+  position: absolute;
+  top: -70%;
+  margin-top: 50%;
+  left: 25%;
+  z-index: 3;
+}
+
+#textBox3 {
+  display: none;
+  left: 35%;
+}
+#paragraph1, #paragraph2 {
+  display: none;
+  font-size: 150%;
+  color: white;
+  background-color: black;
+  position: absolute;
+  z-index: 4;
 }
