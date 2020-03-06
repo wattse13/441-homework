@@ -91,6 +91,7 @@ h1, h2, .byLine {
   display: none;
   left: 35%;
 }
+
 #paragraph1, #paragraph2 {
   display: none;
   font-size: 150%;
