@@ -6,8 +6,11 @@ Purpose: MART 441 Homework Assignment #9
 */
 
 $(document).ready(function () {
-            $("#nextButton").click(function () {
-                $("#pokemonInformation").load("pokedex.txt");
-                console.log(pokemonInformation.status);
+            $("#startButton").click(function () {
+                $("#pokemonInformation").load("pokedex.txt" , function() {
+                  $( "#startButton" ).fadeOut( "slow" , function() {
+                    $( "#backForward" ).fadeIn( "slow" );
+                  });
+                });
             });
         });

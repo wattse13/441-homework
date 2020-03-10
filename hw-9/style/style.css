@@ -66,12 +66,15 @@ h1, h2, .byLine {
     height: auto;
   }
 }
-#tossIt, #missingPerson, #sendIt, #digMore, #replayButton, #tossText, #emailText, #replayButton, #replayStory, #nameField, #btnSubmit, #digText {
+#tossIt, #missingPerson, #sendIt, #digMore, #replayButton, #tossText, #emailText, #replayButton, #replayStory, #nameField, #btnSubmit, #digText, #startButton {
   display: block;
   margin: auto;
   padding: auto;
 }
 
+#backForward {
+  display: none;
+}
 #nextButton, #previousButton {
   display: inline-block;
   margin: auto;
