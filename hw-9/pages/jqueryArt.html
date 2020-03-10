@@ -1,0 +1,119 @@
+<!--
+Author: Eli Watts
+File Name: jqueryArt.html
+Date: 12/02/2020
+Purpose: MART 441 Homework Assignment #8
+-->
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Eli Watts' MART 441 Assignment 8</title>
+
+        <!--Meta information-->
+        <meta charset="utf-8">
+        <meta name="description" content="MART 441, Assignment 8">
+        <meta name="author" content="Eli Watts">
+
+        <!--Matches screen's width in device-independent pixels-->
+        <!--Establishes 1:1 relationship between CSS pixels and device-independent pixels-->
+        <!--From Pete LePage's Responsive Web Design Basics Course-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Latest compiled and minified CSS -->
+        <!--Allows me to use Bootstrap's CSS style content Library-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!--Links to downloaded version of Bootstrap-->
+        <!--Using this version rather than links to online versions changes navbar elements from inline elements to block elements-->
+        <!--<link rel="stylesheet" type="text/css" href=".bootstrap-4.1.1-dist/css/bootstrap.css">-->
+
+        <!--CSS Links-->
+        <!--Font Style Sheet Linked First To Prevent style issues-->
+        <link rel="stylesheet" href="../style/fonts.css">
+        <link rel="stylesheet" href="../style/metaphorStyle.css">
+
+        <!-- jQuery library -->
+        <!--Probably not necessary for this project, but allows me to use Bootstraps JQuery Library-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <!--Probably not necessary for this project, but allows me to use Bootstraps JavaScript Library-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <!--JavaScript File Link-->
+        <script src="../script/jqueryArt.js"></script>
+    </head>
+
+    <body>
+
+      <div id="universe">
+        <div class="text-center nightStars">
+          <img src="../images/nightStars.jpg">
+        </div>
+        <div class="text-center nightStars">
+          <img src="../images/nightStars.jpg" id="secondNight">
+        </div>
+
+        <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
+        <!--h1 is set to 36px by Bootstrap-->
+        <!--byLine class allows me to style line 42 in my CSS stylesheet-->
+      <div id="motherShip">
+        <div class="container-fluid">
+          <h1>rotten strawberry blog</h1>
+          <p class="byLine">a blog for gross stories.</p>
+        </div><!--End of container-fluid Section-->
+
+        <!--Bootstrap's row and col classes create a responsive grid that change based on screen size-->
+        <!--Bootstrap class col-sm-4 creates three equal-width columns that stack once screen size goes bellow 768px wide-->
+        <!--Links move to different sections of webpage using header IDs-->
+        <div class="row" id="navBar">
+          <div class="col-sm-6"><a href="./index.html">home?</a></div>
+          <div class="col-sm-6">
+            <div class="dropdown">
+             <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown"> more ? <span class="caret"></span></button>
+             <ul class="dropdown-menu">
+               <li><a href="./gallery.html">gallery?</a></li>
+               <li><a href="./story.html">interactive story?</a></li>
+               <li><a href="./memoryintro.html">memory?</a></li>
+             </ul>
+            </div>
+          </div>
+        </div><!--End of row Section-->
+
+        <div id="storyTitle">
+          <h2>A Tortured Metaphor</h2>
+          <br />
+          <button id="btnSubmit">blast off?</button>
+          <br />
+        </div><!--End of Story Title Section-->
+    </div><!--End of Mother Ship Section-->
+
+      <div id="rocketShip" class="text-center">
+        <img src="../images/rocketShip.png" class="rounded">
+      </div>
+
+      <div class="container-fluid" id="textBox1">
+        <p id="paragraph1">Had Jordan not noticed the leak in life support systems, the small crew of the [tortured metaphor] would have asphyxiated; Slowly, convulsing, red-faced, and slobbering. But, Jordan did notice, and Melvin, Cassidy, Henry, even Ellen survived.
+        <br />
+        <br />
+        ( click to continue )</p>
+      </div>
+
+      <div class="container-fluid" id="textBox2">
+        <p id="paragraph2">They survived light years waiting in and out of cryogenic sleep; survived waiting for autopilot to land on the alien planet; survived waiting for sensors to document trees that were trees in every aspect aside from how they were not made of wood, did not photosynthesize, and expanded without growing. Most importantly, they survived waiting long enough to find their mission objective; an unassuming grey building in an otherwise empty field.
+        <br />
+        <br />
+        ( click to continue )</p>
+      </div>
+
+      <div class="container-fluid" id="textBox3">
+        <button id="externalLink" onClick="window.location.href='https://docs.google.com/document/d/1HB_VPWwpenWL5oM1v_XjtnXlUjpNOxfziG7PXp-lpdY/edit?usp=sharing'">continue? ( links to external google doc )</button>
+        <button id="returnHome" onClick="window.location.href='./jqueryArt.html'">return to earth?</button>
+      </div>
+  </div><!--End of Universe Section-->
+
+
+  </body>
+</html>
