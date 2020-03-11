@@ -7,7 +7,8 @@ Purpose: MART 441 Homework Assignment #9
 
 $(document).ready(function () {
             $("#startButton").click(function () {
-                $("#pokemonInformation").load("pokedex.txt" , function() {
+                $("#pokemonInformation").load("pokedex.json" , function(responseText) {
+                  window.alert(responseText);
                   $( "#startButton" ).fadeOut( "slow" , function() {
                     $( "#backForward" ).fadeIn( "slow" );
                   });
