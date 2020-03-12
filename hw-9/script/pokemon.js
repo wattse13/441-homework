@@ -31,7 +31,7 @@ $(document).ready(function () {
             $( "#startButton" ).click(function () {
               $.getJSON( "../script/pokedex.json" , function( result ) {
                 //window.alert( result.pokemon[0].name );
-                $.each( JSON.parse( result.pokemon[0].name ) , function( ) {
+                $.each( JSON.parse( result ) , function() {
                   console.log( result.pokemon[0].name );
             });
         });
