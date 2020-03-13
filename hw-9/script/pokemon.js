@@ -30,9 +30,11 @@ class PokeDisplayer {
 $(document).ready(function () {
             $( "#startButton" ).click(function () {
               $.getJSON( "../script/pokedex.json" , function( result ) {
+                //var myPokemon = JSON.parse( result );
                 //window.alert( result.pokemon[0].name );
-                $.each( JSON.parse( result ) , function() {
-                  console.log( result.pokemon[0].name );
+                //for( i = 0; i < result.pokemon.length; i++ )
+                $.each( result.pokemon , function( ) {
+                  window.alert( result.pokemon );
             });
         });
     });
