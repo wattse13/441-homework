@@ -11,6 +11,8 @@ var pokeNames = [];
 var pokeImgs = [];
 var pokeTypes = [];
 
+var partyMember = 0;
+
 class PokeDisplayer {
   constructor( pokeName , pokePicture , pokeType ) {
     this.pokeName = pokeName;
@@ -42,24 +44,46 @@ $(document).ready(function () {
                   pokeNames.push(result.pokemon[i].name);
                   pokeImgs.push(result.pokemon[i].img);
                   pokeTypes.push(result.pokemon[i].type);
-                  console.log(pokeImgs);
+                  //console.log(pokeImgs);
                   //console.log(result.pokemon[i].name);
                   $( "#startButton" ).fadeOut( "slow" , function() {
                     $( "#backForward" ).fadeIn( "slow" );
+                    iChooseYou();
                 });
             });
         });
     });
     $( "#nextButton" ).click( function() {
+      upNext();
       iChooseYou();
-      console.log("done got!");
+      console.log(partyMember);
     });
+    $( "#previousButton" ).click( function() {
+      backUp();
+      iChooseYou();
+    })
 });
 
+function upNext() {
+  if ( partyMember <= 149 ) {
+    partyMember ++;
+  } else if ( partyMember >= 149 ) {
+    partyMember = 0;
+  }
+}
+
+function backUp() {
+  if ( partyMember >= 0 ) {
+    partyMember --;
+  } else if ( partyMember <= 0 ) {
+    partyMember = 150;
+  }
+}
+
 function iChooseYou() {
-  document.getElementById("pokemonName").innerHTML = pokeNames[1];
-  document.getElementById("imageFilePath").src = pokeImgs[1];
-  document.getElementById("pokemonTypes").innerHTML = pokeTypes[1];
+  document.getElementById("pokemonName").innerHTML = pokeNames[ partyMember ];
+  document.getElementById("imageFilePath").src = pokeImgs[ partyMember ];
+  document.getElementById("pokemonTypes").innerHTML = pokeTypes[ partyMember ];
 }
 
 
