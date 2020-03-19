@@ -7,6 +7,9 @@ Purpose: MART 441 Homework Assignment #9
 
 //var pokemonInfo = [ { "pokeName": "" , "pokePicture": "" , "pokeType": "" } ];
 var pokeInfo = new Array();
+var pokeNames = [];
+var pokeImgs = [];
+var pokeTypes = [];
 
 class PokeDisplayer {
   constructor( pokeName , pokePicture , pokeType ) {
@@ -35,13 +38,29 @@ $(document).ready(function () {
                 //This window.alert function correctly finds and displays targeted JSON value
                 //window.alert( result.pokemon[0].name );
                 //for( i = 0; i < result.pokemon.length; i++ )
-                $.each( result.pokemon , function( ) {
-                  //window.alert returns long unparsed list of {Object: object} keys and values
-                  window.alert( result.pokemon );
+                $.each( result.pokemon , function(i) {
+                  pokeNames.push(result.pokemon[i].name);
+                  pokeImgs.push(result.pokemon[i].img);
+                  pokeTypes.push(result.pokemon[i].type);
+                  console.log(pokeImgs);
+                  //console.log(result.pokemon[i].name);
+                  $( "#startButton" ).fadeOut( "slow" , function() {
+                    $( "#backForward" ).fadeIn( "slow" );
+                });
             });
         });
     });
+    $( "#nextButton" ).click( function() {
+      iChooseYou();
+      console.log("done got!");
+    });
 });
+
+function iChooseYou() {
+  document.getElementById("pokemonName").innerHTML = pokeNames[1];
+  document.getElementById("imageFilePath").src = pokeImgs[1];
+  document.getElementById("pokemonTypes").innerHTML = pokeTypes[1];
+}
 
 
 
