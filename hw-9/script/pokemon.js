@@ -33,6 +33,7 @@ $(document).ready(function () {
                   $( "#startButton" ).fadeOut( "slow" , function() {
                     $( "#backForward" ).fadeIn( "slow" );
                     iChooseYou();
+                    $( "#pokemonTypes" ).typeText();
                 });
             });
         });
@@ -41,12 +42,14 @@ $(document).ready(function () {
     $( "#nextButton" ).click( function() {
       upNext();
       iChooseYou();
-      //console.log(partyMember);
+      $( "#pokemonTypes" ).typeText();
+      //console.log($( "#pokemonTypes" ).html());
     });
     //When clicked functions backUp() and iChooseYou() are called
     $( "#previousButton" ).click( function() {
       backUp();
       iChooseYou();
+      $( "#pokemonTypes" ).typeText();
     });
 });
 
@@ -78,7 +81,7 @@ function backUp() {
 
 //Creates new function
   //Changes innerHTML and src of selected HTML elements
-  //Value of partyMember variable selects items from corresponding arrays 
+  //Value of partyMember variable selects items from corresponding arrays
 function iChooseYou() {
   document.getElementById("pokemonName").innerHTML = pokeNames[ partyMember ];
   document.getElementById("imageFilePath").src = pokeImgs[ partyMember ];
