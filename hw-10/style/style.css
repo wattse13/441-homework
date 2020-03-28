@@ -125,3 +125,7 @@ h1, h2, .byLine {
 #pokemonTypes {
   color: black;
 }
+
+#myCanvas {
+  border: 1px solid #000000;
+}
