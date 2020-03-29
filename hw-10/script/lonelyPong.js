@@ -59,6 +59,6 @@ $(document).ready(function(){
   $( "#startButton" ).click(function () {
     var player1 = new LonelyPongPlayers( 50 , 100 , 200 , 20 , 10 , "#0000FF" );
 
-    console.log(player1.speed);
+    console.log(this.speed);
   });
 });
