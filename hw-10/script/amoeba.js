@@ -6,7 +6,7 @@ Purpose: MART 441 Homework Assignment #10
 */
 
     class LonelyPongPlayers {
-      constuctor ( x , y , height , width , speed , color ) {
+      constructor ( x , y , height , width , speed , color ) {
         this.x = x;
         this.y = y;
         this.speed = speed;
