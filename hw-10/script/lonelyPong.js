@@ -129,7 +129,9 @@ $(document).ready(function(){
       document.getElementById( "myCanvas" ).style.backgroundColor = "black";
       ghost1.height -= 10;
       ghost1.width -= 10;
-      window.alert("Ouch! Watch Where You're Going!");
+      if( ghost1.height == 40 ) {
+        window.alert("Ouch! Watch Where You're Going!");
+      }
     }
 
   });
