@@ -128,4 +128,5 @@ h1, h2, .byLine {
 
 #myCanvas {
   border: 1px solid #000000;
+  background-color: white;
 }
