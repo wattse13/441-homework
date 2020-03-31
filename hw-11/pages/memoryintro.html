@@ -1,19 +1,20 @@
 <!--
 Author: Eli Watts
-File Name: amoeba.html
-Date: 03/25/2020
-Purpose: MART 441 Homework Assignment #11
+File Name: memory.html
+Date: 21/02/2020
+Purpose: MART 441 Homework Assignment #6
 -->
+
 <!DOCTYPE html>
 
 <html>
 
     <head>
-        <title>Eli Watts' MART 441 Assignment 11</title>
+        <title>Eli Watts' MART 441 Assignment 6</title>
 
         <!--Meta information-->
         <meta charset="utf-8">
-        <meta name="description" content="MART 441, Assignment 11">
+        <meta name="description" content="MART 441, Assignment 6">
         <meta name="author" content="Eli Watts">
 
         <!--Matches screen's width in device-independent pixels-->
@@ -43,11 +44,11 @@ Purpose: MART 441 Homework Assignment #11
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         <!--JavaScript File Link-->
-        <script src="../script/lonelyPong.js"></script>
+        <script src="../script/memory.js"></script>
+        <script src="../script/json.js"></script>
     </head>
 
     <body>
-
       <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
       <!--h1 is set to 36px by Bootstrap-->
       <!--byLine class allows me to style line 42 in my CSS stylesheet-->
@@ -60,31 +61,36 @@ Purpose: MART 441 Homework Assignment #11
       <!--Bootstrap class col-sm-4 creates three equal-width columns that stack once screen size goes bellow 768px wide-->
       <!--Links move to different sections of webpage using header IDs-->
       <div class="row" id="navBar">
-        <div class="row" id="navBar">
-          <div class="col-sm-6"><a href="./index.html">home?</a></div>
-          <div class="col-sm-6">
-          <div class="dropdown">
-           <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown"> more ? <span class="caret"></span></button>
-           <ul class="dropdown-menu">
-             <li><a href="./story.html">interactive story?</a></li>
-             <li><a href="./memoryintro.html">memory?</a></li>
-             <li><a href="./gallery.html">gallery?</a></li>
-             <li><a href="./jqueryArt.html">some movement?</a></li>
-             <li><a href="./pokemon.html">some pokemon?</a></li>
-             <li><a href="./amoeba.html">some ghost?</a></li>
-           </ul>
-          </div>
-        </div>
+        <div class="col-sm-6"><a href="./index.html">home?</a></div>
+        <div class="col-sm-6"><a href="./memoryintro.html">memory?</a></div>
       </div><!--End of row Section-->
 
-      <br />
-      <canvas id="myCanvas" height="400" width="600"></canvas>
-      <br />
-      <br />
-      <button id="startButton">start?</button>
-      <br />
-      <audio id="song" src="../images/singingGhosts.wav" controls="controls"></audio>
+      <h2>Memory Game!</h2>
+
       <br />
 
-  </body>
+      <div class="container-fluid">
+        <div class="form-group">
+           <label for="usr">First Name:</label>
+           <input type="text" class="form-control" id="firstNameField">
+          </div>
+          <div class="form-group">
+           <label for="usr">Last Name:</label>
+           <input type="text" class="form-control" id="lastNameField">
+          </div>
+          <div class="form-group">
+           <label for="usr">Age:</label>
+           <input type="text" class="form-control" id="ageField">
+          </div>
+      </div>
+
+      <br />
+
+      <button id="btnSubmit" onClick="addPlayerInfo(); window.location.href = './memory.html';">play?</button>
+
+      <!--Random Number Generator Test-->
+      <!--<button id="btnSubmit" onClick="">play again?</button>-->
+
+    </body>
+
 </html>

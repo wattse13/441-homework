@@ -1,19 +1,19 @@
 <!--
 Author: Eli Watts
-File Name: amoeba.html
-Date: 03/25/2020
-Purpose: MART 441 Homework Assignment #11
+File Name: pokemon.html
+Date: 03/10/2020
+Purpose: MART 441 Homework Assignment #9
 -->
 <!DOCTYPE html>
 
 <html>
 
     <head>
-        <title>Eli Watts' MART 441 Assignment 11</title>
+        <title>Eli Watts' MART 441 Assignment 9</title>
 
         <!--Meta information-->
         <meta charset="utf-8">
-        <meta name="description" content="MART 441, Assignment 11">
+        <meta name="description" content="MART 441, Assignment 9">
         <meta name="author" content="Eli Watts">
 
         <!--Matches screen's width in device-independent pixels-->
@@ -43,7 +43,8 @@ Purpose: MART 441 Homework Assignment #11
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         <!--JavaScript File Link-->
-        <script src="../script/lonelyPong.js"></script>
+        <script src="../script/pokemon.js"></script>
+        <script src="../script/typePlugin.js"></script>
     </head>
 
     <body>
@@ -71,20 +72,30 @@ Purpose: MART 441 Homework Assignment #11
              <li><a href="./gallery.html">gallery?</a></li>
              <li><a href="./jqueryArt.html">some movement?</a></li>
              <li><a href="./pokemon.html">some pokemon?</a></li>
-             <li><a href="./amoeba.html">some ghost?</a></li>
            </ul>
           </div>
         </div>
       </div><!--End of row Section-->
 
+      <div id="pokemonInformation">
+        <h2 id="pokemonName"></h2>
+          <div id="pokemonImage">
+            <img id="imageFilePath" src="" class="pokemonImages">
+          </div>
+          <br />
+        <div class="container-fluid" id="pokemonText">
+          <p id="pokemonTypes"></p>
+        </div>
+      </div>
+
       <br />
-      <canvas id="myCanvas" height="400" width="600"></canvas>
       <br />
-      <br />
+
       <button id="startButton">start?</button>
-      <br />
-      <audio id="song" src="../images/singingGhosts.wav" controls="controls"></audio>
-      <br />
+      <div id="backForward">
+        <button id="previousButton">previous?</button>
+        <button id="nextButton">next?</button>
+      </div>
 
   </body>
 </html>

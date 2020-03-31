@@ -1,19 +1,19 @@
 <!--
 Author: Eli Watts
-File Name: amoeba.html
-Date: 03/25/2020
-Purpose: MART 441 Homework Assignment #11
+File Name: gallery.html
+Date: 12/02/2020
+Purpose: MART 441 Homework Assignment #8
 -->
 <!DOCTYPE html>
 
 <html>
 
     <head>
-        <title>Eli Watts' MART 441 Assignment 11</title>
+        <title>Eli Watts' MART 441 Assignment 8</title>
 
         <!--Meta information-->
         <meta charset="utf-8">
-        <meta name="description" content="MART 441, Assignment 11">
+        <meta name="description" content="MART 441, Assignment 8">
         <meta name="author" content="Eli Watts">
 
         <!--Matches screen's width in device-independent pixels-->
@@ -43,10 +43,11 @@ Purpose: MART 441 Homework Assignment #11
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         <!--JavaScript File Link-->
-        <script src="../script/lonelyPong.js"></script>
+        <script src="../script/memory.js"></script>
+        <script src="../script/gallery.js"></script>
     </head>
 
-    <body>
+    <body onLoad="fillEmUp();">
 
       <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
       <!--h1 is set to 36px by Bootstrap-->
@@ -60,31 +61,35 @@ Purpose: MART 441 Homework Assignment #11
       <!--Bootstrap class col-sm-4 creates three equal-width columns that stack once screen size goes bellow 768px wide-->
       <!--Links move to different sections of webpage using header IDs-->
       <div class="row" id="navBar">
-        <div class="row" id="navBar">
-          <div class="col-sm-6"><a href="./index.html">home?</a></div>
-          <div class="col-sm-6">
+        <div class="col-sm-6"><a href="./index.html">home?</a></div>
+        <div class="col-sm-6">
           <div class="dropdown">
            <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown"> more ? <span class="caret"></span></button>
            <ul class="dropdown-menu">
+             <li><a href="./gallery.html">gallery?</a></li>
              <li><a href="./story.html">interactive story?</a></li>
              <li><a href="./memoryintro.html">memory?</a></li>
-             <li><a href="./gallery.html">gallery?</a></li>
-             <li><a href="./jqueryArt.html">some movement?</a></li>
-             <li><a href="./pokemon.html">some pokemon?</a></li>
-             <li><a href="./amoeba.html">some ghost?</a></li>
            </ul>
           </div>
         </div>
       </div><!--End of row Section-->
 
-      <br />
-      <canvas id="myCanvas" height="400" width="600"></canvas>
-      <br />
-      <br />
-      <button id="startButton">start?</button>
-      <br />
-      <audio id="song" src="../images/singingGhosts.wav" controls="controls"></audio>
+      <h2 id="imageTitle"></h2>
+        <div id="galleryImages">
+          <img id="imageFilePath" src="" class="galleryImages">
+        </div>
+        <br />
+      <div class="container-fluid" id="galleryText">
+        <p id="imageDescription"></p>
+        <p id="imageAuthor"></p>
+        <p id="imageYear"></p>
+      </div>
+
       <br />
 
-  </body>
+      <button id="btnSubmit" onClick="spitEmOut();">next?</button>
+
+      <br />
+
+    </body>
 </html>
