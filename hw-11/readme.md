@@ -1,29 +1,29 @@
 # Eli Watts
 # MART 441
-# Homework Assignment 10
+# Homework Assignment 11
 
 ## Intro
 
-While I was very excited to learn about collisions and keyboard-controlled objects, I found this week to be rather difficult. That may be because the current global pandemic is making it difficult to focus on anything, or because I keep making, and over-looking, small mistakes like misspelled words. I started the week excited to try and make a game, but things did not work out as planned. The code I am turning in, sort of meets most of the homework requirements, but doesn’t really do anything interesting. Hopefully now that I better understand the concepts from this week, I will be able to make something a bit more polished for the upcoming week.
-
+This week went mostly well. I was able to adapt the week 12 example code into something that meets all the homework 11 requirements. Originally, I had hoped to reuse my code from week 11, but after spending a lot of time trouble shooting, I decided to use the week 12 example code so that I could focus more on other aspects of the homework. It would have been nice to add some other elements to this project, like moving collectables or antagonistic squares that follow the player square and damage it, but I am happy that I was able to get everything working as it currently does. Hopefully, I will be able to use what I learned here in my final project.
 
 ## What Worked?
 
-I was eventually able to create two class-based objects which can interact with one another through collision detection. After the document loads and the start button is pressed, the `keypress` method looks for any instances of keys being pressed on `this` page. When a key is pressed, its keycode is translated into a string. This string is then used to determine which direction the object will move in.
+In broader strokes, the program works by using information stored in JSON objects to create class-based object instances which are then stored in arrays. By passing these objects into different functions they can have their positions updated, they can be checked for collisions, and they can be spliced from their array.
 
-The two objects, `player1` and `ghost1` are created from the `LonelyPongPlayers` class. Using dot notation, these objects can have their x and y position coordinates manipulated so that they move across the screen. To prevent each object from ‘streaking’ the canvas is cleared each time an object moves.
+Once the document has finished loading and the start button has been pressed the functions `setup();` and `getKey(event);` are called. Function `setup();` creates three new object instances based of the Square and Wall class, loads two JSON objects and assigns them to the variables data and info. For loops then create new object instances from the `Square` and `Wall` classes until all objects stored in the JSON files have been iterated through. Finally, the `drawSquare();` function is called.
 
-As both squares are objects, they can be passed into the `hasCollided();` function which checks to see if their perimeters are overlapping with each other every time they move. If they do overlap, the function returns true, which can then trigger other functions, like my `rude();` function.
+The `getKey(event);` function is a large function which does a couple different things. The ‘event’ argument which fills its input parameter means the function is called every time a key press event occurs on this webpage. First anytime a key is pressed, that key’s keycode is translated into its corresponding key value. Then, if-statements are used to call different functions depending on which key is pressed. For example, if the ‘w’ key is pressed the function `moveUp();` is called and the variable `direction` is assigned the value “up”.
 
-The `rude();` function changes the canvas background color to black, shrinks the `ghost1` object and causes a window alert to pop up on screen.
+Next the `getKey(event);` function initializes three variables. The test variables are then assigned either a Boolean value of false, or the value of what the function `hasCollided();` returns. For loops are again used to test the position of square1 against the positions of all the objects in the `squareArray[]` and in the `wallArray[]`. If square1 collides with a `Square` object instance, that square is spliced from the array and the value of the `lives` variable is increased by one. If square1 collides with a `Wall` object instance the `moveDirection()` function opposite of the current value of the `direction` variable is called. Finally, the `someBoundaries(square1);` function and the `drawSquare()` function are called. 
 
+The `drawSquare();` function first clears the canvas which prevents moving shapes from streaking across the canvas. Next, square1 is drawn onto the canvas at its current x and y position, with its current width and height values, and with its `.mainColor` value. A for loop iterates through all objects within the `squaresArray[]` and draws them to the canvas. The same process is then repeated for all the objects within the `wallsArray[]`.
 
+The `hasCollided( object1 , object2 );` function requires two input parameters. Using objects as arguments for these input parameters then allows the function to check the perimeters of object1 against the perimeter of object2 to see if the two objects overlap. By using a for loop and by passing an array into the `hasCollided();` function as an argument, object1 can be tested for overlap against all objects stored within an array.
+
+And finally, the `someBoundaries(object1);` function checks to see if whatever object is passed in as an argument either exceeds or is less than the canvas boundaries. If any of the if statements within the function evaluate to true, then the object’s x or y coordinates are updated to back within the canvas boundaries.
 
 ## What Didn’t Work?
 
+As stated in the intro, I was hoping to reuse my own code from the previous week. When I tried doing so however, I was unable to get my JSON objects to load properly. In hindsight, I think it was because I did not reference my JSON objects correctly. Thankfully, last weeks code worked similarly to the week 12 example code, so I did not have to change much about my original approach.
 
-Aside from misspelling the word ‘constructor’ I think the biggest mistake I made when attempting this week’s assignment was to try and make all the movement and update functions class methods rather than external functions. Trying to use class methods did work for a little bit. For example, I was able to draw my objects and even update them with the `setInterval()` function. However, once I tried moving my objects around, with keypresses or otherwise, I often ran into errors stating that my functions were undefined. I think this is in part because I was calling functions before having defined them. 
-
-Unfortunately, I did not have time to set up a ‘perimeter’ from which my objects could not escape. If I remember correctly from P5.js then I think the process of doing so would be to create an object which encompasses the entire canvas and then use a modified version of the `hasCollided();` function which would have all of its greater than or lesser than logical operators reversed.
-
-I think I understand the necessity and usefulness of using getters and setters, but I don’t really understand how to use them in a practical way. I made sure to include getters and setters for all of my class properties, but I don’t think I actually ended up making use of them.
+I wanted to try and add more game elements to my project. For example, it would have been nice to add a function that would prevent the player-controlled square from collecting something if the collectable were bigger than the player square. When I tried implementing this in the `omNom();` function, I was unable to get the results I wanted.

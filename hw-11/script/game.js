@@ -8,13 +8,10 @@ Purpose: MART 441 Homework Assignment #11
 //Initializes global variables and assigns them values
 var canvas;
 var ctx;
-var x = 50;
-var y = 50;
 var square1, square2;
 var direction;
-var questions;
-var squareArray = [];
 var lives = 0;
+var squareArray = [];
 var wallArray = [];
 
 //Once document has finished loading, start button can be clicked to call function setup() and getKey()
@@ -88,7 +85,7 @@ function getKey(event) {
 
     //Creates four variables for use in testing for collisions
     //Also copied from week 12 example code
-    var test;
+    //var test;
     var test2 = false;
     var test3;
     var test4 = false;
@@ -103,7 +100,7 @@ function getKey(event) {
             break;
         }
     //If test or test2 return true the value of variable lives increases by one and the square[i] square1 collided with is spliced from the squareArray
-    } if( test || test2 ) {
+    } if( test2 ) {
         lives ++;
         squareArray.splice( i , 1 );
     }
@@ -200,7 +197,7 @@ function hasCollided(object1, object2) {
 //By passing in square1 object function can check if its x or y values exceed or is less than the canvas x and y values
 //A little buggy as square1 can partially pass through some boundaries
   //Would require a little math to fix
-  //For example adding or subtracting some portion of square1's height or width value to the myCanvas x or y values 
+  //For example adding or subtracting some portion of square1's height or width value to the myCanvas x or y values
 function someBoundaries( object ) {
   if( object.y <= 0 ) {
     moveDown();
@@ -216,6 +213,9 @@ function someBoundaries( object ) {
   }
 }
 
+//Failed function that would have checked if square1 was bigger than whatever object it was colliding with
+//If square 1 were bigger then the object would be spliced from the array and square1 would grow in size
+//Unable to get to work, though I did at one point manage to splice every square object except for the square object square1 collided with which was kinda neat in a frusturating way
 /*function omNom( object1 , object2 ) {
   if( object1.h > object2.h ) {
     object1.h += 10;
