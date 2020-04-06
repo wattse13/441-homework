@@ -90,6 +90,12 @@ function create ()
 
     //  Input Events
     cursors = this.input.keyboard.createCursorKeys();
+    /*this.cursors = this.input.keyboard.addKeys(
+      {up:Phaser.Input.Keyboard.KeyCodes.spacebar,
+      down:Phaser.Input.Keyboard.KeyCodes.S,
+      left:Phaser.Input.Keyboard.KeyCodes.A,
+      right:Phaser.Input.Keyboard.KeyCodes.D});*/
+    //game.input.keyboard.addKeys({ 'up': Phaser.Keyboard.SPACEBAR });
 
     //  Some stars to collect, 12 in total, evenly spaced 70 pixels apart along the x axis
     stars = this.physics.add.group({
@@ -147,7 +153,7 @@ function update ()
         player.anims.play('turn');
     }
 
-    if (cursors.up.isDown && player.body.touching.down)
+    if (cursors.space.isDown && player.body.touching.down)
     {
         player.setVelocityY(-330);
     }
