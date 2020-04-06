@@ -5,6 +5,9 @@ Date: 03/31/2020
 Purpose: MART 441 Homework Assignment #11
 */
 
+//Class definitions
+//Copied from week 12 example code 
+
 class Square{
 
     constructor(xCoord,yCoord,objectHeight,objectWidth, color)
