@@ -1,0 +1,133 @@
+<!--
+Author: Eli Watts
+File Name: index.html
+Date: 04/06/2020
+Purpose: MART 441 Homework Assignment #12
+-->
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Eli Watts' MART 441 Assignment 12</title>
+
+        <!--Meta information-->
+        <meta charset="utf-8">
+        <meta name="description" content="MART 441, Assignment 12">
+        <meta name="author" content="Eli Watts">
+
+        <!--Matches screen's width in device-independent pixels-->
+        <!--Establishes 1:1 relationship between CSS pixels and device-independent pixels-->
+        <!--From Pete LePage's Responsive Web Design Basics Course-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Latest compiled and minified CSS -->
+        <!--Allows me to use Bootstrap's CSS style content Library-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!--Links to downloaded version of Bootstrap-->
+        <!--Using this version rather than links to online versions changes navbar elements from inline elements to block elements-->
+        <!--<link rel="stylesheet" type="text/css" href=".bootstrap-4.1.1-dist/css/bootstrap.css">-->
+
+        <!--CSS Links-->
+        <!--Font Style Sheet Linked First To Prevent style issues-->
+        <link rel="stylesheet" href="../style/fonts.css">
+        <link rel="stylesheet" href="../style/style.css">
+
+        <!-- jQuery library -->
+        <!--Probably not necessary for this project, but allows me to use Bootstraps JQuery Library-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <!--Probably not necessary for this project, but allows me to use Bootstraps JavaScript Library-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <!--JavaScript File Link-->
+        <!--<script src="../script/script.js"></script>-->
+    </head>
+
+    <body>
+
+      <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
+      <!--h1 is set to 36px by Bootstrap-->
+      <!--byLine class allows me to style line 42 in my CSS stylesheet-->
+      <div class="container-fluid">
+        <h1>rotten strawberry blog</h1>
+        <p class="byLine">a blog for gross stories.</p>
+      </div><!--End of container-fluid Section-->
+
+      <!--Bootstrap's row and col classes create a responsive grid that change based on screen size-->
+      <!--Bootstrap class col-sm-4 creates three equal-width columns that stack once screen size goes bellow 768px wide-->
+      <!--Links move to different sections of webpage using header IDs-->
+      <div class="row" id="navBar">
+        <div class="col-sm-3"><a href="#aboutSect">about?</a></div>
+        <div class="col-sm-3"><a href="#skillSect">skills?</a></div>
+        <div class="col-sm-3"><a href="#meSect">me?</a></div>
+        <div class="col-sm-3">
+          <div class="dropdown">
+           <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown"> more ? <span class="caret"></span></button>
+           <ul class="dropdown-menu">
+             <li><a href="./story.html">interactive story?</a></li>
+             <li><a href="./memoryintro.html">memory?</a></li>
+             <li><a href="./gallery.html">gallery?</a></li>
+             <li><a href="./jqueryArt.html">some movement?</a></li>
+             <li><a href="./pokemon.html">some pokemon?</a></li>
+             <li><a href="./amoeba.html">some ghost?</a></li>
+             <li><a href="./game.html">some game?</a></li>
+           </ul>
+          </div>
+        </div>
+      </div><!--End of row Section-->
+
+      <!--Tried using Bootstrap Navbar Element-->
+      <!--Was unable to format it properly, i.e.couldn't center it on screen-->
+      <!--<nav class="navbar-fixed-top">
+        <ul class="nav navbar-nav">
+          <li><a href="#aboutSect">about?</a></div></li>
+          <li><a href="#skillSect">skills?</a></div></li>
+          <li><a href="#meSect">me?</a></li>
+        </ul>
+      </nav>-->
+
+      <!--Picture element changes displayed image, from landscape img to portrait img, when screen width goes bellow 768px-->
+      <!--While image responds to different screen sizes, the alt and title tags do not. I don't know why-->
+      <!--Would have liked to make this a parallax img, but could not-->
+      <picture>
+        <source srcset="../images/fly.jpg" media="(max-width: 768px)" title="fly" id="fly">
+        <source srcset="../images/site-logo.jpg">
+        <img src="../images/site-logo.jpg" alt="Digitally Manipulated Picture of Rotten Strawberry" title="gross strawberry" id="strawberry">
+      </picture><!--End of picture Section-->
+
+      <!--Creates new container that extends full viewport width-->
+      <!--Bootstrap sets h2 to 30px-->
+      <!--h2 id lets me link to it using hyperlinks in navBar-->
+      <div class="container-fluid">
+        <h2 id="aboutSect">about?</h2>
+        <p>This blog is a collection of my attempts at storytelling. So far it contains mostly visual and written works, though one day I would like to include some interactive stories as well.</p>
+        <p>If you, like me, are interested in the art of storytelling, I hope you’ll stick around and check out some of my attempts at, experiments with, and failures to tell stories.</p>
+      </div><!--End of container-fluid Section-->
+
+      <!--Creates new container that extends full viewport width-->
+      <!--Bootstrap sets h2 to 30px-->
+      <!--h2 id lets me link to it using hyperlinks in navBar-->
+      <div class="container-fluid">
+        <h2 id="skillSect">skills?</h2>
+        <p>Like my father before me, and his father before him, I am a jack of all trades. Actually, the word <b>all</b> is a bit generous. A jack of a couple trades fits better.</p>
+        <p>I started my career as a working individual as a professional dishwasher. My parents, impressed by my ability to clean and organize dishes in a fast and efficient manner, suggested I try going pro at a young age. As luck would have it, a local restaurant hired me and I spent three years juggling typical high school responsibilities, with the glamour of the professional dishwashing life.</p>
+        <p>After my retirement from the professional dishwashing world and graduation from high school, I moved to Germany and spent three years learning how to build and repair violins. While not as glamourous as professional dishwashing, I did learn many things during my time as a luthier. Most importantly, I learned the fundamentals of turning raw materials into a finished story. A skill that can be applied to almost any creative or professional endeavor.</p>
+        <p>After three years, I knew I didn’t want to be a luthier for the rest of my life. So, I began studying at the University of Montana and working as an English tutor to help support myself. During my time in the Media Arts Program my love for story telling expanded to include forms beyond the written word. Adobe programs, like Photoshop, Illustrator, and Premier, have become tools I use regularly to tell stories. I’ve experimented with the Unity Game Engine, and now I’m exploring the world of web design.</p>
+      </div><!--End of container-fluid Section-->
+
+      <!--Creates new container that extends full viewport width-->
+      <!--Bootstrap sets h2 to 30px-->
+      <!--h2 id lets me link to it using hyperlinks in navBar-->
+      <!--Hyperlink at end links back to top of web page-->
+      <div class="container-fluid">
+        <h2 id="meSect">me?</h2>
+        <p>I am a currently a Junior in the Media Arts Program at the University of Montana. When not studying or working as an English tutor, I enjoy reading, writing, climbing, or playing video games. Currently, I live in Germany, and am hoping the German immigration office will allow me to stay indefinitely.</p>
+        <p><a href="#">Back to Top.</a><!--End of container-fluid Section-->
+      </div>
+
+    </body>
+
+</html>
