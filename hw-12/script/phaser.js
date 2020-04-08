@@ -84,7 +84,7 @@ function create ()
     ow.create( 100 , 460 , 'mines' );
 
     // The player and its settings
-    player = this.physics.add.sprite(200, 450, 'dude');
+    player = this.physics.add.sprite(200, 450, 'cat');
 
 
     //  Player physics properties. Give the little guy a slight bounce.
@@ -140,7 +140,7 @@ function create ()
     this.physics.add.collider(stars, platforms);
     this.physics.add.collider(bombs, platforms);
     //this.physics.add.collider( player , gems );
-    this.physics.add.collider( gems , platforms );
+    //this.physics.add.collider( gems , platforms );
 
     //  Checks to see if the player overlaps with any of the stars if he does call the collectStar function
     this.physics.add.overlap(player, stars, collectStar, null, this);

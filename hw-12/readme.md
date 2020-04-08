@@ -1,29 +1,25 @@
 # Eli Watts
 # MART 441
-# Homework Assignment 11
+# Homework Assignment 12
 
 ## Intro
-
-This week went mostly well. I was able to adapt the week 12 example code into something that meets all the homework 11 requirements. Originally, I had hoped to reuse my code from week 11, but after spending a lot of time trouble shooting, I decided to use the week 12 example code so that I could focus more on other aspects of the homework. It would have been nice to add some other elements to this project, like moving collectables or antagonistic squares that follow the player square and damage it, but I am happy that I was able to get everything working as it currently does. Hopefully, I will be able to use what I learned here in my final project.
+While I was mostly successful in implementing five new changes to the week 13 example code, there is still a lot of syntax that I don’t understand. Thankfully, there are also a lot of elements I do recognize from P5.js and from JavaScript, which is exciting. I would like to learn more about how to use the phaser library, but for some reason, I am finding it difficult to find working tutorials online. The examples provided by phaser.io often don’t load properly.
 
 ## What Worked?
 
-In broader strokes, the program works by using information stored in JSON objects to create class-based object instances which are then stored in arrays. By passing these objects into different functions they can have their positions updated, they can be checked for collisions, and they can be spliced from their array.
+This week, I managed to add new collectable items, print the current level to the screen and update it once all stars are collected, add additional hazards, change the jump button from the up arrow key to the spacebar, and change the player character to a cat.
 
-Once the document has finished loading and the start button has been pressed the functions `setup();` and `getKey(event);` are called. Function `setup();` creates three new object instances based of the Square and Wall class, loads two JSON objects and assigns them to the variables data and info. For loops then create new object instances from the `Square` and `Wall` classes until all objects stored in the JSON files have been iterated through. Finally, the `drawSquare();` function is called.
+A couple changes were very easy. For example, moving the jump button to the space bar required changing `(cursors.up.isDown && player.body.touching.down)` to `(cursors.space.isDown && player.body.touching.down)`. Changing the player sprite to a cat was also similarly easy. After changing which sprite was preloaded, I then made sure that each `this.animis.create()` cycled through the correct images.
 
-The `getKey(event);` function is a large function which does a couple different things. The ‘event’ argument which fills its input parameter means the function is called every time a key press event occurs on this webpage. First anytime a key is pressed, that key’s keycode is translated into its corresponding key value. Then, if-statements are used to call different functions depending on which key is pressed. For example, if the ‘w’ key is pressed the function `moveUp();` is called and the variable `direction` is assigned the value “up”.
+To make the additional hazards and the additional collectables, I more-or-less copied how the star collectables were created. First, I preloaded the images I wanted to use for my hazards and additional collectables. In the `create(){}` section, I then assigned a value of `.physics.add.staticGroup()` to the global variables `ow` and `gems`. While creating the additional hazards and collectables I referred back to the preloaded images using each preloaded image’s key. Finally, I added overlap checks to the various objects and the player. When an overlap is detected, then different functions are triggered.
 
-Next the `getKey(event);` function initializes three variables. The test variables are then assigned either a Boolean value of false, or the value of what the function `hasCollided();` returns. For loops are again used to test the position of square1 against the positions of all the objects in the `squareArray[]` and in the `wallArray[]`. If square1 collides with a `Square` object instance, that square is spliced from the array and the value of the `lives` variable is increased by one. If square1 collides with a `Wall` object instance the `moveDirection()` function opposite of the current value of the `direction` variable is called. Finally, the `someBoundaries(square1);` function and the `drawSquare()` function are called. 
+The `hitGem( player , gem );` function removes the gem from the screen and updates the `score` variable by adding twenty to it. The `hitMine( player , mines );` function turns the player character red, pauses the physics, and triggers the `gameOver();` function.
 
-The `drawSquare();` function first clears the canvas which prevents moving shapes from streaking across the canvas. Next, square1 is drawn onto the canvas at its current x and y position, with its current width and height values, and with its `.mainColor` value. A for loop iterates through all objects within the `squaresArray[]` and draws them to the canvas. The same process is then repeated for all the objects within the `wallsArray[]`.
-
-The `hasCollided( object1 , object2 );` function requires two input parameters. Using objects as arguments for these input parameters then allows the function to check the perimeters of object1 against the perimeter of object2 to see if the two objects overlap. By using a for loop and by passing an array into the `hasCollided();` function as an argument, object1 can be tested for overlap against all objects stored within an array.
-
-And finally, the `someBoundaries(object1);` function checks to see if whatever object is passed in as an argument either exceeds or is less than the canvas boundaries. If any of the if statements within the function evaluate to true, then the object’s x or y coordinates are updated to back within the canvas boundaries.
 
 ## What Didn’t Work?
 
-As stated in the intro, I was hoping to reuse my own code from the previous week. When I tried doing so however, I was unable to get my JSON objects to load properly. In hindsight, I think it was because I did not reference my JSON objects correctly. Thankfully, last weeks code worked similarly to the week 12 example code, so I did not have to change much about my original approach.
+I think a lot of what didn’t work this week is related to how little I know about the phaser library. I am comfortable creating new static groups, adding collider/overlap detectors, and cycling through sprite sheets. But beyond that, I am rather unsure of how to do things.
 
-I wanted to try and add more game elements to my project. For example, it would have been nice to add a function that would prevent the player-controlled square from collecting something if the collectable were bigger than the player square. When I tried implementing this in the `omNom();` function, I was unable to get the results I wanted.
+For example, I wanted to redraw additional collectables once the player had collected all of them – similar to how a new batch of stars appear once all have been collected. However, I don’t entirely understand how the star objects are created, and then re-created.
+
+Originally, I wanted the mine objects to reduce the player’s score rather than trigger the `gameOver();` function. However, when I tried to implement this, I ended creating a bug which continuously reduced the player’s score until they picked up another collectable. I think this is because there was no exit condition for the function to stop subtracting once the function was called. Maybe adding the phaser equivalent of `setInterval();` could prevent this bug from occurring.
