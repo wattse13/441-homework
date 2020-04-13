@@ -6,27 +6,27 @@ Purpose: MART 441 Final Project
 */
 
 var map = {
-    cols: 8,
+    cols: 12,
     rows: 8,
     tsize: 64,
     layers: [[
-        3, 3, 3, 3, 3, 3, 3, 3,
-        3, 1, 1, 1, 1, 1, 1, 3,
-        3, 1, 1, 1, 1, 2, 1, 3,
-        3, 1, 1, 1, 1, 1, 1, 3,
-        3, 1, 1, 2, 1, 1, 1, 3,
-        3, 1, 1, 1, 2, 1, 1, 3,
-        3, 1, 1, 1, 2, 1, 1, 3,
-        3, 3, 3, 1, 2, 3, 3, 3
+        3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+        3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3,
+        3, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 3,
+        3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3,
+        3, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 3,
+        3, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 3,
+        3, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 3,
+        3, 3, 3, 1, 2, 3, 3, 3, 3, 3, 3, 3
     ], [
-        4, 3, 3, 3, 3, 3, 3, 4,
-        4, 0, 0, 0, 0, 0, 0, 4,
-        4, 0, 0, 0, 0, 0, 0, 4,
-        4, 0, 0, 5, 0, 0, 0, 4,
-        4, 0, 0, 0, 0, 0, 0, 4,
-        4, 0, 0, 0, 0, 0, 0, 4,
-        4, 4, 4, 0, 5, 4, 4, 4,
-        0, 3, 3, 0, 0, 3, 3, 3
+        4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4,
+        4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4,
+        4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4,
+        4, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 4,
+        4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4,
+        4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4,
+        4, 4, 4, 0, 5, 4, 4, 4, 4, 4, 4, 4,
+        0, 3, 3, 0, 0, 3, 3, 3, 3, 3, 3, 3
     ]],
     getTile: function (layer, col, row) {
         return this.layers[layer][row * map.cols + col];
@@ -36,13 +36,13 @@ var map = {
 Game.load = function () {
     return [
         Loader.loadImage('tiles', '../assets/images/tiles.png'),
-        Loader.loadImage('character', '../assets/images/character.png')
+        Loader.loadImage('character', '../assets/images/pumpkinBoy.png')
     ];
 };
 
 Game.init = function () {
     this.tileAtlas = Loader.getImage('tiles');
-    this.hero = {x: 128, y: 384, image: Loader.getImage('character')};
+    this.hero = {x: 128, y: 320, image: Loader.getImage('character')};
 };
 
 Game._drawLayer = function (layer) {
