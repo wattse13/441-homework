@@ -1,0 +1,98 @@
+<!--
+Author: Eli Watts
+File Name: memory.html
+Date: 21/02/2020
+Purpose: MART 441 Homework Assignment #6
+-->
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Eli Watts' MART 441 Assignment 6</title>
+
+        <!--Meta information-->
+        <meta charset="utf-8">
+        <meta name="description" content="MART 441, Assignment 6">
+        <meta name="author" content="Eli Watts">
+
+        <!--Matches screen's width in device-independent pixels-->
+        <!--Establishes 1:1 relationship between CSS pixels and device-independent pixels-->
+        <!--From Pete LePage's Responsive Web Design Basics Course-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Latest compiled and minified CSS -->
+        <!--Allows me to use Bootstrap's CSS style content Library-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!--Links to downloaded version of Bootstrap-->
+        <!--Using this version rather than links to online versions changes navbar elements from inline elements to block elements-->
+        <!--<link rel="stylesheet" type="text/css" href=".bootstrap-4.1.1-dist/css/bootstrap.css">-->
+
+        <!--CSS Links-->
+        <!--Font Style Sheet Linked First To Prevent style issues-->
+        <link rel="stylesheet" href="../style/fonts.css">
+        <link rel="stylesheet" href="../style/style.css">
+
+        <!-- jQuery library -->
+        <!--Probably not necessary for this project, but allows me to use Bootstraps JQuery Library-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <!--Probably not necessary for this project, but allows me to use Bootstraps JavaScript Library-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <!--JavaScript File Link-->
+        <script src="../script/memory.js"></script>
+        <script src="../script/json.js"></script>
+    </head>
+
+    <body onLoad="printBlanks(); displayPlayerInfo();">
+      <!--Bootstrap's container-fluid class automatically spans the entire viewport width-->
+      <!--h1 is set to 36px by Bootstrap-->
+      <!--byLine class allows me to style line 42 in my CSS stylesheet-->
+      <div class="container-fluid">
+        <h1>rotten strawberry blog</h1>
+        <p class="byLine">a blog for gross stories.</p>
+      </div><!--End of container-fluid Section-->
+
+      <!--Bootstrap's row and col classes create a responsive grid that change based on screen size-->
+      <!--Bootstrap class col-sm-4 creates three equal-width columns that stack once screen size goes bellow 768px wide-->
+      <!--Links move to different sections of webpage using header IDs-->
+      <div class="row" id="navBar">
+        <div class="col-sm-6"><a href="./index.html">home?</a></div>
+        <div class="col-sm-6"><a href="./memoryintro.html">memory?</a></div>
+      </div><!--End of row Section-->
+
+      <div id="memoryGrid">
+
+        <table class="table table-condensed">
+          <tbody>
+            <tr>
+              <td><div class="divTableCell"><img src="" id="spider1" width="250" height="200" onclick="flipImage(0);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider2" width="250" height="200" onclick="flipImage(1);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider3" width="250" height="200" onclick="flipImage(2);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider4" width="250" height="200" onclick="flipImage(3);"></div></td>
+            </tr>
+            <tr>
+              <td><div class="divTableCell"><img src="" id="spider5" width="250" height="200" onclick="flipImage(4);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider6" width="250" height="200" onclick="flipImage(5);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider7" width="250" height="200" onclick="flipImage(6);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider8" width="250" height="200" onclick="flipImage(7);"></div></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><div class="divTableCell"><img src="" id="spider9" width="250" height="200" onclick="flipImage(8);"></div></td>
+              <td><div class="divTableCell"><img src="" id="spider10" width="250" height="200" onclick="flipImage(9);"></div></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button id="btnSubmit" onClick="location.reload();">retry?</button>
+
+    </body>
+
+</html>
