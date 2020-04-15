@@ -31,8 +31,11 @@ var gameMap = [
 ];
 
 var tileset = null;
-var tilesetURL = "../assets/images/tutorialTiles.png";
+var charset = null;
+var tilesetURL = "../assets/images/tileSet.png";
+var charSetURL = "../assets/images/charSet.png";
 var tilesetLoaded = false;
+var charsetLoaded = false;
 
 var floorTypes = {
 	solid	: 0,
@@ -41,6 +44,14 @@ var floorTypes = {
 };
 
 var tileTypes = {
+  0 : { floor:floorTypes.solid, sprite:[{x:237,y:220,w:16,h:16}] },
+	1 : { floor:floorTypes.path,	sprite:[{x:84,y:0,w:16,h:16}]	   },
+	2 : { floor:floorTypes.path,	sprite:[{x:101,y:0,w:16,h:16}]   },
+	3 : { floor:floorTypes.solid,	sprite:[{x:237,y:254,w:16,h:16}] },
+	4 : { floor:floorTypes.water,	sprite:[{x:0,y:0,w:16,h:16} ]    }
+};
+
+/*var tileTypes = {
   0 : { colour:"#685b48", floor:floorTypes.solid, sprite:[{x:0,y:0,w:64,h:64}]	 },
 	1 : { colour:"#5aa457", floor:floorTypes.path,	sprite:[{x:64,y:0,w:64,h:64}]	 },
 	2 : { colour:"#e8bd7a", floor:floorTypes.path,	sprite:[{x:128,y:0,w:64,h:64}] },
@@ -50,7 +61,7 @@ var tileTypes = {
 			{x:320,y:0,w:64,h:64,d:200}, {x:512,y:0,w:64,h:64,d:200},
 			{x:384,y:0,w:64,h:40,d:200}, {x:448,y:0,w:64,h:64,d:200}
     ]}
-};
+};*/
 
 var directions = {
 	up		: 0,
@@ -84,8 +95,8 @@ var viewport = {
 	}
 };
 
-var tileW = 64;
-var tileH = 64;
+var tileW = 16;
+var tileH = 16;
 var mapW = 20;
 var mapH = 20;
 
@@ -108,15 +119,15 @@ function Character() {
 	this.tileFrom	= [1,1];
 	this.tileTo		= [1,1];
 	this.timeMoved	= 0;
-	this.dimensions	= [64,64];
-	this.position	= [64,64];
+	this.dimensions	= [16,16];
+	this.position	= [16,16];
 	this.delayMove	= 700;
   this.direction	= directions.up;
   this.sprites = {};
-	this.sprites[directions.up]		= [{x:0,y:64,w:64,h:64}];
-	this.sprites[directions.right]	= [{x:64,y:64,w:64,h:64}];
-	this.sprites[directions.down]	= [{x:128,y:64,w:64,h:64}];
-	this.sprites[directions.left]	= [{x:192,y:64,w:64,h:64}];
+	this.sprites[directions.up]		= [{x:0,y:0,w:16,h:16}];
+	this.sprites[directions.right]	= [{x:16,y:0,w:16,h:16}];
+	this.sprites[directions.down]	= [{x:32,y:0,w:16,h:16}];
+	this.sprites[directions.left]	= [{x:48,y:0,w:16,h:16}];
 
 }
 
@@ -214,6 +225,17 @@ window.onload = function() {
 
   tileset.src = tilesetURL;
 
+  charset = new Image();
+
+  charset.onerror = function() {
+    ctx = null;
+    alert("Failed loading charset.");
+  };
+
+  charset.onload = function() { charsetLoaded = true; };
+
+  charset.src = charSetURL;
+
   for(x in tileTypes) {
     tileTypes[x]['animated'] = tileTypes[x].sprite.length > 1 ? true : false;
     if(tileTypes[x].animated) {
@@ -232,7 +254,7 @@ function drawGame() {
 
   if(ctx==null) { return; }
 
-  if(!tilesetLoaded) { requestAnimationFrame(drawGame); return; }
+  if(!tilesetLoaded && !charsetLoaded) { requestAnimationFrame(drawGame); return; }
 
   var currentFrameTime = Date.now();
 	var timeElapsed = currentFrameTime - lastFrameTime;
@@ -269,7 +291,7 @@ function drawGame() {
 	}
 
 	var sprite = player.sprites[player.direction];
-  ctx.drawImage(tileset, sprite[0].x, sprite[0].y, sprite[0].w, sprite[0].h,
+  ctx.drawImage(charset, sprite[0].x, sprite[0].y, sprite[0].w, sprite[0].h,
 		viewport.offset[0] + player.position[0], viewport.offset[1] + player.position[1], player.dimensions[0], player.dimensions[1]);
 
 
