@@ -5,7 +5,7 @@ Date: 04/14/2020
 Purpose: MART 441 Homework Assignment #13
 */
 
-var scene = new THREE.Scene();
+/*var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 var renderer = new THREE.WebGLRenderer();
@@ -29,11 +29,11 @@ cube.rotation.y += 0.01;
 
     renderer.render( scene, camera );
 }
-animate();
+animate();*/
 
 
 
-/*var scene = new THREE.Scene()
+var scene = new THREE.Scene()
         scene.overrideMaterial = new THREE.MeshBasicMaterial({
             color: 'green'
         });
@@ -77,4 +77,4 @@ animate();
             renderer.render(scene, camera);
         };
 
-        render();*/
+        render();
