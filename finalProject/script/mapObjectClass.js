@@ -6,7 +6,7 @@ Purpose: MART 441 Final Project
 */
 
 //Creates new MapObject class which wil lbe used to track object instances
-//Object id is passed in as argument
+//ObjectTypes id is passed in as argument and determines which object will be displayed
 function MapObject(nt)
 {
 	this.x		= 0;

@@ -27,13 +27,14 @@ function Tile(tx, ty, tt)
 function TileMap()
 {
 	this.map	= [];
+	this.objMap = [];
 	this.w		= 0;
 	this.h		= 0;
 	this.levels	= 4;
 }
 //TileMap method takes three arguments: `d` = gameMap array containing the tileType id to use for each map tile, `w` and `h` are the map width and height values
 //Method begins by setting `w` and `h` to correspond with the passed in dimensions
-TileMap.prototype.buildMapFromData = function(d, w, h)
+TileMap.prototype.buildMapFromData = function(d, objD, w, h)
 {
 	this.w		= w;
 	this.h		= h;
@@ -51,6 +52,15 @@ TileMap.prototype.buildMapFromData = function(d, w, h)
 			this.map.push( new Tile(x, y, d[((y*w)+x)]) );
 		}
 	}
+	//For loops loop through `d` array by row, and then by column
+	//Add new Tile object to this.map[] with from corresponding `x` and `y` postions and corresponding entry from `d` as the tileType ID
+	/*for(var i = 0; i < h; i++)
+	{
+		for(var j = 0; j < w; j++)
+		{
+			this.objMap.push( new Tile(x, y, objD[((y*w)+x)]) );
+		}
+	}*/
 	//Once loops have been iterated through, function returns true and exits the loop
 	return true;
 };

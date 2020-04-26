@@ -43,9 +43,44 @@ var gameMap = [
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 ];
 
+var objectMap = [
+  5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5
+
+];
+
 //Creates new instance of TileMap object
 //Will be used to store and manage loaded map data
 var mapTileData = new TileMap();
+//var objectTileData = new TileMap();
 
 //Arrays which hold information about roofs
 //`x` and `y` correspond to roof position on map and `w` and `h` correspond to roof width and height
@@ -80,6 +115,7 @@ var roofList = [
 //Initializes variables containing tile width and height and map width and height
 var tileW = 16, tileH = 16;
 var mapW = 30, mapH = 30;
+//var objMapW = 30 , objMapH = 30;
 
 //Initializes variables related to game timing
 var currentSecond = 0, frameCount = 0, framesLastSecond = 0, lastFrameTime = 0;
@@ -118,15 +154,15 @@ var objectTypes = {
 	},
 	2 : {
 		name : "Broken Box",
-		sprite : new Sprite([{x:220,y:135,w:40,h:40}]),
+		sprite : new Sprite([{x:220,y:135,w:16,h:16}]),
 		offset : [0,0],
 		collision : objectCollision.none,
 		zIndex : 1
 	},
 	3 : {
 		name : "Tree top",
-		sprite : new Sprite([{x:220,y:152,w:40,h:40}]),
-		offset : [-20,-20],
+		sprite : new Sprite([{x:238,y:153,w:16,h:16}]),
+		offset : [0,0],
 		collision : objectCollision.solid,
 		zIndex : 3
 	}
@@ -150,7 +186,7 @@ var floorTypes = {
 //Colour property is remnant from old code before use of tile sheet
 var tileTypes = {
 	0 : { floor:floorTypes.solid,
-		sprite:new Sprite([{x:238,y:221,w:16,h:16}])	},
+		sprite:new Sprite([{x:170,y:442,w:16,h:16}])	},
 	1 : { floor:floorTypes.grass,
 		sprite:new Sprite([{x:85,y:0,w:16,h:16}])	},
 	2 : { floor:floorTypes.path,
@@ -159,11 +195,11 @@ var tileTypes = {
 		sprite:new Sprite([{x:238,y:255,w:16,h:16}])	},
 	4 : { floor:floorTypes.water,
 		sprite:new Sprite([{x:0,y:0,w:16,h:16}])},
-	/*5 : { floor:floorTypes.ice,
-		sprite:new Sprite([{x:136,y:0,w:16,h:16}])	},
-	6 : { floor:floorTypes.conveyorL,
-		sprite:new Sprite([{x:187,y:238,w:16,h:16}])},
-	7 : { floor:floorTypes.conveyorR,
+	5 : { floor:floorTypes.solid,
+		sprite:new Sprite([{x:238,y:153,w:16,h:16}])	},
+	6 : { floor:floorTypes.path,
+		sprite:new Sprite([{x:1160,y:442,w:16,h:16}])},
+	/*7 : { floor:floorTypes.conveyorR,
 		sprite:new Sprite([{x:187,y:238,w:16,h:16}])},
 	8 : { floor:floorTypes.conveyorD,
 		sprite:new Sprite([{x:187,y:238,w:16,h:16}])},
@@ -283,15 +319,17 @@ window.onload = function()
 	tileset.src = tilesetURL;
 
   //Calls the buildMapFromData method and passes in gameMap object, mapW and mapH as arguments
-	mapTileData.buildMapFromData(gameMap, mapW, mapH);
+	mapTileData.buildMapFromData(gameMap, objectMap, mapW, mapH);
 	mapTileData.addRoofs(roofList);
-	mapTileData.map[((2*mapW)+2)].eventEnter = function()
+  //mapTileData.buildMapFromData( objectMap , objMapW , objMapH );
+	//mapTileData.map[((2*mapW)+2)].eventEnter = function()
+  //objectTileData.buildMapsFromData(objectMap , objMapW , objMapH );
 		{ console.log("Entered tile 2,2"); };
 
-	/*var mo1 = new MapObject(1); mo1.placeAt(2, 4);
-	var mo2 = new MapObject(2); mo2.placeAt(2, 3);
+	//var mo1 = new MapObject(3); mo1.placeAt( 0 , 0 );
+	//var mo2 = new MapObject(2); mo2.placeAt(2, 3);
 
-	var mo11 = new MapObject(1); mo11.placeAt(6, 4);
+	/*var mo11 = new MapObject(1); mo11.placeAt(6, 4);
 	var mo12 = new MapObject(2); mo12.placeAt(7, 4);
 
 	var mo4 = new MapObject(3); mo4.placeAt(4, 5);
@@ -381,29 +419,12 @@ function drawGame()
 					viewport.offset[0] + (x*tileW),
 					viewport.offset[1] + (y*tileH));
 			}
-			else if(z==1)
-			{
-				var is = mapTileData.map[toIndex(x,y)].itemStack;
-				if(is!=null)
-				{
-					itemTypes[is.type].sprite.draw(
-						gameTime,
-						viewport.offset[0] + (x*tileW) + itemTypes[is.type].offset[0],
-						viewport.offset[1] + (y*tileH) + itemTypes[is.type].offset[1]);
-				}
-			}
-
-			var o = mapTileData.map[toIndex(x,y)].object;
-			//Checks if an object exists on tile being drawn and if objectType's zIndex is equal to layer currently being drawn
-			//If true, object's sprite is drawn
-			if(o!=null && objectTypes[o.type].zIndex==z)
-			{
-				var ot = objectTypes[o.type];
-
-				ot.sprite.draw(gameTime,
-					viewport.offset[0] + (x*tileW) + ot.offset[0],
-					viewport.offset[1] + (y*tileH) + ot.offset[1]);
-			}
+      /*if(z==2) {
+        tileTypes[mapTileData.objMap[toIndex(x,y)].type].sprite.draw(
+          gameTime,
+					viewport.offset[0] + (x*tileW),
+					viewport.offset[1] + (y*tileH));
+      }*/
 
 			//If current layer being drawn is 2 and if roofType is not 0 and if player is not standing under roof, then roof sprites are drawn
 			if(z==2 &&
@@ -440,3 +461,28 @@ function drawGame()
 	lastFrameTime = currentFrameTime;
 	requestAnimationFrame(drawGame);
 }
+
+
+/*else if(z==1)
+{
+  var is = mapTileData.map[toIndex(x,y)].itemStack;
+  if(is!=null)
+  {
+    itemTypes[is.type].sprite.draw(
+      gameTime,
+      viewport.offset[0] + (x*tileW) + itemTypes[is.type].offset[0],
+      viewport.offset[1] + (y*tileH) + itemTypes[is.type].offset[1]);
+  }
+}
+
+var o = mapTileData.map[toIndex(x,y)].object;
+//Checks if an object exists on tile being drawn and if objectType's zIndex is equal to layer currently being drawn
+//If true, object's sprite is drawn
+if(o!=null && objectTypes[o.type].zIndex==z)
+{
+  var ot = objectTypes[o.type];
+
+  ot.sprite.draw(gameTime,
+    viewport.offset[0] + (x*tileW) + ot.offset[0],
+    viewport.offset[1] + (y*tileH) + ot.offset[1]);
+}*/
