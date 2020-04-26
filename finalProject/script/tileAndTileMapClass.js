@@ -31,7 +31,7 @@ function TileMap()
 	this.h		= 0;
 	this.levels	= 4;
 }
-//TileMap method takes three arguments: `d` = array containing the tileType id to use for each map tile, `w` and `h` are the map width and height values
+//TileMap method takes three arguments: `d` = gameMap array containing the tileType id to use for each map tile, `w` and `h` are the map width and height values
 //Method begins by setting `w` and `h` to correspond with the passed in dimensions
 TileMap.prototype.buildMapFromData = function(d, w, h)
 {

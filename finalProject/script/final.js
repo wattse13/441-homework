@@ -11,26 +11,36 @@ var ctx = null;
 //Creates new game map array
 //Different numbers correspond with different tile types
 var gameMap = [
-	0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-	0, 2, 2, 2, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-	0, 1, 1, 2, 1, 0, 0, 0, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-	0, 1, 1, 2, 1, 0, 2, 2, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-	0, 1, 1, 2, 1, 0, 2, 2, 0, 4, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
-	0, 1, 1, 2, 2, 2, 2, 2, 0, 4, 4, 4, 1, 1, 1, 0, 2, 2, 2, 0,
-	0, 1, 1, 2, 1, 0, 2, 2, 0, 1, 1, 4, 1, 1, 1, 0, 2, 2, 2, 0,
-	0, 1, 1, 2, 1, 0, 2, 2, 0, 1, 1, 4, 1, 1, 1, 0, 2, 2, 2, 0,
-	0, 1, 1, 2, 1, 0, 0, 0, 0, 1, 1, 4, 1, 1, 0, 0, 0, 2, 0, 0,
-	0, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 0, 2, 2, 2, 2, 0,
-	0, 1, 1, 2, 2, 2, 2, 2, 2, 1, 4, 4, 1, 1, 0, 2, 2, 2, 2, 0,
-	0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
-	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 1, 1, 1, 0, 2, 2, 2, 2, 0,
-	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 0, 2, 2, 2, 2, 0,
-	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
-	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 2, 2, 2, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 2, 1, 0, 0, 0, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 2, 1, 0, 2, 2, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 2, 1, 0, 2, 2, 0, 4, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 2, 2, 2, 2, 2, 0, 4, 4, 4, 1, 1, 1, 0, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 2, 1, 0, 2, 2, 0, 1, 1, 4, 1, 1, 1, 0, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 2, 1, 0, 2, 2, 0, 1, 1, 4, 1, 1, 1, 0, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 2, 1, 0, 0, 0, 0, 1, 1, 4, 1, 1, 0, 0, 0, 2, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 0, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 2, 2, 2, 2, 2, 2, 1, 4, 4, 1, 1, 0, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 1, 1, 1, 0, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 0, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+  0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+  0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+  0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+  0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+  0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+  0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+  0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+  0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+  0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+  0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 ];
 
 //Creates new instance of TileMap object
@@ -69,7 +79,7 @@ var roofList = [
 
 //Initializes variables containing tile width and height and map width and height
 var tileW = 16, tileH = 16;
-var mapW = 20, mapH = 20;
+var mapW = 30, mapH = 30;
 
 //Initializes variables related to game timing
 var currentSecond = 0, frameCount = 0, framesLastSecond = 0, lastFrameTime = 0;
@@ -77,7 +87,7 @@ var currentSecond = 0, frameCount = 0, framesLastSecond = 0, lastFrameTime = 0;
 //Initializes variables related to the tileset used
 //Variable tileset will hold tilesheet image once loaded by code
 //tilesetLoaded is a boolean value which will allow for check to see if the tilesheet image has loaded correctly
-var tileset = null, tilesetURL = "../assets/images/tileSet.png", tilesetLoaded = false;
+var tileset = null, tilesetURL = "../assets/images/finalSpriteSheet-01.png", tilesetLoaded = false;
 
 //Initializes variables related to which speed the game can be played at
 var gameTime = 0;
@@ -127,11 +137,11 @@ var floorTypes = {
 	solid	: 0,
 	path	: 1,
 	water	: 2,
-	ice		: 3,
+	/*ice		: 3,
 	conveyorU	: 4,
 	conveyorD	: 5,
 	conveyorL	: 6,
-	conveyorR	: 7,
+	conveyorR	: 7,*/
 	grass		: 8
 };
 
@@ -139,30 +149,30 @@ var floorTypes = {
 //Each tileType index is assigned a floorTypes value, and an instance of the Sprite class which determinew which sprite will be used from tileSet.png
 //Colour property is remnant from old code before use of tile sheet
 var tileTypes = {
-	0 : { colour:"#685b48", floor:floorTypes.solid,
+	0 : { floor:floorTypes.solid,
 		sprite:new Sprite([{x:238,y:221,w:16,h:16}])	},
-	1 : { colour:"#5aa457", floor:floorTypes.grass,
+	1 : { floor:floorTypes.grass,
 		sprite:new Sprite([{x:85,y:0,w:16,h:16}])	},
-	2 : { colour:"#e8bd7a", floor:floorTypes.path,
+	2 : { floor:floorTypes.path,
 		sprite:new Sprite([{x:102,y:0,w:16,h:16}])	},
-	3 : { colour:"#286625", floor:floorTypes.solid,
+	3 : { floor:floorTypes.solid,
 		sprite:new Sprite([{x:238,y:255,w:16,h:16}])	},
-	4 : { colour:"#678fd9", floor:floorTypes.water,
+	4 : { floor:floorTypes.water,
 		sprite:new Sprite([{x:0,y:0,w:16,h:16}])},
-	5 : { colour:"#eeeeff", floor:floorTypes.ice,
+	/*5 : { floor:floorTypes.ice,
 		sprite:new Sprite([{x:136,y:0,w:16,h:16}])	},
-	6 : { colour:"#cccccc", floor:floorTypes.conveyorL,
+	6 : { floor:floorTypes.conveyorL,
 		sprite:new Sprite([{x:187,y:238,w:16,h:16}])},
-	7 : { colour:"#cccccc", floor:floorTypes.conveyorR,
+	7 : { floor:floorTypes.conveyorR,
 		sprite:new Sprite([{x:187,y:238,w:16,h:16}])},
-	8 : { colour:"#cccccc", floor:floorTypes.conveyorD,
+	8 : { floor:floorTypes.conveyorD,
 		sprite:new Sprite([{x:187,y:238,w:16,h:16}])},
-	9 : { colour:"#cccccc", floor:floorTypes.conveyorU,
-		sprite:new Sprite([{x:187,y:238,w:16,h:16}])},
+	9 : { floor:floorTypes.conveyorU,
+		sprite:new Sprite([{x:187,y:238,w:16,h:16}])},*/
 
-	10 : { colour:"#ccaa00", floor:floorTypes.solid,
+	10 : { floor:floorTypes.solid,
 		sprite:new Sprite([{x:17,y:442,w:16,h:16}])},
-	11 : { colour:"#ccaa00", floor:floorTypes.solid,
+	11 : { floor:floorTypes.solid,
 		sprite:new Sprite([{x:17,y:442,w:16,h:16}])}
 };
 
@@ -272,6 +282,7 @@ window.onload = function()
 	tileset.onload = function() { tilesetLoaded = true; };
 	tileset.src = tilesetURL;
 
+  //Calls the buildMapFromData method and passes in gameMap object, mapW and mapH as arguments
 	mapTileData.buildMapFromData(gameMap, mapW, mapH);
 	mapTileData.addRoofs(roofList);
 	mapTileData.map[((2*mapW)+2)].eventEnter = function()

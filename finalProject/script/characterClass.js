@@ -17,22 +17,30 @@ function Character()
 
 	//Contains list of times it will take character to move across different floor types
 	this.delayMove	= {};
-	this.delayMove[floorTypes.path]			= 400;
-	this.delayMove[floorTypes.grass]		= 800;
-	this.delayMove[floorTypes.ice]			= 300;
+	this.delayMove[floorTypes.path]			= 300;
+	this.delayMove[floorTypes.grass]		= 300;
+	/*this.delayMove[floorTypes.ice]			= 300;
 	this.delayMove[floorTypes.conveyorU]	= 200;
 	this.delayMove[floorTypes.conveyorD]	= 200;
 	this.delayMove[floorTypes.conveyorL]	= 200;
-	this.delayMove[floorTypes.conveyorR]	= 200;
+	this.delayMove[floorTypes.conveyorR]	= 200;*/
 
 	//Character objects can now have directionality property
 	//Changing direction can now change which sprites are retrieved from the sprite sheet
 	this.direction	= directions.up;
 	this.sprites = {};
-	this.sprites[directions.up]		= new Sprite([{x:0,y:120,w:16,h:16}]);
-	this.sprites[directions.right]	= new Sprite([{x:0,y:150,w:16,h:16}]);
-	this.sprites[directions.down]	= new Sprite([{x:0,y:180,w:16,h:16}]);
-	this.sprites[directions.left]	= new Sprite([{x:0,y:210,w:16,h:16}]);
+	this.sprites[directions.up]		= new Sprite([{x:1160,y:32,w:16,h:16,d:200},
+                                              {x:1176,y:32,w:16,h:16,d:200},
+                                              {x:1192,y:32,w:16,h:16,d:200}]);
+	this.sprites[directions.right]	= new Sprite([{x:1160,y:48,w:16,h:16,d:200},
+                                                {x:1176,y:48,w:16,h:16,d:200},
+                                                {x:1192,y:48,w:16,h:16,d:200}]);
+	this.sprites[directions.down]	= new Sprite([{x:1160,y:0,w:16,h:16,d:200},
+                                              {x:1176,y:0,w:16,h:16,d:200},
+                                              {x:1192,y:0,w:16,h:16,d:200}]);
+	this.sprites[directions.left]	= new Sprite([{x:1160,y:16,w:16,h:16,d:200},
+                                              {x:1176,y:16,w:16,h:16,d:200},
+                                              {x:1192,y:16,w:16,h:16,d:200}]);
 
 	/*this.inventory = new Inventory(3*/
 }
