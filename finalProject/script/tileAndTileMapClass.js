@@ -29,15 +29,16 @@ function TileMap()
 	this.map	= [];
 	this.w		= 0;
 	this.h		= 0;
-	this.objMap = [];
+	/*this.objMap = [];
 	this.ow = 0;
-	this.oh = 0;
+	this.oh = 0;*/
 	this.levels	= 4;
 }
 //TileMap method takes three arguments: `d` = gameMap array containing the tileType id to use for each map tile, `w` and `h` are the map width and height values
 //Method begins by setting `w` and `h` to correspond with the passed in dimensions
-TileMap.prototype.buildMapFromData = function(d, w, h , od, ow, oh )
+TileMap.prototype.buildMapFromData = function(d, w, h /*, od, ow, oh*/ )
 {
+	//this.d = [];
 	this.w		= w;
 	this.h		= h;
 

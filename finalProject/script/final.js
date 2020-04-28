@@ -10,7 +10,7 @@ var ctx = null;
 
 //Creates new game map array
 //Different numbers correspond with different tile types
-var gameMap = [
+/*var gameMap = [
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
 	0, 2, 2, 2, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
@@ -75,7 +75,12 @@ var objectMap = [
   5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
 	5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5
 
-];
+];*/
+
+//Empty arrays for storing JSON data
+var gameMapArray = [], objectMapArray = [];
+//var mapW = [], mapH = [];
+//var tileW = [], tileH = [];
 
 //Creates new instance of TileMap object
 //Will be used to store and manage loaded map data
@@ -115,7 +120,7 @@ var roofList = [
 //Initializes variables containing tile width and height and map width and height
 var tileW = 16, tileH = 16;
 var mapW = 30, mapH = 30;
-var objMapW = 30 , objMapH = 30;
+//var objMapW = 30 , objMapH = 30;
 
 //Initializes variables related to game timing
 var currentSecond = 0, frameCount = 0, framesLastSecond = 0, lastFrameTime = 0;
@@ -281,6 +286,22 @@ function toIndex(x, y)
 //Following functions are called once window is finished loading
 window.onload = function()
 {
+
+	//$(document).ready(function () {
+		$.getJSON( "../script/levels.json" , function( result ) {
+                //window.alert( result.levels[0].gameMap );
+                $.each( result.levels , function(i) {
+                  gameMapArray.push(result.levels[i].gameMap);
+                  objectMapArray.push(result.levels[i].objectMap);
+									console.log(gameMapArray[0]);
+                  //mapW.push(result.levels[i].mapW);
+									//mapH.push(result.levels[i].mapH);
+									//tileW.push(result.levels[i].tileW);
+									//tileH.push(result.levels[i].tileH);
+		//	});
+		});
+	});
+
 	//variable ctx is assigned a value of `2d`
 	//requestAnimationFrame function is called with function drawGame passed in as argument
 	ctx = document.getElementById('myGame').getContext("2d");
@@ -319,7 +340,7 @@ window.onload = function()
 	tileset.src = tilesetURL;
 
   //Calls the buildMapFromData method and passes in gameMap object, mapW and mapH as arguments
-	mapTileData.buildMapFromData(gameMap, mapW, mapH, objectMap, objMapW, objMapH);
+	mapTileData.buildMapFromData(gameMapArray[0], mapW, mapH /*, objectMap, objMapW, objMapH*/);
 	mapTileData.addRoofs(roofList);
   //mapTileData.buildMapFromData( objectMap , objMapW , objMapH );
 	//mapTileData.map[((2*mapW)+2)].eventEnter = function()
