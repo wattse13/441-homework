@@ -9,11 +9,11 @@ Purpose: MART 441 Final Project
 //Contains data related to tiles the character is moving from and to, the time at which the character began to move the dimensions of character in pixels, and characters x/y coordinate postion on canvas
 function Character()
 {
-	this.tileFrom	= [1,1];
-	this.tileTo		= [1,1];
+	this.tileFrom	= [28,28];
+	this.tileTo		= [28,28];
 	this.timeMoved	= 0;
 	this.dimensions	= [16,16];
-	this.position	= [16,16];
+	this.position	= [448,448];
 
 	//Contains list of times it will take character to move across different floor types
 	this.delayMove	= {};
