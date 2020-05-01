@@ -10,7 +10,7 @@ var ctx = null;
 
 //Creates new game map array
 //Different numbers correspond with different tile types
-/*var gameMap = [
+var gameMap = [
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
 	0, 2, 2, 2, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
@@ -43,7 +43,7 @@ var ctx = null;
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 ];
 
-var objectMap = [
+/*var objectMap = [
   5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
 	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
@@ -79,6 +79,7 @@ var objectMap = [
 
 //Empty arrays for storing JSON data
 var gameMapArray = [], objectMapArray = [];
+var currentGameMap = gameMapArray[0];
 //var mapW = [], mapH = [];
 //var tileW = [], tileH = [];
 
@@ -90,7 +91,7 @@ var mapTileData = new TileMap();
 //Arrays which hold information about roofs
 //`x` and `y` correspond to roof position on map and `w` and `h` correspond to roof width and height
 //data varaible contains array with a width and height corresponding to the `w` and `h` values and numerical value which corresponds to the tileType array entry
-var roofList = [
+/*var roofList = [
 	{ x:5, y:3, w:4, h:7, data: [
 		10, 10, 11, 11,
 		10, 10, 11, 11,
@@ -115,7 +116,7 @@ var roofList = [
 		10, 10, 10, 11, 11, 11,
 		10, 10, 10, 11, 11, 11
 	]}
-];
+];*/
 
 //Initializes variables containing tile width and height and map width and height
 var tileW = 16, tileH = 16;
@@ -211,10 +212,10 @@ var tileTypes = {
 	9 : { floor:floorTypes.conveyorU,
 		sprite:new Sprite([{x:187,y:238,w:16,h:16}])},*/
 
-	10 : { floor:floorTypes.solid,
+	/*10 : { floor:floorTypes.solid,
 		sprite:new Sprite([{x:17,y:442,w:16,h:16}])},
 	11 : { floor:floorTypes.solid,
-		sprite:new Sprite([{x:17,y:442,w:16,h:16}])}
+		sprite:new Sprite([{x:17,y:442,w:16,h:16}])}*/
 };
 
 //Object allows for other objects, like sprites, to contain directionality
@@ -292,7 +293,7 @@ window.onload = function()
                 //window.alert( result.levels[0].gameMap );
                 $.each( result.levels , function(i) {
                   gameMapArray.push(result.levels[i].gameMap);
-                  objectMapArray.push(result.levels[i].objectMap);
+                  //objectMapArray.push(result.levels[i].objectMap);
 									console.log(gameMapArray[0]);
                   //mapW.push(result.levels[i].mapW);
 									//mapH.push(result.levels[i].mapH);
@@ -340,8 +341,8 @@ window.onload = function()
 	tileset.src = tilesetURL;
 
   //Calls the buildMapFromData method and passes in gameMap object, mapW and mapH as arguments
-	mapTileData.buildMapFromData(gameMapArray[0], mapW, mapH /*, objectMap, objMapW, objMapH*/);
-	mapTileData.addRoofs(roofList);
+	mapTileData.buildMapFromData(gameMap, mapW, mapH /*, objectMap, objMapW, objMapH*/);
+	//mapTileData.addRoofs(roofList);
   //mapTileData.buildMapFromData( objectMap , objMapW , objMapH );
 	//mapTileData.map[((2*mapW)+2)].eventEnter = function()
   //objectTileData.buildMapsFromData(objectMap , objMapW , objMapH );
@@ -414,10 +415,10 @@ function drawGame()
 	viewport.update(player.position[0] + (player.dimensions[0]/2),
 		player.position[1] + (player.dimensions[1]/2));
 
-	var playerRoof1 = mapTileData.map[toIndex(
+	/*var playerRoof1 = mapTileData.map[toIndex(
 		player.tileFrom[0], player.tileFrom[1])].roof;
 	var playerRoof2 = mapTileData.map[toIndex(
-		player.tileTo[0], player.tileTo[1])].roof;
+		player.tileTo[0], player.tileTo[1])].roof;*/
 
 	//Before new frame is drawn, last frame is erased with black rectangle
 	ctx.fillStyle = "#000000";
@@ -448,7 +449,7 @@ function drawGame()
       }*/
 
 			//If current layer being drawn is 2 and if roofType is not 0 and if player is not standing under roof, then roof sprites are drawn
-			else if(z==2 &&
+			/*else if(z==2 &&
 				mapTileData.map[toIndex(x,y)].roofType!=0 &&
 				mapTileData.map[toIndex(x,y)].roof!=playerRoof1 &&
 				mapTileData.map[toIndex(x,y)].roof!=playerRoof2)
@@ -457,7 +458,7 @@ function drawGame()
 					gameTime,
 					viewport.offset[0] + (x*tileW),
 					viewport.offset[1] + (y*tileH));
-			}
+			}*/
 		}
 	}
 

@@ -88,5 +88,3 @@ Sprite.prototype.draw = function(t, x, y)
 		x + offset[0], y + offset[1],
 		this.frames[frameIdx].w, this.frames[frameIdx].h);
 };
-
-//console.log("hi");

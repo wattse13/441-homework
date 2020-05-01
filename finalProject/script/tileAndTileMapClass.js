@@ -14,8 +14,8 @@ function Tile(tx, ty, tt)
 	this.x			= tx;
 	this.y			= ty;
 	this.type		= tt;
-	this.roof		= null;
-	this.roofType	= 0;
+	//this.roof		= null;
+	//this.roofType	= 0;
 	this.eventEnter	= null;
 	//this.object		= null;
 	//this.itemStack	= null;
@@ -77,7 +77,7 @@ TileMap.prototype.buildMapFromData = function(d, w, h /*, od, ow, oh*/ )
 //Takes array of roof objects as argument
 //Loops through each entry in roofs array
 //Variable `r` references current roof object
-TileMap.prototype.addRoofs = function(roofs)
+/*TileMap.prototype.addRoofs = function(roofs)
 {
 	for(var i in roofs)
 	{
@@ -106,4 +106,4 @@ TileMap.prototype.addRoofs = function(roofs)
 			}
 		}
 	}
-};
+};*/

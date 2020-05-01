@@ -47,7 +47,7 @@ function Character()
 //Character class method helps place initial character object instance
 //Takes two arguments, x and y coordinates of destination tile
 //Updates tileFrom and tileTo properties to new tile coordinates
-//Centers character sprite by adding half the difference between character sprite width or height and the tile width or height
+//Centers character sprite by adding half the difference between character sprite width or height and the tile width or height to the product of x * tileWidth and y * tileHeight
 Character.prototype.placeAt = function(x, y)
 {
 	this.tileFrom	= [x,y];
