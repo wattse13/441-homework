@@ -10,7 +10,8 @@ var ctx = null;
 
 //Creates new game map array
 //Different numbers correspond with different tile types
-var gameMap = [
+var gameMap =[
+	 [
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
@@ -41,8 +42,23 @@ var gameMap = [
   0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0,
   0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0,
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-];
+],
+[
+	//Doesn't matter what these numbers are, newly loaded gameMap will be strange mixture of grass and impassable green blocks
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
 
+	]
+];
 /*var objectMap = [
   5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
@@ -79,7 +95,7 @@ var gameMap = [
 
 //Empty arrays for storing JSON data
 var gameMapArray = [], objectMapArray = [];
-var currentGameMap = gameMapArray[0];
+var currentLevel = 0;
 //var mapW = [], mapH = [];
 //var tileW = [], tileH = [];
 
@@ -197,8 +213,8 @@ var tileTypes = {
 		sprite:new Sprite([{x:85,y:0,w:16,h:16}])	},
 	2 : { floor:floorTypes.path,
 		sprite:new Sprite([{x:102,y:0,w:16,h:16}])	},
-	3 : { floor:floorTypes.solid,
-		sprite:new Sprite([{x:238,y:255,w:16,h:16}])	},
+	3 : { floor:floorTypes.path,
+		sprite:new Sprite([{x:85,y:68,w:16,h:16}])	},
 	4 : { floor:floorTypes.water,
 		sprite:new Sprite([{x:306,y:392,w:16,h:16}])},
 	5 : { floor:floorTypes.solid,
@@ -217,23 +233,16 @@ var tileTypes = {
 		sprite:new Sprite([{x:17,y:442,w:16,h:16}])}*/
 };
 
+//Function which increases value of currentLevel variable, which in theory should change which gameMap array object is loaded
+//Rather buggy, as numerical values in newly loaded gameMap array do not correspond to tiles found within new map
+//Also moves players position and reassigns values of variables mapW and mapH to correspond with new map width and map height 
 function enterBuilding() {
-	console.log("Anyone Home?");
-	var gameMap = [
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-	];
-	var mapW = 11;
-	var mapH = 11;
+	//console.log("Anyone Home?");
+	currentLevel += 1;
+	mapW = 11;
+	mapH = 11;
+	player.tileTo = [5,10];
+	player.tileFrom = [5,10];
 }
 
 //Object allows for other objects, like sprites, to contain directionality
@@ -359,9 +368,11 @@ window.onload = function()
 	tileset.src = tilesetURL;
 
   //Calls the buildMapFromData method and passes in gameMap object, mapW and mapH as arguments
-	mapTileData.buildMapFromData(gameMap, mapW, mapH /*, objectMap, objMapW, objMapH*/);
+	mapTileData.buildMapFromData(gameMap[currentLevel], mapW, mapH /*, objectMap, objMapW, objMapH*/);
 	//mapTileData.addRoofs(roofList);
   //mapTileData.buildMapFromData( objectMap , objMapW , objMapH );
+	//If player-object enters tiles at specified location, function enterBuilding() is called
+	//Will probably later lead to problems, as it specifies not a specific tileType, but a location which could appear on any map
 	mapTileData.map[((15*mapW)+14)].eventEnter = function() {
 		enterBuilding();
 	};
