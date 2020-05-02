@@ -44,18 +44,17 @@ var gameMap =[
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 ],
 [
-	//Doesn't matter what these numbers are, newly loaded gameMap will be strange mixture of grass and impassable green blocks
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+	7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7,
+	7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7,
+	7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7,
+	7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7,
+	7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7,
+	7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7,
+	7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7,
+	7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7,
+	7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7,
+	7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7,
+	7, 7, 7, 7, 10, 10, 7, 7, 7, 7, 7
 
 	]
 ];
@@ -158,7 +157,7 @@ var gameSpeeds = [
 var currentSpeed = 0;
 
 //Variable which sets up ability to handle two collision types: pass-through-able and non-pass-through-able
-var objectCollision = {
+/*var objectCollision = {
 	none		: 0,
 	solid		: 1
 };
@@ -188,61 +187,77 @@ var objectTypes = {
 		collision : objectCollision.solid,
 		zIndex : 3
 	}
-};
+};*/
 
 //FloorTypes object helps organize which tiles character object can walk on, and which cannot be walked on
 var floorTypes = {
 	solid	: 0,
 	path	: 1,
 	water	: 2,
-	/*ice		: 3,
-	conveyorU	: 4,
-	conveyorD	: 5,
-	conveyorL	: 6,
-	conveyorR	: 7,*/
-	grass		: 8
+	grass	: 3
 };
 
 //TileTypes indexes correspond with gameMap array
 //Each tileType index is assigned a floorTypes value, and an instance of the Sprite class which determinew which sprite will be used from tileSet.png
 //Colour property is remnant from old code before use of tile sheet
 var tileTypes = {
+	//Green impassable block
 	0 : { floor:floorTypes.solid,
 		sprite:new Sprite([{x:170,y:442,w:16,h:16}])	},
+		//Grass
 	1 : { floor:floorTypes.grass,
 		sprite:new Sprite([{x:85,y:0,w:16,h:16}])	},
+		//Dirt path
 	2 : { floor:floorTypes.path,
 		sprite:new Sprite([{x:102,y:0,w:16,h:16}])	},
+		//Wooden Floor
 	3 : { floor:floorTypes.path,
 		sprite:new Sprite([{x:85,y:68,w:16,h:16}])	},
-	4 : { floor:floorTypes.water,
+		//Roof
+	4 : { floor:floorTypes.solid,
 		sprite:new Sprite([{x:306,y:392,w:16,h:16}])},
+		//Bush
 	5 : { floor:floorTypes.solid,
 		sprite:new Sprite([{x:238,y:153,w:16,h:16}])	},
+		//Transparent
 	6 : { floor:floorTypes.path,
 		sprite:new Sprite([{x:1160,y:442,w:16,h:16}])},
+		//Brown Wall
 	7 : { floor:floorTypes.solid,
 		sprite:new Sprite([{x:425,y:374,w:16,h:16}])},
+		//Door, Right
 	8 : { floor:floorTypes.path,
 		sprite:new Sprite([{x:493,y:102,w:16,h:16}])},
+		//Door, Left
 	9 : { floor:floorTypes.path,
 		sprite:new Sprite([{x:476,y:102,w:16,h:16}])},
-	10 : { floor:floorTypes.solid,
-		sprite:new Sprite([{x:306,y:392,w:16,h:16}])}
+		//Orange Rug
+	10 : { floor:floorTypes.path,
+		sprite:new Sprite([{x:187,y:238,w:16,h:16}])}
 	/*11 : { floor:floorTypes.solid,
 		sprite:new Sprite([{x:17,y:442,w:16,h:16}])}*/
 };
 
 //Function which increases value of currentLevel variable, which in theory should change which gameMap array object is loaded
-//Rather buggy, as numerical values in newly loaded gameMap array do not correspond to tiles found within new map
-//Also moves players position and reassigns values of variables mapW and mapH to correspond with new map width and map height 
+//Also moves players position and reassigns values of variables mapW and mapH to correspond with new map width and map height
 function enterBuilding() {
 	//console.log("Anyone Home?");
 	currentLevel += 1;
 	mapW = 11;
 	mapH = 11;
-	player.tileTo = [5,10];
-	player.tileFrom = [5,10];
+	mapTileData.buildMapFromData(gameMap[currentLevel], mapW, mapH);
+	player.tileTo = [5,9];
+	player.tileFrom = [5,9];
+}
+
+function exitBuilding() {
+	console.log("Anyone Home?");
+	currentLevel -= 1;
+	mapW = 30;
+	mapH = 30;
+	mapTileData.buildMapFromData(gameMap[currentLevel], mapW, mapH);
+	player.tileTo = [14,16];
+	player.tileFrom = [14,16];
 }
 
 //Object allows for other objects, like sprites, to contain directionality
@@ -371,6 +386,7 @@ window.onload = function()
 	mapTileData.buildMapFromData(gameMap[currentLevel], mapW, mapH /*, objectMap, objMapW, objMapH*/);
 	//mapTileData.addRoofs(roofList);
   //mapTileData.buildMapFromData( objectMap , objMapW , objMapH );
+
 	//If player-object enters tiles at specified location, function enterBuilding() is called
 	//Will probably later lead to problems, as it specifies not a specific tileType, but a location which could appear on any map
 	mapTileData.map[((15*mapW)+14)].eventEnter = function() {
@@ -379,6 +395,15 @@ window.onload = function()
 	mapTileData.map[((15*mapW)+13)].eventEnter = function() {
 		enterBuilding();
 	};
+
+	/*if (currentLevel.val == 1) {
+		 mapTileData.map[((11*mapW)+4)].eventEnter = function() {
+			 exitBuilding();
+		 };
+		 mapTileData.map[((11*mapW)+5)].eventEnter = function() {
+			exitBuilding();
+		};
+	}*/
   //objectTileData.buildMapsFromData(objectMap , objMapW , objMapH );
 	//	{ console.log("Entered tile 2,2"); };
 
