@@ -58,6 +58,39 @@ var gameMap =[
 
 	]
 ];
+/*var objectMap = [
+  5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+  5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,
+	5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5
+
+];*/
 
 //Empty arrays for storing JSON data
 var gameMapArray = [], objectMapArray = [];
@@ -70,6 +103,35 @@ var currentLevel = 0;
 var mapTileData = new TileMap();
 //var objectTileData = new TileMap();
 
+//Arrays which hold information about roofs
+//`x` and `y` correspond to roof position on map and `w` and `h` correspond to roof width and height
+//data varaible contains array with a width and height corresponding to the `w` and `h` values and numerical value which corresponds to the tileType array entry
+/*var roofList = [
+	{ x:5, y:3, w:4, h:7, data: [
+		10, 10, 11, 11,
+		10, 10, 11, 11,
+		10, 10, 11, 11,
+		10, 10, 11, 11,
+		10, 10, 11, 11,
+		10, 10, 11, 11,
+		10, 10, 11, 11
+	]},
+	{ x:15, y:5, w:5, h:4, data: [
+		10, 10, 11, 11, 11,
+		10, 10, 11, 11, 11,
+		10, 10, 11, 11, 11,
+		10, 10, 11, 11, 11
+	]},
+	{ x:14, y:9, w:6, h:7, data: [
+		10, 10, 10, 11, 11, 11,
+		10, 10, 10, 11, 11, 11,
+		10, 10, 10, 11, 11, 11,
+		10, 10, 10, 11, 11, 11,
+		10, 10, 10, 11, 11, 11,
+		10, 10, 10, 11, 11, 11,
+		10, 10, 10, 11, 11, 11
+	]}
+];*/
 
 //Initializes variables containing tile width and height and map width and height
 var tileW = 16, tileH = 16;
@@ -172,6 +234,8 @@ var tileTypes = {
 		//Orange Rug
 	10 : { floor:floorTypes.path,
 		sprite:new Sprite([{x:187,y:238,w:16,h:16}])}
+	/*11 : { floor:floorTypes.solid,
+		sprite:new Sprite([{x:17,y:442,w:16,h:16}])}*/
 };
 
 //Function which increases value of currentLevel variable, which in theory should change which gameMap array object is loaded
@@ -290,7 +354,7 @@ window.onload = function()
                 $.each( result.levels , function(i) {
                   gameMapArray.push(result.levels[i].gameMap);
                   //objectMapArray.push(result.levels[i].objectMap);
-									//console.log(gameMapArray[0]);
+									console.log(gameMapArray[0]);
                   //mapW.push(result.levels[i].mapW);
 									//mapH.push(result.levels[i].mapH);
 									//tileW.push(result.levels[i].tileW);
@@ -338,6 +402,7 @@ window.onload = function()
 
   //Calls the buildMapFromData method and passes in gameMap object, mapW and mapH as arguments
 	mapTileData.buildMapFromData(gameMap[currentLevel], mapW, mapH /*, objectMap, objMapW, objMapH*/);
+	//mapTileData.addRoofs(roofList);
   //mapTileData.buildMapFromData( objectMap , objMapW , objMapH );
 
 	//If player-object enters tiles at specified location, function enterBuilding() is called
@@ -358,6 +423,30 @@ window.onload = function()
 		};
 	}*/
   //objectTileData.buildMapsFromData(objectMap , objMapW , objMapH );
+	//	{ console.log("Entered tile 2,2"); };
+
+	//var mo1 = new MapObject(3); mo1.placeAt( 0 , 0 );
+	//var mo2 = new MapObject(2); mo2.placeAt(2, 3);
+
+
+	/*var mo12 = new MapObject(2); mo12.placeAt(7, 4);
+
+	var mo4 = new MapObject(3); mo4.placeAt(4, 5);
+	var mo5 = new MapObject(3); mo5.placeAt(4, 8);
+	var mo6 = new MapObject(3); mo6.placeAt(4, 11);
+
+	var mo7 = new MapObject(3); mo7.placeAt(2, 6);
+	var mo8 = new MapObject(3); mo8.placeAt(2, 9);
+	var mo9 = new MapObject(3); mo9.placeAt(2, 12);
+
+	for(var i = 3; i < 8; i++)
+	{
+		var ps = new PlacedItemStack(1, 1); ps.placeAt(i, 1);
+	}
+	for(var i = 3; i < 8; i++)
+	{
+		var ps = new PlacedItemStack(1, 1); ps.placeAt(3, i);
+	}*/
 };
 
 //Main function counts frame rate, draws map, and requests function be called again once browser is ready
@@ -395,12 +484,18 @@ function drawGame()
 		else if(keysDown[40] && player.canMoveDown())	{ player.moveDown(gameTime); }
 		else if(keysDown[37] && player.canMoveLeft())	{ player.moveLeft(gameTime); }
 		else if(keysDown[39] && player.canMoveRight())	{ player.moveRight(gameTime); }
+		//else if(keysDown[80]) { player.pickUp(); }
 	}
 
 	//Reassigns values in viewport-object's update function to value of player-object's position + half of player-object's dimensions
 	//Causes viewport object to follow player movement
 	viewport.update(player.position[0] + (player.dimensions[0]/2),
 		player.position[1] + (player.dimensions[1]/2));
+
+	/*var playerRoof1 = mapTileData.map[toIndex(
+		player.tileFrom[0], player.tileFrom[1])].roof;
+	var playerRoof2 = mapTileData.map[toIndex(
+		player.tileTo[0], player.tileTo[1])].roof;*/
 
 	//Before new frame is drawn, last frame is erased with black rectangle
 	ctx.fillStyle = "#000000";
@@ -429,6 +524,18 @@ function drawGame()
 					viewport.offset[0] + (x*tileW),
 					viewport.offset[1] + (y*tileH));
       }*/
+
+			//If current layer being drawn is 2 and if roofType is not 0 and if player is not standing under roof, then roof sprites are drawn
+			/*else if(z==2 &&
+				mapTileData.map[toIndex(x,y)].roofType!=0 &&
+				mapTileData.map[toIndex(x,y)].roof!=playerRoof1 &&
+				mapTileData.map[toIndex(x,y)].roof!=playerRoof2)
+			{
+				tileTypes[mapTileData.map[toIndex(x,y)].roofType].sprite.draw(
+					gameTime,
+					viewport.offset[0] + (x*tileW),
+					viewport.offset[1] + (y*tileH));
+			}*/
 			else if (z == 1){
 				var o = mapTileData.map[toIndex(x,y)].object;
 				//Checks if an object exists on tile being drawn and if objectType's zIndex is equal to layer currently being drawn
@@ -466,3 +573,28 @@ function drawGame()
 	lastFrameTime = currentFrameTime;
 	requestAnimationFrame(drawGame);
 }
+
+
+/*else if(z==1)
+{
+  var is = mapTileData.map[toIndex(x,y)].itemStack;
+  if(is!=null)
+  {
+    itemTypes[is.type].sprite.draw(
+      gameTime,
+      viewport.offset[0] + (x*tileW) + itemTypes[is.type].offset[0],
+      viewport.offset[1] + (y*tileH) + itemTypes[is.type].offset[1]);
+  }
+}
+
+var o = mapTileData.map[toIndex(x,y)].object;
+//Checks if an object exists on tile being drawn and if objectType's zIndex is equal to layer currently being drawn
+//If true, object's sprite is drawn
+if(o!=null && objectTypes[o.type].zIndex==z)
+{
+  var ot = objectTypes[o.type];
+
+  ot.sprite.draw(gameTime,
+    viewport.offset[0] + (x*tileW) + ot.offset[0],
+    viewport.offset[1] + (y*tileH) + ot.offset[1]);
+}*/

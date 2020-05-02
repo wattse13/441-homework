@@ -19,7 +19,12 @@ function Character()
 	this.delayMove	= {};
 	this.delayMove[floorTypes.path]			= 300;
 	this.delayMove[floorTypes.grass]		= 300;
-	
+	/*this.delayMove[floorTypes.ice]			= 300;
+	this.delayMove[floorTypes.conveyorU]	= 200;
+	this.delayMove[floorTypes.conveyorD]	= 200;
+	this.delayMove[floorTypes.conveyorL]	= 200;
+	this.delayMove[floorTypes.conveyorR]	= 200;*/
+
 	//Character objects can now have directionality property
 	//Changing direction can now change which sprites are retrieved from the sprite sheet
 	this.direction	= directions.up;

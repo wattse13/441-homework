@@ -73,3 +73,37 @@ TileMap.prototype.buildMapFromData = function(d, w, h /*, od, ow, oh*/ )
 	//Once loops have been iterated through, function returns true and exits the loop
 	return true;
 };
+//Similar function to previous function, but for roofs
+//Takes array of roof objects as argument
+//Loops through each entry in roofs array
+//Variable `r` references current roof object
+/*TileMap.prototype.addRoofs = function(roofs)
+{
+	for(var i in roofs)
+	{
+		var r = roofs[i];
+
+		//If roof objects extend beyond map confines, or if roof array length is not equal to the roof width * roof height, roof is skipped
+		if(r.x < 0 || r.y < 0 || r.x >= this.w || r.y >= this.h ||
+			(r.x+r.w)>this.w || (r.y+r.h)>this.h ||
+			r.data.length!=(r.w*r.h))
+		{
+			continue;
+		}
+
+		//Iterates through roof rows and then through roof columns
+		//Calculates tileIdx by adding x and y offset values to x and y roof coordinate positions currently being examined
+		for(var y = 0; y < r.h; y++)
+		{
+			for(var x = 0; x < r.w; x++)
+			{
+				var tileIdx = (((r.y+y)*this.w)+r.x+x);
+
+				//Updates Tile object in map array by setting its roof property to a reference to the current roof object being added to the map
+				//Updates roofType in Tile to the value in the data array from this roof
+				this.map[tileIdx].roof = r;
+				this.map[tileIdx].roofType = r.data[((y*r.w)+x)];
+			}
+		}
+	}
+};*/
