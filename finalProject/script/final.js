@@ -157,7 +157,7 @@ var gameSpeeds = [
 var currentSpeed = 0;
 
 //Variable which sets up ability to handle two collision types: pass-through-able and non-pass-through-able
-/*var objectCollision = {
+var objectCollision = {
 	none		: 0,
 	solid		: 1
 };
@@ -167,8 +167,8 @@ var currentSpeed = 0;
 //zIndex variable determines what order objects will be drawn in
 var objectTypes = {
 	1 : {
-		name : "Box",
-		sprite : new Sprite([{x:271,y:0,w:16,h:16}]),
+		name : "Book Shelf",
+		sprite : new Sprite([{x:731,y:204,w:16,h:16}]),
 		offset : [0,0],
 		collision : objectCollision.solid,
 		zIndex : 1
@@ -187,7 +187,7 @@ var objectTypes = {
 		collision : objectCollision.solid,
 		zIndex : 3
 	}
-};*/
+};
 
 //FloorTypes object helps organize which tiles character object can walk on, and which cannot be walked on
 var floorTypes = {
@@ -240,6 +240,8 @@ var tileTypes = {
 
 //Function which increases value of currentLevel variable, which in theory should change which gameMap array object is loaded
 //Also moves players position and reassigns values of variables mapW and mapH to correspond with new map width and map height
+//Populates a single Book Shelf object inside the building
+//Can be interacted with when the player enters the tile in front of Book Shelf Object while holding down space bar
 function enterBuilding() {
 	//console.log("Anyone Home?");
 	currentLevel += 1;
@@ -248,9 +250,17 @@ function enterBuilding() {
 	mapTileData.buildMapFromData(gameMap[currentLevel], mapW, mapH);
 	player.tileTo = [5,9];
 	player.tileFrom = [5,9];
+
+	var mo11 = new MapObject(1); mo11.placeAt(5, 4);
+
+	//Tile in front of Book Shelf is trigger for interactWith() function
+	//Space Bar must be held down while moving into Tile 
+	mapTileData.map[((5*mapW)+5)].eventEnter = function() {
+		interactWith();
+	};
 }
 
-function exitBuilding() {
+/*function exitBuilding() {
 	console.log("Anyone Home?");
 	currentLevel -= 1;
 	mapW = 30;
@@ -258,7 +268,7 @@ function exitBuilding() {
 	mapTileData.buildMapFromData(gameMap[currentLevel], mapW, mapH);
 	player.tileTo = [14,16];
 	player.tileFrom = [14,16];
-}
+}*/
 
 //Object allows for other objects, like sprites, to contain directionality
 var directions = {
@@ -274,7 +284,7 @@ var keysDown = {
 	38 : false,
 	39 : false,
 	40 : false,
-	80 : false
+	32 : false
 };
 
 //Viewport object keeps track of following information:
@@ -326,6 +336,13 @@ function toIndex(x, y)
 	return((y * mapW) + x);
 }
 
+function interactWith() {
+	//console.log("hi");
+	if ( keysDown[32] == true ){
+		window.alert("There is no escape from this room... Sorry?");
+	}
+}
+
 //Following functions are called once window is finished loading
 window.onload = function()
 {
@@ -355,7 +372,7 @@ window.onload = function()
 	//If an arrow key is not pressed, the corresponding boolean value stored in keysDown  array is changed back to false
 	window.addEventListener("keydown", function(e) {
 		if(e.keyCode>=37 && e.keyCode<=40) { keysDown[e.keyCode] = true; }
-		if(e.keyCode==80) { keysDown[e.keyCode] = true; }
+		if(e.keyCode==32) { keysDown[e.keyCode] = true; }
 	});
 	window.addEventListener("keyup", function(e) {
 		if(e.keyCode>=37 && e.keyCode<=40) { keysDown[e.keyCode] = false; }
@@ -363,7 +380,7 @@ window.onload = function()
 		{
 			currentSpeed = (currentSpeed>=(gameSpeeds.length-1) ? 0 : currentSpeed+1);
 		}
-		if(e.keyCode==80) { keysDown[e.keyCode] = false; }
+		if(e.keyCode==32) { keysDown[e.keyCode] = false; }
 	});
 
 	//Assigns canvas width and canvas height as values to the viewport-object's screen property
@@ -410,8 +427,8 @@ window.onload = function()
 	//var mo1 = new MapObject(3); mo1.placeAt( 0 , 0 );
 	//var mo2 = new MapObject(2); mo2.placeAt(2, 3);
 
-	/*var mo11 = new MapObject(1); mo11.placeAt(6, 4);
-	var mo12 = new MapObject(2); mo12.placeAt(7, 4);
+
+	/*var mo12 = new MapObject(2); mo12.placeAt(7, 4);
 
 	var mo4 = new MapObject(3); mo4.placeAt(4, 5);
 	var mo5 = new MapObject(3); mo5.placeAt(4, 8);
@@ -518,6 +535,19 @@ function drawGame()
 					viewport.offset[0] + (x*tileW),
 					viewport.offset[1] + (y*tileH));
 			}*/
+			else if (z == 1){
+				var o = mapTileData.map[toIndex(x,y)].object;
+				//Checks if an object exists on tile being drawn and if objectType's zIndex is equal to layer currently being drawn
+				//If true, object's sprite is drawn
+				if(o!=null && objectTypes[o.type].zIndex==z)
+				{
+					var ot = objectTypes[o.type];
+
+					ot.sprite.draw(gameTime,
+						viewport.offset[0] + (x*tileW) + ot.offset[0],
+						viewport.offset[1] + (y*tileH) + ot.offset[1]);
+				}
+			}
 		}
 	}
 

@@ -17,7 +17,7 @@ function Tile(tx, ty, tt)
 	//this.roof		= null;
 	//this.roofType	= 0;
 	this.eventEnter	= null;
-	//this.object		= null;
+	this.object		= null;
 	//this.itemStack	= null;
 }
 
