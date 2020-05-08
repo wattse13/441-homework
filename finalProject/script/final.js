@@ -41,7 +41,7 @@ var gameMap =[
   0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 0,
   0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0,
   0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0,
-	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0
 ],
 [
 	7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7,
@@ -283,6 +283,52 @@ function interactWith() {
 //Following functions are called once window is finished loading
 window.onload = function()
 {
+
+	//var arrayString;
+	//$(document).ready(function () {
+		//$.getJSON( "../script/levels.json" , function( result ) {
+								//window.alert( result.levels[0].gameMap );
+				//$.each( result.levels , function(i)
+				//{
+
+					//arrayString = JSON.stringify(result.levels[i].gameMap);
+				//	gameMapArray.push(result.levels[i].gameMap);
+
+									//objectMapArray.push(result.levels[i].objectMap);
+									//console.log("hi"+ gameMap[0]);
+									//mapW.push(result.levels[i].mapW);
+									//mapH.push(result.levels[i].mapH);
+									//tileW.push(result.levels[i].tileW);
+									//tileH.push(result.levels[i].tileH);
+			//});
+
+		// read through all the array values in the JSON object
+		//var myArray = arrayString.split(",");
+	//	for(var i = 0; i < myArray.length; i++)
+	//	{
+		//	if(i == myArray.length-1)
+		//	{
+				// get rid of the ending "]"
+			//	gameMap.push(myArray[i].substring(0,1));
+		//	}
+		//	else if(i == 0)
+		//	{
+		//		gameMap.push(myArray[i].substring(1));
+		//	}
+		//	else
+		//	{
+			//	gameMap.push(myArray[i]);
+			//}
+
+	//	}
+
+		// set the mapTileData here because of its association to the JSON object now
+		//mapTileData.buildMapFromData(gameMap, mapW, mapH /*, objectMap, objMapW, objMapH*/);
+
+	//});
+
+
+
 
 	//$(document).ready(function () {
 		$.getJSON( "../script/levels.json" , function( result ) {
